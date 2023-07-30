@@ -1,0 +1,28 @@
+
+<div class="mb-3" data-waste-type-wrapper="">
+  <div class="d-flex mb-2">
+    <div class="col-3">
+      <div class="input-group-text">Тип отхода</div>
+    </div>
+    <div class="col">
+      <div class="input-group">
+        <select class="form-control" name="wasteType[]">
+          <option selected="selected" disabled="disabled" value="0">Выберите тип</option>
+          <option value="weekdays">Тип А</option>
+          <option value="monthdays">Тип Б</option>
+          <option value="exactdates">Тип В</option>
+          <option value="weekdays">Тип Г</option>
+        </select>
+        <div class="input-group-text">Количество</div>
+        <input class="form-control" type="number" name="quantity[]"/>
+        <div class="input-group-text">Единица измерения</div>
+        <select class="form-control" name="unit[]">
+          <option selected="selected" value="1">КГ</option>
+          <option value="2">ТОННА</option>
+          <option value="3">М2</option>
+          <option value="4">Контейнер 35л</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

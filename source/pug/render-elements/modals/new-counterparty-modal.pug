@@ -1,0 +1,77 @@
+.modal.fade(id="new-counterparty-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Карточка контрагента
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				button.mb-3.btn.btn-dark(type="button" data-bs-toggle="modal" data-bs-target="#counterparty-INN") Заполнить реквизиты автоматически по ИНН
+				form
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Тип контрагента
+						.col
+							select.form-select(name="typeCounterparty")
+								option(selected) Организационно-правовая форма
+								option Государственное учреждение
+								option Коммерческая организация
+								option Индивидуальный предприниматель
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Краткое название
+						.col
+							input.form-control(type="text" name="shortName")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text.h-100 Полное название
+						.col
+							textarea.form-control(row="3" name="fullName")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text ИНН
+						.col
+							input.form-control(type="text" name="INN")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text КПП
+						.col
+							input.form-control(type="text" name="CPP")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text.h-100 Юридический адрес
+						.col
+							textarea.form-control(row="3" name="legalAddress")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text ФИО представителя
+						.col
+							input.form-control(type="text" name="fullNameRepresentative")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Телефон
+						.col
+							input.form-control(type="tel" name="tel")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Email
+						.col
+							input.form-control(type="email" name="email")
+			.modal-footer
+				button.btn.btn-dark(type="button") Сохранить
+				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить
+.modal.fade(id="counterparty-INN" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-dialog-scrollable
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Запись данных по ИНН
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				form
+					.d-flex
+						.col-3
+							.input-group-text ИНН
+						.col
+							input.form-control(type="text" name="INN")
+			.modal-footer
+				button.btn.btn-dark(type="button") Сохранить
+				button.btn.btn-danger(type="button" data-bs-toggle="modal" data-bs-target="#counterparty") Отменить

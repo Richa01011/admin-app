@@ -1,0 +1,175 @@
+
+<div class="modal fade" id="new-contract-modal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title fs-5">Создание договора</div>
+        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="d-flex mb-3">
+            <div class="col-3">
+              <div class="input-group-text">Договор №</div>
+            </div>
+            <div class="col">
+              <div class="input-group">
+                <input class="form-control" type="text" name="contractNumber"/><span class="input-group-text">От</span>
+                <input class="form-control" type="date" name="dateContractStart"/><span class="input-group-text">До</span>
+                <input class="form-control" type="date" name="dateContractEnd"/>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="col-3">
+              <div class="input-group-text">Иполнитель</div>
+            </div>
+            <div class="col">
+              <select class="form-control" name="executor">
+                <option value="1" selected="selected">Выберите исполнителя для отображения</option>
+                <option value="2">ООО Название организации</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="col-3">
+              <div class="input-group-text">Контрагент</div>
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" name="counterpartyName" placeholder="Название или ИНН"/>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="col-3">
+              <div class="input-group-text">Дата начала исполнения</div>
+            </div>
+            <div class="col">
+              <div class="input-group">
+                <input class="form-control" type="date" name="dateExecutionStart"/><span class="input-group-text">Дата окончания исполнения</span>
+                <input class="form-control" type="date" name="dateExecutionEnd"/>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="col-3">
+              <div class="input-group-text h-100">Комментарий</div>
+            </div>
+            <div class="col">
+              <textarea class="form-control" rows="3" name="comment"></textarea>
+            </div>
+          </div>
+          <div class="nav nav-tabs" role="tablist" id="address-tabs">
+            <div class="nav-link active d-flex align-items-center" data-bs-toggle="tab" data-bs-target="#tab-0-1" role="tab" style="cursor: pointer;"><span>Адрес 1</span></div>
+            <button class="nav-link" type="button" data-add-contract="add">+</button>
+          </div>
+          <div class="tab-content pt-4">
+            <div class="tab-pane fade show active" id="tab-0-1" role="tabpanel">
+              <div class="d-flex mb-3">
+                <div class="col-3">
+                  <div class="input-group-text">Исполнитель (субподряд)</div>
+                </div>
+                <div class="col">
+                  <select class="form-control" name="subcontracting[]">
+                    <option selected="selected">Выберите исполнителя для отображения</option>
+                    <option>ООО Союз Рубин</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="col-3">
+                  <div class="input-group-text">Регион исполнения</div>
+                </div>
+                <div class="col">
+                  <select class="form-control" name="region[]">
+                    <option selected="selected" value="1">Липецкая обл.</option>
+                    <option value="2">Тамбовская обл.</option>
+                    <option value="3">Курская обл.</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="col-3">
+                  <div class="input-group-text">Наименование ЛПУ</div>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="text" name="hospitalName[]"/>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="col-3">
+                  <div class="input-group-text">ФИО ответственного лица от ЛПУ</div>
+                </div>
+                <div class="col">
+                  <div class="input-group">
+                    <input class="form-control" type="text" name="fullNamePersonFromHospital[]"/>
+                    <div class="input-group-text">Телефон</div>
+                    <input class="form-control" type="tel" name="telPersonFromHospital[]"/>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="col-3">
+                  <div class="input-group-text">Адрес вывоза отходов</div>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="text" name="wasteRemovalAddress[]"/>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="col-3">
+                  <div class="input-group-text">График работы</div>
+                </div>
+                <div class="col">
+                  <select class="form-control" name="workSchedule[]">
+                    <option value="1" selected="selected">Работают все дни, включая выходные и праздничные дни</option>
+                    <option value="2">Не работают в выходные и праздничные дни</option>
+                    <option value="3">Не работают в выходные и праздничные дни, кроме субботы</option>
+                    <option value="4">Не работают в выходные и праздничные дни, кроме воскресенья</option>
+                    <option value="5">Работают все дни, кроме праздничных.</option>
+                  </select>
+                </div>
+              </div>
+              <p class="mb-3"><strong>Типы вывозимых отходов</strong></p>
+              <div data-dynamic-element="">
+                <div data-dynamic-container="waste-type">
+                  <div class="mb-3" data-waste-type-wrapper="">
+                    <div class="d-flex mb-2">
+                      <div class="col-3">
+                        <div class="input-group-text">Тип отхода</div>
+                      </div>
+                      <div class="col">
+                        <div class="input-group">
+                          <select class="form-control" name="wasteType[]">
+                            <option selected="selected" disabled="disabled" value="0">Выберите тип</option>
+                            <option value="weekdays">Тип А</option>
+                            <option value="monthdays">Тип Б</option>
+                            <option value="exactdates">Тип В</option>
+                            <option value="weekdays">Тип Г</option>
+                          </select>
+                          <div class="input-group-text">Количество</div>
+                          <input class="form-control" type="number" name="quantity[]"/>
+                          <div class="input-group-text">Единица измерения</div>
+                          <select class="form-control" name="unit[]">
+                            <option selected="selected" value="1">КГ</option>
+                            <option value="2">ТОННА</option>
+                            <option value="3">М2</option>
+                            <option value="4">Контейнер 35л</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-outline-rose" type="button" data-dynamic-button="waste-type">+ Добавить строку</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark" type="button">Сохранить и сформировать график вывоза</button>
+        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Отменить</button>
+      </div>
+    </div>
+  </div>
+</div>

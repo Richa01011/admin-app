@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="./images/logo.jpg">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <header class="position-sticky z-3 top-0 bg-white border-bottom mb-4 py-2">
+      <div class="container">
+        <div class="d-flex gap-4"><a class="logo" href="/"><img src="images/logo.jpg">
+            <p>Союз Рубин</p></a>
+          <div class="d-flex align-items-center gap-2 col-4"><span>Проект</span>
+            <select class="form-select" name="project">
+              <option selected>Обезвреживание (уничтожение) отходов</option>
+              <option>Утилизация (покупка) отходов</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="d-flex">
+        <div class="nav-menu d-none d-xxl-block">
+          <div class="list-group"><a class="list-group-item list-group-item-action active" href="/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="#">Реестр заявок</a><a class="list-group-item list-group-item-action" href="#">Отчеты</a><a class="list-group-item list-group-item-action" href="#">Архивы</a><a class="list-group-item list-group-item-action" href="#">Настройки</a></div>
+        </div>
+        <div class="offcanvas offcanvas-start" id="nav-menu">
+          <div class="offcanvas-header">
+            <div class="offcanvas-title fs-5">Меню</div>
+            <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="list-group"><a class="list-group-item list-group-item-action active" href="/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="#">Реестр заявок</a><a class="list-group-item list-group-item-action" href="#">Отчеты</a><a class="list-group-item list-group-item-action" href="#">Архивы</a><a class="list-group-item list-group-item-action" href="#">Настройки</a></div>
+          </div>
+        </div>
+        <main class="col">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
+            <button class="btn btn-secondary" type="button" id="new-counterparty-modal-btn">Добавить контрагента</button>
+            <button class="btn btn-secondary" type="button" id="new-contract-modal-btn">Добавить договор</button>
+            <div class="btn-group">
+              <input class="btn-check" name="tables" type="radio" id="table-contract-is-proccess" checked>
+              <label class="btn btn-outline-secondary" for="table-contract-is-proccess">Действующие договора</label>
+              <input class="btn-check" name="tables" type="radio" id="table-contract-is-complete">
+              <label class="btn btn-outline-secondary" for="table-contract-is-complete">Исполненные договора</label>
+            </div>
+          </div>
+          <div class="d-flex flex-column mb-3">
+            <div class="row mb-2">
+              <div class="col-3">
+                <div class="row">
+                  <div class="col-5 pe-0">
+                    <div class="input-group-text">Исполнитель</div>
+                  </div>
+                  <div class="col px-0">
+                    <select class="form-select" name="filter_executor">
+                      <option selected>Все</option>
+                      <option>ООО Союз Рубин</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-2 pe-0">
+                    <div class="input-group-text">За период</div>
+                  </div>
+                  <div class="col-6 px-0">
+                    <div class="input-group">
+                      <input class="form-control" type="date" name="filter_date_start">
+                      <div class="input-group-text">-</div>
+                      <input class="form-control" type="date" name="filter_date_end">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="row">
+                  <div class="col-5 pe-0">
+                    <div class="input-group-text">Контрагент</div>
+                  </div>
+                  <div class="col px-0">
+                    <select class="form-select" name="filter_counterparty">
+                      <option selected>Все</option>
+                      <option>ООО МедТехника Ип Иванов А.А.</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-2 pe-0">
+                    <div class="input-group-text">Регион</div>
+                  </div>
+                  <div class="col-6 px-0">
+                    <select class="form-select" name="filter_region">
+                      <option selected>Все</option>
+                      <option>Липецкая область</option>
+                      <option>Тамбовская область</option>
+                      <option>Белгородская область</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="table-contracts">
+            <div class="tab-pane fade show active" id="tab-proccess-contracts">
+              <div class="d-flex gap-2 mb-2">
+                <button class="btn btn-light" type="button" id="toggle-checked-all-btn"><i class="fa-regular fa-circle-check"></i><span> Выделить всё</span></button>
+                <button class="btn btn-light" type="button" id="excel-contract-btn" disabled><i class="fa-solid fa-download"></i><span> Отправить в Excel</span></button>
+                <button class="btn btn-light" type="button" id="delete-contract-btn" disabled><i class="fa-solid fa-trash"></i><span> Удалить</span></button>
+                <button class="btn btn-light" type="button" id="edit-contact-btn" disabled><i class="fa-solid fa-edit"></i><span> Редактировать</span></button>
+                <button class="btn btn-light" type="button" id="access-contact-btn" disabled><i class="fa-solid fa-user-group"></i><span> Настроить доступ</span></button>
+              </div>
+              <table class="table table-striped table-bordered table-sm table-hover rounded align-middle">
+                <thead>
+                  <tr class="align-middle">
+                    <th>#</th>
+                    <th>Исполнитель</th>
+                    <th>Контрагент</th>
+                    <th>№Договора</th>
+                    <th>Регион исполнения</th>
+                    <th>Дата заключения договора</th>
+                    <th>Дата окончания договора</th>
+                    <th>Дата начала исполнения</th>
+                    <th>Дата окончания исполнения</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                      <input type="hidden" name="is-allow-delete" value="true">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 321/421</td>
+                    <td>Липецкая обл., Тамбовская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>31.12.2023</td>
+                    <td>01.01.2023</td>
+                    <td>31.12.2023</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                      <input type="hidden" name="is-allow-delete" value="false">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 432/3423</td>
+                    <td>Тамбовская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>31.12.2023</td>
+                    <td>01.01.2023</td>
+                    <td>31.12.2023</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                      <input type="hidden" name="is-allow-delete" value="true">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 543/12</td>
+                    <td>Белгородская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>31.12.2023</td>
+                    <td>01.01.2023</td>
+                    <td>31.12.2023</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                      <input type="hidden" name="is-allow-delete" value="true">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 543/12</td>
+                    <td>Белгородская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>31.12.2023</td>
+                    <td>01.01.2023</td>
+                    <td>31.12.2023</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="tab-complete-contracts">
+              <div class="d-flex gap-2 mb-2">
+                <button class="btn btn-light" type="button" id="toggle-checked-all-btn"><i class="fa-regular fa-circle-check"></i><span> Выделить всё</span></button>
+                <button class="btn btn-light" type="button" id="excel-contract-btn" disabled><i class="fa-solid fa-download"></i><span> Отправить в Excel</span></button>
+                <button class="btn btn-light" type="button" id="edit-contact-btn" disabled><i class="fa-solid fa-edit"></i><span> Редактировать</span></button>
+                <button class="btn btn-light" type="button" id="access-contact-btn" disabled><i class="fa-solid fa-user-group"></i><span> Настроить доступ</span></button>
+              </div>
+              <table class="table table-striped table-bordered table-sm table-hover rounded align-middle">
+                <thead>
+                  <tr class="align-middle">
+                    <th>#</th>
+                    <th>Исполнитель</th>
+                    <th>Контрагент</th>
+                    <th>№Договора</th>
+                    <th>Регион исполнения</th>
+                    <th>Дата заключения договора</th>
+                    <th>Сумма контракта</th>
+                    <th>Сумма расторжения</th>
+                    <th>Дата расторжения договора</th>
+                    <th>Основание расторжения</th>
+                    <th>Комментарии к договоору</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 321/421</td>
+                    <td>Липецкая обл., Тамбовская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>1 350 000</td>
+                    <td>550 000</td>
+                    <td>30.12.2023</td>
+                    <td>Доп. соглашение № 3123 от 15.04.2023</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 432/3423</td>
+                    <td>Тамбовская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>1 350 000</td>
+                    <td>550 000</td>
+                    <td>30.12.2023</td>
+                    <td>Доп. соглашение № 3123 от 15.04.2023</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 543/12</td>
+                    <td>Белгородская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>1 350 000</td>
+                    <td>550 000</td>
+                    <td>30.12.2023</td>
+                    <td>Доп. соглашение № 3123 от 15.04.2023</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="form-check-input" type="checkbox">
+                    </td>
+                    <td>ООО Название организации</td>
+                    <td>ООО Контрагент</td>
+                    <td>Договор 543/12</td>
+                    <td>Белгородская обл.</td>
+                    <td>15.12.2022</td>
+                    <td>1 350 000</td>
+                    <td>550 000</td>
+                    <td>30.12.2023</td>
+                    <td>Доп. соглашение № 3123 от 15.04.2023</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="js/libs.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

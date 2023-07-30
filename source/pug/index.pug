@@ -1,0 +1,52 @@
+extends layout/index
+block content
+	.d-flex.align-items-center.gap-2.mb-2
+		button.d-xxl-none.btn.btn-secondary(type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu") Меню
+		button.btn.btn-secondary(type="button" id="new-counterparty-modal-btn") Добавить контрагента
+		button.btn.btn-secondary(type="button" id="new-contract-modal-btn") Добавить договор
+		.btn-group
+			input.btn-check(name="tables" type="radio" id="table-contract-is-proccess" checked)
+			label.btn.btn-outline-secondary(for="table-contract-is-proccess") Действующие договора
+			input.btn-check(name="tables" type="radio" id="table-contract-is-complete")
+			label.btn.btn-outline-secondary(for="table-contract-is-complete") Исполненные договора
+	.d-flex.flex-column.mb-3
+		.row.mb-2
+			.col-3
+				.row
+					.col-5.pe-0
+						.input-group-text Исполнитель
+					.col.px-0
+						select.form-select(name="filter_executor")
+							option(selected) Все
+							option ООО Союз Рубин
+			.col-6
+				.row
+					.col-2.pe-0
+						.input-group-text За период
+					.col-6.px-0
+						.input-group
+							input.form-control(type="date" name="filter_date_start")
+							.input-group-text -
+							input.form-control(type="date" name="filter_date_end")
+		.row
+			.col-3
+				.row
+					.col-5.pe-0
+						.input-group-text Контрагент
+					.col.px-0
+						select.form-select(name="filter_counterparty")
+							option(selected) Все
+							option ООО МедТехника Ип Иванов А.А.
+			.col-6
+				.row
+					.col-2.pe-0
+						.input-group-text Регион
+					.col-6.px-0
+						select.form-select(name="filter_region")
+							option(selected) Все
+							option Липецкая область
+							option Тамбовская область
+							option Белгородская область
+	.tab-content#table-contracts
+		include components/contracts/proccess-contracts
+		include components/contracts/complete-contracts

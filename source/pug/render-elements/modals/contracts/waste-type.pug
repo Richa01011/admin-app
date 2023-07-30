@@ -1,0 +1,20 @@
+.mb-3(data-waste-type-wrapper="")
+	.d-flex.mb-2
+		.col-3
+			.input-group-text Тип отхода
+		.col
+			.input-group
+				select.form-control(name="wasteType[]")
+					option(selected disabled value="0") Выберите тип
+					option(value="weekdays") Тип А
+					option(value="monthdays") Тип Б
+					option(value="exactdates") Тип В
+					option(value="weekdays") Тип Г
+				.input-group-text Количество
+				input.form-control(type="number" name="quantity[]")
+				.input-group-text Единица измерения
+				select.form-control(name="unit[]")
+					option(selected value="1") КГ
+					option(value="2") ТОННА
+					option(value="3") М2
+					option(value="4") Контейнер 35л

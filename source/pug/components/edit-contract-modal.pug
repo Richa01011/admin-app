@@ -1,0 +1,118 @@
+.modal.fade(id="edit-contract-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-xl.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Редактирование договора
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body(data-add-contract="wrapper")
+				.input-group.mb-3
+					span.input-group-text Договор №
+					input.form-control(type="text")
+					span.input-group-text От
+					input.form-control(type="date")
+					span.input-group-text До
+					input.form-control(type="date")
+				.input-group.mb-3
+					span.input-group-text Проект
+					input.form-control(type="text" placeholder="Вывоз отходов")
+				.input-group.mb-3
+					span.input-group-text Иполнитель
+					select.form-select(name="project")
+						option(selected) Выберите исполнителя для отображения
+						option 2
+				.input-group.mb-3
+					span.input-group-text Заказчик
+					input.form-control(type="text" placeholder="Название или ИНН")
+				.input-group.mb-3
+					span.input-group-text Дата начала исполнения
+					input.form-control(type="date")
+					span.input-group-text Дата окончания исполнения
+					input.form-control(type="date")
+				.input-group.mb-3
+					span.input-group-text Комментарий
+					textarea.form-control(rows="3")
+				.nav.nav-tabs(role="tablist" id="address-tabs")
+					li.nav-item(role="presentation")
+						button.nav-link.active(data-bs-toggle="tab" data-bs-target="#tab-1-1" role="tab") Адрес 1
+					button.nav-link(type="button" data-add-contract="add") +
+				.tab-content.pt-4
+					.tab-pane.fade.show.active(id="tab-1-1" role="tabpanel")
+						.input-group.mb-3
+							span.input-group-text Оранизация исполниель (субподряд)
+							select.form-select(name="project")
+								option(selected) Выберите исполнителя для отображения
+								option 2
+						.input-group.mb-3
+							span.input-group-text Регион нахождения
+							input.form-control(type="text")
+						.input-group.mb-3
+							span.input-group-text Наименование учреждения
+						.input-group.mb-3
+							span.input-group-text ФИО представителя Заказчика
+							input.form-control(type="text")
+							span.input-group-text телефон
+							input.form-control(type="tel")
+						.input-group.mb-3
+							span.input-group-text Адрес вывоза
+							input.form-control(type="text")
+						.input-group.mb-3
+							span.input-group-text График работы
+							input.form-control(type="text")
+						p.mb-3
+							strong Переодичность вывоза отходов
+						.input-group.mb-3
+							span.input-group-text День недели
+							input.btn-check(type="checkbox", id="mo-1")
+							label.btn.btn-outline-secondary(for="mo-1") ПН
+							input.btn-check(type="checkbox", id="tu-1")
+							label.btn.btn-outline-secondary(for="tu-1") ВТ
+							input.btn-check(type="checkbox", id="we-1")
+							label.btn.btn-outline-secondary(for="we-1") СР
+							input.btn-check(type="checkbox", id="th-1")
+							label.btn.btn-outline-secondary(for="th-1") ЧТ
+							input.btn-check(type="checkbox", id="fr-1")
+							label.btn.btn-outline-secondary(for="fr-1") ПТ
+							input.btn-check(type="checkbox", id="sa-1")
+							label.btn.btn-outline-secondary(for="sa-1") СБ
+							input.btn-check(type="checkbox", id="su-1")
+							label.btn.btn-outline-secondary(for="su-1") ВС
+						.d-flex.flex-wrap.gap-2.mb-3(data-add-item="wrapper")
+							span Дни месяца
+							div(style="width: 40px" data-add-item="item")
+								input.form-control(type="text")
+							button.btn.btn-outline-secondary(type="button" data-add-item="add") + добавить день
+						.d-flex.flex-wrap.gap-2.mb-3(data-add-item="wrapper")
+							span Точные даты
+							div.col-2(data-add-item="item")
+								input.form-control(type="date")
+							button.btn.btn-outline-secondary(type="button" data-add-item="add") + добавить дату
+						p.mb-3
+							strong Типы вывозимых отходов
+						.mb-3(data-add-item="wrapper")
+							.input-group.mb-3(data-add-item="item")
+								span.input-group-text Тип отхода
+								select.form-select(name="type-trash")
+									option Отход типа А
+									option Отход типа Б
+								span.input-group-text Количество
+								input.col.form-control(type="number" value="0")
+								span.input-group-text Единица измерения
+								select.form-select(name="unit")
+									option КГ
+									option ТОННА
+									option МЕТР
+							button.btn.btn-secondary(type="button" data-add-item="add") + Добавить строку
+						.input-group.mb-3
+							span.input-group-text Выбрать и закрепить ТС
+							select.form-select(name="pick-TS")
+								option
+								option
+						.input-group
+							span.input-group-text Комментарий к адресу вывоза отходов
+							textarea.form-control(rows="3")
+			.modal-footer
+				.form-check.form-switch
+					input.form-check-input(type="checkbox" role="switch" id="is-term-contract")
+					label.form-check-label(for="is-term-contract") Договор расторгнут?
+				button.btn.btn-dark(type="button") Сохранить и сформировать график вывоза
+				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить

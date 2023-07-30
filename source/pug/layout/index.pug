@@ -1,0 +1,45 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="icon" type="image/jpg" href="./images/logo.jpg")
+		title Document
+		link(rel="stylesheet", href="index.css")
+	body
+		header.position-sticky.z-3.top-0.bg-white.border-bottom.mb-4.py-2
+			.container
+				.d-flex.gap-4
+					a.logo(href="/")
+						img(src="images/logo.jpg")
+						p Союз Рубин
+					.d-flex.align-items-center.gap-2.col-4
+						span Проект
+						select.form-select(name="project")
+							option(selected) Обезвреживание (уничтожение) отходов
+							option Утилизация (покупка) отходов
+		.container
+			.d-flex
+				.nav-menu.d-none.d-xxl-block
+					.list-group
+						a.list-group-item.list-group-item-action.active(href='/') Реестр договоров
+						a.list-group-item.list-group-item-action(href='#') Реестр заявок
+						a.list-group-item.list-group-item-action(href='#') Отчеты
+						a.list-group-item.list-group-item-action(href='#') Архивы
+						a.list-group-item.list-group-item-action(href='#') Настройки
+				.offcanvas.offcanvas-start(id="nav-menu")
+					.offcanvas-header
+						.offcanvas-title.fs-5 Меню
+						button.btn-close(type="button" data-bs-dismiss="offcanvas")
+					.offcanvas-body
+						.list-group
+							a.list-group-item.list-group-item-action.active(href='/') Реестр договоров
+							a.list-group-item.list-group-item-action(href='#') Реестр заявок
+							a.list-group-item.list-group-item-action(href='#') Отчеты
+							a.list-group-item.list-group-item-action(href='#') Архивы
+							a.list-group-item.list-group-item-action(href='#') Настройки
+				main.col
+					block content
+		script(src="js/libs.js")
+		script(type="module", src="js/main.js")
