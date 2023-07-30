@@ -1,78 +1,107 @@
 .tab-pane.fade.show.active#tab-proccess-contracts
-	.d-flex.gap-2.mb-2
-		button.btn.btn-light(type="button" id="toggle-checked-all-btn")
-			i.fa-regular.fa-circle-check
-			span  Выделить всё
-		button.btn.btn-light(type="button" id="excel-contract-btn" disabled)
-			i.fa-solid.fa-download
-			span  Отправить в Excel
-		button.btn.btn-light(type="button" id="delete-contract-btn" disabled)
-			i.fa-solid.fa-trash
-			span  Удалить
-		button.btn.btn-light(type="button" id="edit-contact-btn" disabled)
-			i.fa-solid.fa-edit
-			span  Редактировать
-		button.btn.btn-light(type="button" id="access-contact-btn" disabled)
-			i.fa-solid.fa-user-group
-			span  Настроить доступ
-	table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
-		thead
-			tr.align-middle
-				th #
-				th Исполнитель
-				th Контрагент
-				th №Договора
-				th Регион исполнения
-				th Дата заключения договора
-				th Дата окончания договора
-				th Дата начала исполнения
-				th Дата окончания исполнения
-		tbody
-			tr
-				td
-					input.form-check-input(type="checkbox")
-					input(type="hidden", name="is-allow-delete" value="true")
-				td ООО Название организации
-				td ООО Контрагент
-				td Договор 321/421
-				td Липецкая обл., Тамбовская обл.
-				td 15.12.2022
-				td 31.12.2023
-				td 01.01.2023
-				td 31.12.2023
-			tr
-				td
-					input.form-check-input(type="checkbox")
-					input(type="hidden", name="is-allow-delete" value="false")
-				td ООО Название организации
-				td ООО Контрагент
-				td Договор 432/3423
-				td Тамбовская обл.
-				td 15.12.2022
-				td 31.12.2023
-				td 01.01.2023
-				td 31.12.2023
-			tr
-				td
-					input.form-check-input(type="checkbox")
-					input(type="hidden", name="is-allow-delete" value="true")
-				td ООО Название организации
-				td ООО Контрагент
-				td Договор 543/12
-				td Белгородская обл.
-				td 15.12.2022
-				td 31.12.2023
-				td 01.01.2023
-				td 31.12.2023
-			tr
-				td
-					input.form-check-input(type="checkbox")
-					input(type="hidden", name="is-allow-delete" value="true")
-				td ООО Название организации
-				td ООО Контрагент
-				td Договор 543/12
-				td Белгородская обл.
-				td 15.12.2022
-				td 31.12.2023
-				td 01.01.2023
-				td 31.12.2023
+	.d-flex.justify-content-between.mb-2
+		.d-flex.gap-2
+			button.btn.btn-light(type="button" id="toggle-checked-all-btn")
+				i.fa-regular.fa-circle-check
+				span  Выделить всё
+			button.btn.btn-light(type="button" id="excel-contract-btn" disabled)
+				i.fa-solid.fa-download
+				span  Отправить в Excel
+			button.btn.btn-light(type="button" id="delete-contract-btn" disabled)
+				i.fa-solid.fa-trash
+				span  Удалить
+			button.btn.btn-light(type="button" id="edit-contact-btn" disabled)
+				i.fa-solid.fa-edit
+				span  Редактировать
+			button.btn.btn-light(type="button" id="access-contact-btn" disabled)
+				i.fa-solid.fa-user-group
+				span  Настроить доступ
+		.d-flex.gap-2
+			input.form-control(type="text" placeholder="Поиск")
+			button.btn.btn-dark(type="button") Поиск
+	.table-responsive
+		table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
+			thead
+				tr.align-middle
+					th #
+					th
+						.filterable
+							span Исполнитель
+							i.fa-solid.fa-sort-down
+					th
+						.filterable
+							span Контрагент
+							i.fa-solid.fa-sort-down
+					th
+						.filterable
+							span №Договора
+							i.fa-solid.fa-sort-down
+					th
+						.filterable
+							span Регион исполнения
+							i.fa-solid.fa-sort-down
+					th
+						.filterable
+							span Дата заключения договора
+							i.fa-solid.fa-sort-down
+					th
+						.filterable
+							span Дата окончания договора
+							i.fa-solid.fa-sort-down
+					th
+						.filterable
+							span Дата начала исполнения
+							i.fa-solid.fa-sort-down
+					th
+						.filterable
+							span Дата окончания исполнения
+							i.fa-solid.fa-sort-down
+			tbody
+				tr
+					td
+						input.form-check-input(type="checkbox")
+						input(type="hidden", name="is-allow-delete" value="true")
+					td ООО Название организации
+					td ООО Контрагент
+					td Договор 321/421
+					td Липецкая обл., Тамбовская обл.
+					td 15.12.2022
+					td 31.12.2023
+					td 01.01.2023
+					td 31.12.2023
+				tr
+					td
+						input.form-check-input(type="checkbox")
+						input(type="hidden", name="is-allow-delete" value="false")
+					td ООО Название организации
+					td ООО Контрагент
+					td Договор 432/3423
+					td Тамбовская обл.
+					td 15.12.2022
+					td 31.12.2023
+					td 01.01.2023
+					td 31.12.2023
+				tr
+					td
+						input.form-check-input(type="checkbox")
+						input(type="hidden", name="is-allow-delete" value="true")
+					td ООО Название организации
+					td ООО Контрагент
+					td Договор 543/12
+					td Белгородская обл.
+					td 15.12.2022
+					td 31.12.2023
+					td 01.01.2023
+					td 31.12.2023
+				tr
+					td
+						input.form-check-input(type="checkbox")
+						input(type="hidden", name="is-allow-delete" value="true")
+					td ООО Название организации
+					td ООО Контрагент
+					td Договор 543/12
+					td Белгородская обл.
+					td 15.12.2022
+					td 31.12.2023
+					td 01.01.2023
+					td 31.12.2023

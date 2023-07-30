@@ -2,14 +2,14 @@
 	.col-3
 		.input-group-text Исполнитель (субподряд)
 	.col
-		select.form-control(name="subcontracting[]")
+		select.form-select(name="subcontracting[]")
 			option(selected) Выберите исполнителя для отображения
 			option ООО Союз Рубин
 .d-flex.mb-3
 	.col-3
 		.input-group-text Регион исполнения
 	.col
-		select.form-control(name="region[]")
+		select.form-select(name="region[]")
 			option(selected value="1") Липецкая обл.
 			option(value="2") Тамбовская обл.
 			option(value="3") Курская обл.
@@ -20,6 +20,11 @@
 		input.form-control(type="text" name="hospitalName[]")
 .d-flex.mb-3
 	.col-3
+		.input-group-text Адрес вывоза отходов
+	.col
+		input.form-control(type="text" name="wasteRemovalAddress[]")
+.d-flex.mb-3
+	.col-3
 		.input-group-text ФИО ответственного лица от ЛПУ
 	.col
 		.input-group
@@ -28,14 +33,9 @@
 			input.form-control(type="tel" name="telPersonFromHospital[]")
 .d-flex.mb-3
 	.col-3
-		.input-group-text Адрес вывоза отходов
-	.col
-		input.form-control(type="text" name="wasteRemovalAddress[]")
-.d-flex.mb-3
-	.col-3
 		.input-group-text График работы
 	.col
-		select.form-control(name="workSchedule[]")
+		select.form-select(name="workSchedule[]")
 			option(value="1" selected) Работают все дни, включая выходные и праздничные дни
 			option(value="2") Не работают в выходные и праздничные дни
 			option(value="3") Не работают в выходные и праздничные дни, кроме субботы

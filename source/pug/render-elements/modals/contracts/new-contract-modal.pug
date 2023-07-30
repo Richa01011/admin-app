@@ -9,18 +9,22 @@
 					.d-flex.mb-3
 						.col-3
 							.input-group-text Договор №
+								span.text-rose *
 						.col
 							.input-group
 								input.form-control(type="text" name="contractNumber")
-								span.input-group-text От
+								.input-group-text От
+									span.text-rose *
 								input.form-control(type="date" name="dateContractStart")
-								span.input-group-text До
+								.input-group-text До
+									span.text-rose *
 								input.form-control(type="date" name="dateContractEnd")
 					.d-flex.mb-3
 						.col-3
 							.input-group-text Иполнитель
+								span.text-rose *
 						.col
-							select.form-control(name="executor")
+							select.form-select(name="executor")
 								option(value="1" selected) Выберите исполнителя для отображения
 								option(value="2") ООО Название организации
 					.d-flex.mb-3
@@ -45,7 +49,7 @@
 						.nav-link.active.d-flex.align-items-center(data-bs-toggle="tab" data-bs-target="#tab-0-1" role="tab" style="cursor: pointer;")
 							span Адрес 1
 						button.nav-link(type="button" data-add-contract="add") +
-					.tab-content.pt-4
+					.tab-content.pt-4#dynamic-tab-content
 						.tab-pane.fade.show.active(id="tab-0-1" role="tabpanel")
 							include tab-pane
 			.modal-footer

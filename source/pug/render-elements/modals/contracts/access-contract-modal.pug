@@ -1,0 +1,20 @@
+.modal.fade(id="access-contract-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-md.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Настройка доступа
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				form
+					h5.mb-3 Операторы
+					.input-group.mb-3
+						.input-group-text
+							input.form-check-input.mt-0(type="checkbox" id="1")
+						label.input-group-text.col(for="1") Иван Иванович
+					.input-group.mb-3
+						.input-group-text
+							input.form-check-input.mt-0(type="checkbox" id="2")
+						label.input-group-text.col(for="2") Андрей Андреевич
+			.modal-footer
+				button.btn.btn-dark(type="button") Сохранить
+				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить

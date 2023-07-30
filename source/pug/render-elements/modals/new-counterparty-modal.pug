@@ -8,11 +8,10 @@
 				button.mb-3.btn.btn-dark(type="button" data-bs-toggle="modal" data-bs-target="#counterparty-INN") Заполнить реквизиты автоматически по ИНН
 				form
 					.d-flex.mb-3
-						.col-3
-							.input-group-text Тип контрагента
+						.col-5
+							.input-group-text Организационно-правовая форма
 						.col
 							select.form-select(name="typeCounterparty")
-								option(selected) Организационно-правовая форма
 								option Государственное учреждение
 								option Коммерческая организация
 								option Индивидуальный предприниматель
@@ -33,6 +32,11 @@
 							input.form-control(type="text" name="INN")
 					.d-flex.mb-3
 						.col-3
+							.input-group-text ОГРИ
+						.col
+							input.form-control(type="text" name="OGRI")
+					.d-flex.mb-3
+						.col-3
 							.input-group-text КПП
 						.col
 							input.form-control(type="text" name="CPP")
@@ -43,7 +47,7 @@
 							textarea.form-control(row="3" name="legalAddress")
 					.d-flex.mb-3
 						.col-3
-							.input-group-text ФИО представителя
+							.input-group-text ФИО руководителя
 						.col
 							input.form-control(type="text" name="fullNameRepresentative")
 					.d-flex.mb-3

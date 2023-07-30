@@ -1,0 +1,18 @@
+.filterable {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+
+	& i {
+		color: rgba(#000, 0.5);
+		transition: 0.2s ease-in-out;
+	}
+
+	&:hover {
+		& i {
+			color: #000;
+		}
+	}
+}

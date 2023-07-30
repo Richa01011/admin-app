@@ -20,7 +20,7 @@
 						.col-3
 							.input-group-text Иполнитель
 						.col
-							select.form-control(name="executor")
+							select.form-select(name="executor")
 								option(value="1" selected) Выберите исполнителя для отображения
 								option(value="2") ООО Название организации
 					.d-flex.mb-3
@@ -56,39 +56,5 @@
 							include tab-pane
 			.modal-footer
 				button.btn.btn-dark(type="button") Сохранить и сформировать график вывоза
-				button.btn.btn-danger(type="button" data-bs-toggle="modal" data-bs-target="#termination-contract-modal") Расторгнуть договор
-				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить
-.modal.fade(id="termination-contract-modal" data-bs-backdrop="static" data-bs-keyboard="false")
-	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
-		.modal-content
-			.modal-header
-				.modal-title.fs-5 Расторжение договора
-				button.btn-close(type="button" data-bs-dismiss="modal")
-			.modal-body
-				form
-					.d-flex.mb-3
-						.col-5
-							.input-group-text Стоимость контракта
-						.col
-							input.form-control(type="text" name="contractCost")
-					.d-flex.mb-3
-						.col-5
-							.input-group-text Стоимость выполененных работ
-						.col
-							.input-group
-								input.form-control(type="text" name="completedWorksCost")
-								.input-group-text Дата расторжения
-								input.form-control(type="date" name="dateOfTermination")
-					.d-flex.mb-3
-						.col-5
-							.input-group-text Основание расторжения/исполнения
-						.col
-							input.form-control(type="text" name="groupdsForTermination")
-					.d-flex
-						.col-5
-							.input-group-text.h-100 Комментарий к договору
-						.col
-							textarea.form-control(name="commentContract" row="3")
-			.modal-footer
-				button.btn.btn-dark(type="button") Расторгнуть договор
+				button.btn.btn-danger(type="button" id="term-contract-btn") Расторгнуть договор
 				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить

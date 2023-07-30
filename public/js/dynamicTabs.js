@@ -3,7 +3,7 @@ export const DynanicTabs = (htmlTabContent) => {
 	function addTab() {
 		// получаем элементы для работы с ними
 		let tabs = document.querySelector("#address-tabs");
-		let tabContent = document.querySelector(".tab-content");
+		let tabContent = document.querySelector("#dynamic-tab-content");
 		let tabCount = tabs.querySelectorAll('.nav-link[data-bs-toggle="tab"]').length;
 
 		// создаем новую вкладку
@@ -46,7 +46,7 @@ export const DynanicTabs = (htmlTabContent) => {
 	function removeTab(event) {
 		// получаем элементы для работы с ними
 		let tabs = document.querySelector("#address-tabs");
-		let tabContent = document.querySelector(".tab-content");
+		let tabContent = document.querySelector("#dynamic-tab-content");
 
 		// получаем индекс удаляемой вкладки
 		let tabIndex = event.target.parentNode.getAttribute("data-bs-target").split("-")[2];

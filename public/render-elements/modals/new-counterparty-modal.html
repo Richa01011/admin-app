@@ -10,12 +10,11 @@
         <button class="mb-3 btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#counterparty-INN">Заполнить реквизиты автоматически по ИНН</button>
         <form>
           <div class="d-flex mb-3">
-            <div class="col-3">
-              <div class="input-group-text">Тип контрагента</div>
+            <div class="col-5">
+              <div class="input-group-text">Организационно-правовая форма</div>
             </div>
             <div class="col">
               <select class="form-select" name="typeCounterparty">
-                <option selected="selected">Организационно-правовая форма</option>
                 <option>Государственное учреждение</option>
                 <option>Коммерческая организация</option>
                 <option>Индивидуальный предприниматель</option>
@@ -48,6 +47,14 @@
           </div>
           <div class="d-flex mb-3">
             <div class="col-3">
+              <div class="input-group-text">ОГРИ</div>
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" name="OGRI"/>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="col-3">
               <div class="input-group-text">КПП</div>
             </div>
             <div class="col">
@@ -64,7 +71,7 @@
           </div>
           <div class="d-flex mb-3">
             <div class="col-3">
-              <div class="input-group-text">ФИО представителя</div>
+              <div class="input-group-text">ФИО руководителя</div>
             </div>
             <div class="col">
               <input class="form-control" type="text" name="fullNameRepresentative"/>

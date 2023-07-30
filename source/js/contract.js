@@ -39,6 +39,7 @@ export const Contract = () => {
 				document.querySelector(target).classList.add("show", "active");
 			});
 		});
+
 		tablPanes.forEach((tablPane) => {
 			const tbody = tablPane.querySelector("tbody");
 
@@ -64,9 +65,45 @@ export const Contract = () => {
 									DynanicTabs(text);
 								});
 
+							const termContractBtn = document.querySelector("#term-contract-btn");
+							termContractBtn.addEventListener("click", () => {
+								fetch("./render-elements/modals/contracts/term-contract-modal.html")
+									.then((response) => response.text())
+									.then((text) => {
+										document.body.insertAdjacentHTML("beforeend", text);
+										const termContractModal = new bootstrap.Modal(
+											document.querySelector("#termination-contract-modal")
+										);
+
+										editContactModal.hide();
+										termContractModal.show();
+										termContractModal._element.addEventListener("hidden.bs.modal", () => {
+											termContractModal._element.remove();
+										});
+									});
+							});
+
 							editContactModal.show();
 							editContactModal._element.addEventListener("hidden.bs.modal", () => {
 								editContactModal._element.remove();
+							});
+						});
+				});
+			}
+
+			if (accessContractBtn) {
+				accessContractBtn.addEventListener("click", () => {
+					fetch("./render-elements/modals/contracts/access-contract-modal.html")
+						.then((response) => response.text())
+						.then((text) => {
+							document.body.insertAdjacentHTML("beforeend", text);
+							const accessContactModal = new bootstrap.Modal(
+								document.querySelector("#access-contract-modal")
+							);
+
+							accessContactModal.show();
+							accessContactModal._element.addEventListener("hidden.bs.modal", () => {
+								accessContactModal._element.remove();
 							});
 						});
 				});

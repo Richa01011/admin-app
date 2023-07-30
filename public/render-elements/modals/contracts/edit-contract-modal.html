@@ -25,7 +25,7 @@
               <div class="input-group-text">Иполнитель</div>
             </div>
             <div class="col">
-              <select class="form-control" name="executor">
+              <select class="form-select" name="executor">
                 <option value="1" selected="selected">Выберите исполнителя для отображения</option>
                 <option value="2">ООО Название организации</option>
               </select>
@@ -74,7 +74,7 @@
                   <div class="input-group-text">Исполнитель (субподряд)</div>
                 </div>
                 <div class="col">
-                  <select class="form-control" name="subcontracting[]">
+                  <select class="form-select" name="subcontracting[]">
                     <option selected="selected">Выберите исполнителя для отображения</option>
                     <option>ООО Союз Рубин</option>
                   </select>
@@ -85,7 +85,7 @@
                   <div class="input-group-text">Регион исполнения</div>
                 </div>
                 <div class="col">
-                  <select class="form-control" name="region[]">
+                  <select class="form-select" name="region[]">
                     <option selected="selected" value="1">Липецкая обл.</option>
                     <option value="2">Тамбовская обл.</option>
                     <option value="3">Курская обл.</option>
@@ -102,6 +102,14 @@
               </div>
               <div class="d-flex mb-3">
                 <div class="col-3">
+                  <div class="input-group-text">Адрес вывоза отходов</div>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="text" name="wasteRemovalAddress[]"/>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="col-3">
                   <div class="input-group-text">ФИО ответственного лица от ЛПУ</div>
                 </div>
                 <div class="col">
@@ -114,18 +122,10 @@
               </div>
               <div class="d-flex mb-3">
                 <div class="col-3">
-                  <div class="input-group-text">Адрес вывоза отходов</div>
-                </div>
-                <div class="col">
-                  <input class="form-control" type="text" name="wasteRemovalAddress[]"/>
-                </div>
-              </div>
-              <div class="d-flex mb-3">
-                <div class="col-3">
                   <div class="input-group-text">График работы</div>
                 </div>
                 <div class="col">
-                  <select class="form-control" name="workSchedule[]">
+                  <select class="form-select" name="workSchedule[]">
                     <option value="1" selected="selected">Работают все дни, включая выходные и праздничные дни</option>
                     <option value="2">Не работают в выходные и праздничные дни</option>
                     <option value="3">Не работают в выходные и праздничные дни, кроме субботы</option>
@@ -145,7 +145,7 @@
                       <div class="col">
                         <div class="input-group">
                           <select class="form-control" name="wasteType[]">
-                            <option selected="selected" disabled="disabled" value="0">Выберите тип</option>
+                            <option selected="selected" value="none">Выберите тип</option>
                             <option value="weekdays">Тип А</option>
                             <option value="monthdays">Тип Б</option>
                             <option value="exactdates">Тип В</option>
@@ -155,10 +155,22 @@
                           <input class="form-control" type="number" name="quantity[]"/>
                           <div class="input-group-text">Единица измерения</div>
                           <select class="form-control" name="unit[]">
-                            <option selected="selected" value="1">КГ</option>
-                            <option value="2">ТОННА</option>
-                            <option value="3">М2</option>
-                            <option value="4">Контейнер 35л</option>
+                            <option selected="selected" value="1">Контейнер 3 л</option>
+                            <option value="2">Контейнер 5 л</option>
+                            <option value="3">Контейнер 6 л</option>
+                            <option value="4">Контейнер 10 л</option>
+                            <option value="5">Контейнер 30 л</option>
+                            <option value="6">Контейнер 35 л</option>
+                            <option value="7">Контейнер 50 л</option>
+                            <option value="8">Контейнер 60 л</option>
+                            <option value="9">Контейнер 65 л</option>
+                            <option value="10">Контейнер 120 л</option>
+                            <option value="11">Контейнер 240 л</option>
+                            <option value="12">Контейнер 360 л</option>
+                            <option value="13">Контейнер 1100 л</option>
+                            <option value="14">КГ</option>
+                            <option value="15">ШТ</option>
+                            <option value="16">М Куб</option>
                           </select>
                         </div>
                       </div>
@@ -174,7 +186,7 @@
                   <div class="input-group-text">Исполнитель (субподряд)</div>
                 </div>
                 <div class="col">
-                  <select class="form-control" name="subcontracting[]">
+                  <select class="form-select" name="subcontracting[]">
                     <option selected="selected">Выберите исполнителя для отображения</option>
                     <option>ООО Союз Рубин</option>
                   </select>
@@ -185,7 +197,7 @@
                   <div class="input-group-text">Регион исполнения</div>
                 </div>
                 <div class="col">
-                  <select class="form-control" name="region[]">
+                  <select class="form-select" name="region[]">
                     <option selected="selected" value="1">Липецкая обл.</option>
                     <option value="2">Тамбовская обл.</option>
                     <option value="3">Курская обл.</option>
@@ -202,6 +214,14 @@
               </div>
               <div class="d-flex mb-3">
                 <div class="col-3">
+                  <div class="input-group-text">Адрес вывоза отходов</div>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="text" name="wasteRemovalAddress[]"/>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="col-3">
                   <div class="input-group-text">ФИО ответственного лица от ЛПУ</div>
                 </div>
                 <div class="col">
@@ -214,18 +234,10 @@
               </div>
               <div class="d-flex mb-3">
                 <div class="col-3">
-                  <div class="input-group-text">Адрес вывоза отходов</div>
-                </div>
-                <div class="col">
-                  <input class="form-control" type="text" name="wasteRemovalAddress[]"/>
-                </div>
-              </div>
-              <div class="d-flex mb-3">
-                <div class="col-3">
                   <div class="input-group-text">График работы</div>
                 </div>
                 <div class="col">
-                  <select class="form-control" name="workSchedule[]">
+                  <select class="form-select" name="workSchedule[]">
                     <option value="1" selected="selected">Работают все дни, включая выходные и праздничные дни</option>
                     <option value="2">Не работают в выходные и праздничные дни</option>
                     <option value="3">Не работают в выходные и праздничные дни, кроме субботы</option>
@@ -245,7 +257,7 @@
                       <div class="col">
                         <div class="input-group">
                           <select class="form-control" name="wasteType[]">
-                            <option selected="selected" disabled="disabled" value="0">Выберите тип</option>
+                            <option selected="selected" value="none">Выберите тип</option>
                             <option value="weekdays">Тип А</option>
                             <option value="monthdays">Тип Б</option>
                             <option value="exactdates">Тип В</option>
@@ -255,10 +267,22 @@
                           <input class="form-control" type="number" name="quantity[]"/>
                           <div class="input-group-text">Единица измерения</div>
                           <select class="form-control" name="unit[]">
-                            <option selected="selected" value="1">КГ</option>
-                            <option value="2">ТОННА</option>
-                            <option value="3">М2</option>
-                            <option value="4">Контейнер 35л</option>
+                            <option selected="selected" value="1">Контейнер 3 л</option>
+                            <option value="2">Контейнер 5 л</option>
+                            <option value="3">Контейнер 6 л</option>
+                            <option value="4">Контейнер 10 л</option>
+                            <option value="5">Контейнер 30 л</option>
+                            <option value="6">Контейнер 35 л</option>
+                            <option value="7">Контейнер 50 л</option>
+                            <option value="8">Контейнер 60 л</option>
+                            <option value="9">Контейнер 65 л</option>
+                            <option value="10">Контейнер 120 л</option>
+                            <option value="11">Контейнер 240 л</option>
+                            <option value="12">Контейнер 360 л</option>
+                            <option value="13">Контейнер 1100 л</option>
+                            <option value="14">КГ</option>
+                            <option value="15">ШТ</option>
+                            <option value="16">М Куб</option>
                           </select>
                         </div>
                       </div>
@@ -273,61 +297,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-dark" type="button">Сохранить и сформировать график вывоза</button>
-        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#termination-contract-modal">Расторгнуть договор</button>
-        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Отменить</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="termination-contract-modal" data-bs-backdrop="static" data-bs-keyboard="false">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title fs-5">Расторжение договора</div>
-        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="d-flex mb-3">
-            <div class="col-5">
-              <div class="input-group-text">Стоимость контракта</div>
-            </div>
-            <div class="col">
-              <input class="form-control" type="text" name="contractCost"/>
-            </div>
-          </div>
-          <div class="d-flex mb-3">
-            <div class="col-5">
-              <div class="input-group-text">Стоимость выполененных работ</div>
-            </div>
-            <div class="col">
-              <div class="input-group">
-                <input class="form-control" type="text" name="completedWorksCost"/>
-                <div class="input-group-text">Дата расторжения</div>
-                <input class="form-control" type="date" name="dateOfTermination"/>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex mb-3">
-            <div class="col-5">
-              <div class="input-group-text">Основание расторжения/исполнения</div>
-            </div>
-            <div class="col">
-              <input class="form-control" type="text" name="groupdsForTermination"/>
-            </div>
-          </div>
-          <div class="d-flex">
-            <div class="col-5">
-              <div class="input-group-text h-100">Комментарий к договору</div>
-            </div>
-            <div class="col">
-              <textarea class="form-control" name="commentContract" row="3"></textarea>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-dark" type="button">Расторгнуть договор</button>
+        <button class="btn btn-danger" type="button" id="term-contract-btn">Расторгнуть договор</button>
         <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Отменить</button>
       </div>
     </div>

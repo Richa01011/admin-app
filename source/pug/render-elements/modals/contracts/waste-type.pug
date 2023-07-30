@@ -5,7 +5,7 @@
 		.col
 			.input-group
 				select.form-control(name="wasteType[]")
-					option(selected disabled value="0") Выберите тип
+					option(selected value="none") Выберите тип
 					option(value="weekdays") Тип А
 					option(value="monthdays") Тип Б
 					option(value="exactdates") Тип В
@@ -14,7 +14,19 @@
 				input.form-control(type="number" name="quantity[]")
 				.input-group-text Единица измерения
 				select.form-control(name="unit[]")
-					option(selected value="1") КГ
-					option(value="2") ТОННА
-					option(value="3") М2
-					option(value="4") Контейнер 35л
+					option(selected value="1") Контейнер 3 л
+					option(value="2") Контейнер 5 л
+					option(value="3") Контейнер 6 л
+					option(value="4") Контейнер 10 л
+					option(value="5") Контейнер 30 л
+					option(value="6") Контейнер 35 л
+					option(value="7") Контейнер 50 л
+					option(value="8") Контейнер 60 л
+					option(value="9") Контейнер 65 л
+					option(value="10") Контейнер 120 л
+					option(value="11") Контейнер 240 л
+					option(value="12") Контейнер 360 л
+					option(value="13") Контейнер 1100 л
+					option(value="14") КГ
+					option(value="15") ШТ
+					option(value="16") М Куб
