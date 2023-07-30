@@ -44,12 +44,12 @@
 					.nav.nav-tabs(role="tablist" id="address-tabs")
 						.nav-link.active.d-flex.align-items-center(data-bs-toggle="tab" data-bs-target="#tab-0-1" role="tab" style="cursor: pointer;")
 							span Адрес 1
-							button.btn-close(type="button")
+							button.btn-close.ms-2(type="button")
 						.nav-link.d-flex.align-items-center(data-bs-toggle="tab" data-bs-target="#tab-0-2" role="tab" style="cursor: pointer;")
 							span Адрес 2
-							button.btn-close(type="button")
+							button.btn-close.ms-2(type="button")
 						button.nav-link(type="button" data-add-contract="add") +
-					.tab-content.pt-4
+					.tab-content.pt-4#dynamic-tab-content
 						.tab-pane.fade.show.active(id="tab-0-1" role="tabpanel")
 							include tab-pane
 						.tab-pane.fade(id="tab-0-2" role="tabpanel")

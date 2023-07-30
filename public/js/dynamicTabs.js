@@ -93,7 +93,8 @@ export const DynanicTabs = (htmlTabContent) => {
 		// получаем элементы для работы с ними
 		let tabs = document.querySelector("#address-tabs");
 		let firstTab = tabs.querySelector('.nav-link[data-bs-toggle="tab"]');
-		let tabCount = tabs.querySelectorAll('.nav-link[data-bs-toggle="tab"]').length;
+		let allTabs = tabs.querySelectorAll('.nav-link[data-bs-toggle="tab"]');
+		let tabCount = allTabs.length;
 
 		// проверяем количество вкладок
 		if (tabCount > 1) {
@@ -105,6 +106,11 @@ export const DynanicTabs = (htmlTabContent) => {
 				removeBtn.addEventListener("click", removeTab);
 				firstTab.appendChild(removeBtn);
 			}
+
+			allTabs.forEach((tab) => {
+				const removeBtn = tab.querySelector(".btn-close");
+				removeBtn.addEventListener("click", removeTab);
+			});
 		} else {
 			// если вкладка только одна, то удаляем кнопку удаления у первой вкладки
 			let removeBtn = firstTab.querySelector(".btn-close");
@@ -113,6 +119,7 @@ export const DynanicTabs = (htmlTabContent) => {
 			}
 		}
 	}
+	updateFirstTabRemoveBtn();
 
 	// добавляем обработчик события для кнопки добавления вкладки
 	document.querySelector('[data-add-contract="add"]').addEventListener("click", addTab);
