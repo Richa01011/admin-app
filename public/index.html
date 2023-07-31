@@ -25,7 +25,7 @@
     <div class="container">
       <div class="grid">
         <div class="g-col-2 d-none d-xxl-block">
-          <div class="list-group"><a class="list-group-item list-group-item-action active" href="/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="#">Реестр заявок</a><a class="list-group-item list-group-item-action" href="#">Отчеты</a><a class="list-group-item list-group-item-action" href="#">Архивы</a><a class="list-group-item list-group-item-action" href="#">Настройки</a></div>
+          <div class="list-group" id="nav-menu-links"><a class="list-group-item list-group-item-action" href="/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="/regedit-orders.html">Реестр заявок</a><a class="list-group-item list-group-item-action" href="#">Отчеты</a><a class="list-group-item list-group-item-action" href="#">Архивы</a><a class="list-group-item list-group-item-action" href="#">Настройки</a></div>
         </div>
         <div class="offcanvas offcanvas-start" id="nav-menu">
           <div class="offcanvas-header">
@@ -33,7 +33,7 @@
             <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
           </div>
           <div class="offcanvas-body">
-            <div class="list-group"><a class="list-group-item list-group-item-action active" href="/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="#">Реестр заявок</a><a class="list-group-item list-group-item-action" href="#">Отчеты</a><a class="list-group-item list-group-item-action" href="#">Архивы</a><a class="list-group-item list-group-item-action" href="#">Настройки</a></div>
+            <div class="list-group" id="nav-menu-links"><a class="list-group-item list-group-item-action" href="/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="/regedit-orders.html">Реестр заявок</a><a class="list-group-item list-group-item-action" href="#">Отчеты</a><a class="list-group-item list-group-item-action" href="#">Архивы</a><a class="list-group-item list-group-item-action" href="#">Настройки</a></div>
           </div>
         </div>
         <main class="g-col-12 g-col-xxl-10">
@@ -43,9 +43,9 @@
             <button class="btn btn-secondary" type="button" id="new-contract-modal-btn">Добавить договор</button>
             <div class="btn-group">
               <input class="btn-check" name="tables" type="radio" id="table-contract-is-proccess" checked>
-              <label class="btn btn-outline-secondary" for="table-contract-is-proccess">Действующие договора</label>
+              <label class="btn btn-outline-secondary" for="table-contract-is-proccess">Действующие договоры</label>
               <input class="btn-check" name="tables" type="radio" id="table-contract-is-complete">
-              <label class="btn btn-outline-secondary" for="table-contract-is-complete">Исполненные договора</label>
+              <label class="btn btn-outline-secondary" for="table-contract-is-complete">Исполненные договоры</label>
             </div>
           </div>
           <div class="d-flex flex-column mb-3">
@@ -114,10 +114,10 @@
               <div class="d-flex justify-content-between mb-2">
                 <div class="d-flex gap-2">
                   <button class="btn btn-light" type="button" id="toggle-checked-all-btn"><i class="fa-regular fa-circle-check"></i><span> Выделить всё</span></button>
-                  <button class="btn btn-light" type="button" id="excel-contract-btn" disabled><i class="fa-solid fa-download"></i><span> Отправить в Excel</span></button>
-                  <button class="btn btn-light" type="button" id="delete-contract-btn" disabled><i class="fa-solid fa-trash"></i><span> Удалить</span></button>
-                  <button class="btn btn-light" type="button" id="edit-contact-btn" disabled><i class="fa-solid fa-edit"></i><span> Редактировать</span></button>
-                  <button class="btn btn-light" type="button" id="access-contact-btn" disabled><i class="fa-solid fa-user-group"></i><span> Настроить доступ</span></button>
+                  <button class="btn btn-light" type="button" id="excel-contract-btn" data-disabled-toggle="any" disabled><i class="fa-solid fa-download"></i><span> Отправить в Excel</span></button>
+                  <button class="btn btn-light" type="button" id="delete-contract-btn" data-disabled-toggle="any" disabled><i class="fa-solid fa-trash"></i><span> Удалить</span></button>
+                  <button class="btn btn-light" type="button" id="edit-contact-btn" data-disabled-toggle="one" disabled><i class="fa-solid fa-edit"></i><span> Редактировать</span></button>
+                  <button class="btn btn-light" type="button" id="access-contact-btn" data-disabled-toggle="any" disabled><i class="fa-solid fa-user-group"></i><span> Настроить доступ</span></button>
                 </div>
                 <div class="d-flex gap-2">
                   <input class="form-control" type="text" placeholder="Поиск">
@@ -129,28 +129,28 @@
                   <thead>
                     <tr class="align-middle">
                       <th>#</th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Исполнитель</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Контрагент</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>№Договора</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Регион исполнения</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Дата заключения договора</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Дата окончания договора</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Дата начала исполнения</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Дата окончания исполнения</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
                     </tr>
@@ -159,7 +159,6 @@
                     <tr>
                       <td>
                         <input class="form-check-input" type="checkbox">
-                        <input type="hidden" name="is-allow-delete" value="true">
                       </td>
                       <td>ООО Название организации</td>
                       <td>ООО Контрагент</td>
@@ -173,7 +172,6 @@
                     <tr>
                       <td>
                         <input class="form-check-input" type="checkbox">
-                        <input type="hidden" name="is-allow-delete" value="false">
                       </td>
                       <td>ООО Название организации</td>
                       <td>ООО Контрагент</td>
@@ -187,7 +185,6 @@
                     <tr>
                       <td>
                         <input class="form-check-input" type="checkbox">
-                        <input type="hidden" name="is-allow-delete" value="true">
                       </td>
                       <td>ООО Название организации</td>
                       <td>ООО Контрагент</td>
@@ -201,7 +198,6 @@
                     <tr>
                       <td>
                         <input class="form-check-input" type="checkbox">
-                        <input type="hidden" name="is-allow-delete" value="true">
                       </td>
                       <td>ООО Название организации</td>
                       <td>ООО Контрагент</td>
@@ -234,34 +230,34 @@
                   <thead>
                     <tr class="align-middle">
                       <th>#</th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Исполнитель</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Контрагент</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>№Договора</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Регион исполнения</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Дата заключения договора</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Сумма контракта</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Сумма расторжения</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Дата расторжения договора</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Основание расторжения</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
-                      <th>
+                      <th style="min-width: 200px">
                         <div class="filterable"><span>Комментарии к договоору</span><i class="fa-solid fa-sort-down"></i></div>
                       </th>
                     </tr>

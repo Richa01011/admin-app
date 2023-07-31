@@ -29,10 +29,10 @@ export function createDynamicElements() {
 										<div class="input-group">
 											<select class="form-control" name="wasteType[]">
 												<option selected="selected" value="none">Выберите тип</option>
-												<option value="weekdays">Тип А</option>
-												<option value="monthdays">Тип Б</option>
-												<option value="exactdates">Тип В</option>
-												<option value="weekdays">Тип Г</option>
+												<option value="1">Тип А</option>
+												<option value="2">Тип Б</option>
+												<option value="3">Тип В</option>
+												<option value="4">Тип Г</option>
 											</select>
 											<div class="input-group-text">Количество</div>
 											<input class="form-control" type="number" name="quantity[]">
@@ -64,16 +64,6 @@ export function createDynamicElements() {
 							div.setAttribute("data-waste-type-wrapper", "");
 							break;
 						}
-						case "exactdates": {
-							markup = `
-								<div class="input-group">
-									<input class="form-control" type="date" name="exactdate[]" />
-									<button class="btn btn-outline-rose" type="button" data-dynamic-delete="">&times;</button>
-								</div>
-							`;
-							div.classList.add("col-3", "px-0");
-							break;
-						}
 					}
 
 					div.innerHTML = markup;
@@ -90,7 +80,38 @@ export function createDynamicElements() {
 	});
 }
 
+function handleExactdates(element) {
+	const addButton = element.querySelector('[data-exactdates="add-button"]');
+	const container = element.querySelector('[data-exactdates="container"]');
+
+	if (addButton && container) {
+		addButton.addEventListener("click", (event) => {
+			event.stopPropagation();
+
+			const div = document.createElement("div");
+			div.innerHTML = `
+				<div class="input-group">
+					<input class="form-control" type="date" name="exactdate[]" />
+					<button class="btn btn-outline-rose" type="button" data-exactdates="delete-button">&times;</button>
+				</div>
+			`;
+			div.classList.add("col-3", "px-0");
+			container.appendChild(div);
+
+			const deleteButton = div.querySelector('[data-exactdates="delete-button"]');
+			deleteButton.addEventListener("click", () => {
+				container.removeChild(div);
+				container.dispatchEvent(new Event("exactdatesChanged"));
+			});
+
+			container.dispatchEvent(new Event("exactdatesChanged"));
+		});
+	}
+}
+
 export function createWasteTypeElement() {
+	updateWasteTypeOptions();
+
 	const wasteType = document.querySelectorAll("[data-waste-type-wrapper]");
 	wasteType.forEach((element) => {
 		const select = element.querySelector('select[name="wasteType[]"]');
@@ -119,7 +140,7 @@ export function createWasteTypeElement() {
 								<div class="input-group-text">Дни недели</div>
 							</div>
 							<div class="col">
-								<div class="btn-group">
+								<div class="btn-group" data-type-interval="weekdays">
 									<input class="btn-check" type="checkbox" autocomplete="off" id="mo-${uniqueId}" name="mo[]"/>
 									<label for="mo-${uniqueId}" class="btn btn-outline-rose">ПН</label>
 									<input class="btn-check" type="checkbox" autocomplete="off" id="tu-${uniqueId}" name="tu[]"/>
@@ -156,7 +177,7 @@ export function createWasteTypeElement() {
 								<div class="input-group-text">Дни месяца</div>
 							</div>
 							<div class="col-6">
-								<div class="d-flex flex-wrap gap-2">
+								<div class="d-flex flex-wrap gap-2" data-type-interval="monthdays">
 									${days.join("")}
 								</div>
 							</div>
@@ -170,115 +191,160 @@ export function createWasteTypeElement() {
 							<div class="col-3">
 								<div class="input-group-text">Дочные даты</div>
 							</div>
-							<div class="col" data-dynamic-element="">
-								<div class="d-flex flex-wrap" data-dynamic-container="exactdates">
-									<button class="btn btn-outline-rose" style="max-width: 150px;" type="button" data-dynamic-button="exactdates">Добавить дату</button>
+							<div class="col">
+								<div class="d-flex flex-wrap" data-exactdates="container" data-type-interval="exactdates">
+									<button class="btn btn-outline-rose" style="max-width: 150px;" type="button" data-exactdates="add-button">Добавить дату</button>
 								</div>
 							</div>
 						</div>
 					`
 					);
 					element.setAttribute("data-waste-type-element", "type-intervals");
+					handleExactdates(element);
 				}
+				updateWasteTypeOptions();
+				changeTypeIntervalHandler();
 			});
 			select.setAttribute("data-handler-added", "true");
 		}
 	});
-	// wasteType.forEach((element) => {
-	// 	const select = element.querySelector('select[name="wasteType[]"]');
-	// 	if (!select.hasAttribute("data-handler-added")) {
-	// 		select.addEventListener("change", (event) => {
-	// 			const previousElement = element.querySelector("[data-waste-type-element]");
-	// 			if (previousElement) {
-	// 				element.removeAttribute(
-	// 					"data-waste-type-added",
-	// 					previousElement.getAttribute("data-waste-type-element")
-	// 				);
-	// 				element.removeChild(previousElement);
-	// 			}
+}
 
-	// 			if (event.target.value === "weekdays" && !element.hasAttribute("data-waste-type-added", "weekdays")) {
-	// 				const uniqueId = generateUniqueId();
-	// 				element.insertAdjacentHTML(
-	// 					"beforeend",
-	// 					`
-	// 					<div class="d-flex mb-3" data-waste-type-element="weekdays">
-	// 						<div class="col-3">
-	// 							<div class="input-group-text">Дни недели</div>
-	// 						</div>
-	// 						<div class="col">
-	// 							<div class="btn-group">
-	// 								<input class="btn-check" type="checkbox" autocomplete="off" id="mo-${uniqueId}" name="mo[]"/>
-	// 								<label for="mo-${uniqueId}" class="btn btn-outline-rose">ПН</label>
-	// 								<input class="btn-check" type="checkbox" autocomplete="off" id="tu-${uniqueId}" name="tu[]"/>
-	// 								<label for="tu-${uniqueId}" class="btn btn-outline-rose">ВТ</label>
-	// 								<input class="btn-check" type="checkbox" autocomplete="off" id="we-${uniqueId}" name="we[]"/>
-	// 								<label for="we-${uniqueId}" class="btn btn-outline-rose">СР</label>
-	// 								<input class="btn-check" type="checkbox" autocomplete="off" id="th-${uniqueId}" name="th[]"/>
-	// 								<label for="th-${uniqueId}" class="btn btn-outline-rose">ЧТ</label>
-	// 								<input class="btn-check" type="checkbox" autocomplete="off" id="fr-${uniqueId}" name="fr[]"/>
-	// 								<label for="fr-${uniqueId}" class="btn btn-outline-rose">ПТ</label>
-	// 								<input class="btn-check" type="checkbox" autocomplete="off" id="sa-${uniqueId}" name="sa[]"/>
-	// 								<label for="sa-${uniqueId}" class="btn btn-outline-rose">СБ</label>
-	// 								<input class="btn-check" type="checkbox" autocomplete="off" id="su-${uniqueId}" name="su[]"/>
-	// 								<label for="su-${uniqueId}" class="btn btn-outline-rose">ВС</label>
-	// 							</div>
-	// 						</div>
-	// 					</div>
-	// 				`
-	// 				);
-	// 				element.setAttribute("data-waste-type-added", "weekdays");
-	// 			} else if (
-	// 				event.target.value === "monthdays" &&
-	// 				!element.hasAttribute("data-waste-type-added", "monthdays")
-	// 			) {
-	// 				const uniqueId = generateUniqueId();
-	// 				const days = [];
-	// 				for (let i = 1; i < 32; i++) {
-	// 					days.push(`
-	// 						<input class="btn-check" type="checkbox" autocomplete="off" id="monthday-${i}-${uniqueId}" name="monthday-${i}[]"/>
-	// 						<label for="monthday-${i}-${uniqueId}" class="btn btn-outline-rose">${i}</label>
-	// 					`);
-	// 				}
-	// 				element.insertAdjacentHTML(
-	// 					"beforeend",
-	// 					`
-	// 					<div class="d-flex mb-3" data-waste-type-element="monthday">
-	// 						<div class="col-3">
-	// 							<div class="input-group-text">Дни месяца</div>
-	// 						</div>
-	// 						<div class="col-6">
-	// 							<div class="d-flex flex-wrap gap-2">
-	// 								${days.join("")}
-	// 							</div>
-	// 						</div>
-	// 					</div>
-	// 				`
-	// 				);
-	// 				element.setAttribute("data-waste-type-added", "monthdays");
-	// 			} else if (
-	// 				event.target.value === "exactdates" &&
-	// 				!element.hasAttribute("data-waste-type-added", "exactdates")
-	// 			) {
-	// 				element.insertAdjacentHTML(
-	// 					"beforeend",
-	// 					`
-	// 				<div class="d-flex mb-3" data-waste-type-element="exactdates">
-	// 					<div class="col-3">
-	// 						<div class="input-group-text">Дочные даты</div>
-	// 					</div>
-	// 					<div class="col" data-dynamic-element="">
-	// 						<div class="d-flex flex-wrap" data-dynamic-container="exactdates">
-	// 							<button class="btn btn-outline-rose" style="max-width: 150px;" type="button" data-dynamic-button="exactdates">Добавить дату</button>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-	// 				`
-	// 				);
-	// 				element.setAttribute("data-waste-type-added", "exactdates");
-	// 			}
-	// 		});
-	// 		select.setAttribute("data-handler-added", "true");
-	// 	}
-	// });
+function updateWasteTypeOptions() {
+	const wasteTypeWrappers = document.querySelectorAll("[data-waste-type-wrapper]");
+	const selectedWasteTypes = [];
+	wasteTypeWrappers.forEach((wrapper) => {
+		const wasteTypeSelect = wrapper.querySelector("select[name='wasteType[]']");
+		const selectedWasteType = wasteTypeSelect.value;
+		if (selectedWasteType !== "none") {
+			selectedWasteTypes.push(selectedWasteType);
+		}
+	});
+
+	wasteTypeWrappers.forEach((wrapper) => {
+		const wasteTypeSelect = wrapper.querySelector("select[name='wasteType[]']");
+		wasteTypeSelect.querySelectorAll("option").forEach((option) => {
+			if (selectedWasteTypes.includes(option.value) && option.value !== wasteTypeSelect.value) {
+				option.disabled = true;
+			} else {
+				option.disabled = false;
+			}
+		});
+	});
+}
+
+function isAnyCheckboxChecked(checkboxes) {
+	return Array.prototype.some.call(checkboxes, function (checkbox) {
+		return checkbox.checked;
+	});
+}
+
+function changeTypeIntervalHandler() {
+	const typeIntervals = document.querySelectorAll("[data-type-intervals]");
+	typeIntervals.forEach((element) => {
+		const intervalTypes = element.querySelectorAll("[data-type-interval]");
+		intervalTypes.forEach((interval) => {
+			switch (interval.getAttribute("data-type-interval")) {
+				case "weekdays": {
+					const checkboxes = interval.querySelectorAll('input[type="checkbox"]');
+					checkboxes.forEach((checkbox) => {
+						checkbox.addEventListener("change", () => {
+							if (isAnyCheckboxChecked(checkboxes)) {
+								interval.setAttribute("data-type-interval-active", "");
+							} else {
+								interval.removeAttribute("data-type-interval-active");
+							}
+							updateTypeIntervals(intervalTypes);
+						});
+					});
+					break;
+				}
+				case "monthdays": {
+					const checkboxes = interval.querySelectorAll('input[type="checkbox"]');
+					checkboxes.forEach((checkbox) => {
+						checkbox.addEventListener("change", () => {
+							if (isAnyCheckboxChecked(checkboxes)) {
+								interval.setAttribute("data-type-interval-active", "");
+							} else {
+								interval.removeAttribute("data-type-interval-active");
+							}
+							updateTypeIntervals(intervalTypes);
+						});
+					});
+					break;
+				}
+				case "exactdates": {
+					interval.addEventListener("exactdatesChanged", () => {
+						const container = element.querySelector('[data-exactdates="container"]');
+						if (container.querySelectorAll('input[type="date"]').length > 0) {
+							interval.setAttribute("data-type-interval-active", "");
+						} else {
+							interval.removeAttribute("data-type-interval-active");
+						}
+						updateTypeIntervals(intervalTypes);
+					});
+					break;
+				}
+			}
+		});
+	});
+}
+function updateTypeIntervals(intervals) {
+	let anyActive = false;
+	intervals.forEach((interval) => {
+		if (interval.hasAttribute("data-type-interval-active")) {
+			anyActive = true;
+		}
+	});
+
+	intervals.forEach((interval) => {
+		switch (interval.getAttribute("data-type-interval")) {
+			case "weekdays": {
+				const checkboxes = interval.querySelectorAll('input[type="checkbox"]');
+				if (anyActive && !interval.hasAttribute("data-type-interval-active")) {
+					checkboxes.forEach((checkbox) => {
+						checkbox.setAttribute("disabled", true);
+					});
+				} else {
+					checkboxes.forEach((checkbox) => {
+						checkbox.removeAttribute("disabled");
+					});
+				}
+				break;
+			}
+			case "monthdays": {
+				const checkboxes = interval.querySelectorAll('input[type="checkbox"]');
+				if (anyActive && !interval.hasAttribute("data-type-interval-active")) {
+					checkboxes.forEach((checkbox) => {
+						checkbox.setAttribute("disabled", true);
+					});
+				} else {
+					checkboxes.forEach((checkbox) => {
+						checkbox.removeAttribute("disabled");
+					});
+				}
+				break;
+			}
+			case "exactdates": {
+				const buttons = interval.querySelectorAll("button");
+				const dates = interval.querySelectorAll('input[type="date"]');
+				if (anyActive && !interval.hasAttribute("data-type-interval-active")) {
+					buttons.forEach((button) => {
+						button.setAttribute("disabled", true);
+					});
+					dates.forEach((date) => {
+						date.setAttribute("disabled", true);
+					});
+				} else {
+					buttons.forEach((button) => {
+						button.removeAttribute("disabled");
+					});
+					dates.forEach((date) => {
+						date.removeAttribute("disabled");
+					});
+				}
+				break;
+			}
+		}
+	});
 }

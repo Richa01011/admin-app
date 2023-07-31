@@ -1,10 +1,15 @@
-function toggleButtonDisabled(isEnabled, button) {
-	if (button) {
-		if (isEnabled) {
-			button.removeAttribute("disabled");
-		} else {
-			button.setAttribute("disabled", true);
+function toggleButtonDisabled(isEnabled, buttons) {
+	if (buttons) {
+		if (!Array.isArray(buttons)) {
+			buttons = [buttons];
 		}
+		buttons.forEach((button) => {
+			if (isEnabled) {
+				button.removeAttribute("disabled");
+			} else {
+				button.setAttribute("disabled", true);
+			}
+		});
 	} else {
 		return;
 	}

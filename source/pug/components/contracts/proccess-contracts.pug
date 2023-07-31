@@ -4,16 +4,16 @@
 			button.btn.btn-light(type="button" id="toggle-checked-all-btn")
 				i.fa-regular.fa-circle-check
 				span  Выделить всё
-			button.btn.btn-light(type="button" id="excel-contract-btn" disabled)
+			button.btn.btn-light(type="button" id="excel-contract-btn" data-disabled-toggle="any" disabled)
 				i.fa-solid.fa-download
 				span  Отправить в Excel
-			button.btn.btn-light(type="button" id="delete-contract-btn" disabled)
+			button.btn.btn-light(type="button" id="delete-contract-btn" data-disabled-toggle="any" disabled)
 				i.fa-solid.fa-trash
 				span  Удалить
-			button.btn.btn-light(type="button" id="edit-contact-btn" disabled)
+			button.btn.btn-light(type="button" id="edit-contact-btn" data-disabled-toggle="one" disabled)
 				i.fa-solid.fa-edit
 				span  Редактировать
-			button.btn.btn-light(type="button" id="access-contact-btn" disabled)
+			button.btn.btn-light(type="button" id="access-contact-btn" data-disabled-toggle="any" disabled)
 				i.fa-solid.fa-user-group
 				span  Настроить доступ
 		.d-flex.gap-2
@@ -24,35 +24,35 @@
 			thead
 				tr.align-middle
 					th #
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span Исполнитель
 							i.fa-solid.fa-sort-down
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span Контрагент
 							i.fa-solid.fa-sort-down
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span №Договора
 							i.fa-solid.fa-sort-down
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span Регион исполнения
 							i.fa-solid.fa-sort-down
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span Дата заключения договора
 							i.fa-solid.fa-sort-down
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span Дата окончания договора
 							i.fa-solid.fa-sort-down
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span Дата начала исполнения
 							i.fa-solid.fa-sort-down
-					th
+					th(style="min-width: 200px")
 						.filterable
 							span Дата окончания исполнения
 							i.fa-solid.fa-sort-down
@@ -60,7 +60,6 @@
 				tr
 					td
 						input.form-check-input(type="checkbox")
-						input(type="hidden", name="is-allow-delete" value="true")
 					td ООО Название организации
 					td ООО Контрагент
 					td Договор 321/421
@@ -72,7 +71,6 @@
 				tr
 					td
 						input.form-check-input(type="checkbox")
-						input(type="hidden", name="is-allow-delete" value="false")
 					td ООО Название организации
 					td ООО Контрагент
 					td Договор 432/3423
@@ -84,7 +82,6 @@
 				tr
 					td
 						input.form-check-input(type="checkbox")
-						input(type="hidden", name="is-allow-delete" value="true")
 					td ООО Название организации
 					td ООО Контрагент
 					td Договор 543/12
@@ -96,7 +93,6 @@
 				tr
 					td
 						input.form-check-input(type="checkbox")
-						input(type="hidden", name="is-allow-delete" value="true")
 					td ООО Название организации
 					td ООО Контрагент
 					td Договор 543/12

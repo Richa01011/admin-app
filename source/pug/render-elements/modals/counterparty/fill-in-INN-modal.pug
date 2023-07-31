@@ -1,0 +1,16 @@
+.modal.fade(id="counterparty-INN" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-dialog-scrollable
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Запись данных по ИНН
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				form
+					.d-flex
+						.col-3
+							.input-group-text ИНН
+						.col
+							input.form-control(type="text" name="INN")
+			.modal-footer
+				button.btn.btn-dark(type="button") Сохранить
+				button.btn.btn-danger(type="button" data-bs-toggle="modal" data-bs-target="#counterparty-INN") Отменить

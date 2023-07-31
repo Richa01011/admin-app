@@ -1,14 +1,12 @@
 extends layout/index
 block content
-	.d-flex.align-items-center.gap-2.mb-2
-		button.d-xxl-none.btn.btn-secondary(type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu") Меню
-		button.btn.btn-secondary(type="button" id="new-counterparty-modal-btn") Добавить контрагента
-		button.btn.btn-secondary(type="button" id="new-contract-modal-btn") Добавить договор
-		.btn-group
-			input.btn-check(name="tables" type="radio" id="table-contract-is-proccess" checked)
-			label.btn.btn-outline-secondary(for="table-contract-is-proccess") Действующие договоры
-			input.btn-check(name="tables" type="radio" id="table-contract-is-complete")
-			label.btn.btn-outline-secondary(for="table-contract-is-complete") Исполненные договоры
+	.btn-group.mb-3
+		input.btn-check(name="order-tables" type="radio" id="table-removal-schedule" checked)
+		label.btn.btn-outline-secondary(for="table-removal-schedule") График вывоза
+		input.btn-check(name="order-tables" type="radio" id="table-completed-request")
+		label.btn.btn-outline-secondary(for="table-completed-request") Выполненные заявки
+		input.btn-check(name="order-tables" type="radio" id="table-unfulfilled-request")
+		label.btn.btn-outline-secondary(for="table-unfulfilled-request") Не выполненные заявки
 	.d-flex.flex-column.mb-3
 		.row.mb-2
 			.col-3
@@ -47,6 +45,5 @@ block content
 							option Липецкая область
 							option Тамбовская область
 							option Белгородская область
-	.tab-content#table-contracts
-		include components/contracts/proccess-contracts
-		include components/contracts/complete-contracts
+	.tab-content#table-orders
+		include components/orders/removal-schedule

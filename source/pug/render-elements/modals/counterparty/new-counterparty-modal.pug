@@ -5,7 +5,7 @@
 				.modal-title.fs-5 Карточка контрагента
 				button.btn-close(type="button" data-bs-dismiss="modal")
 			.modal-body
-				button.mb-3.btn.btn-dark(type="button" data-bs-toggle="modal" data-bs-target="#counterparty-INN") Заполнить реквизиты автоматически по ИНН
+				button.mb-3.btn.btn-dark(type="button" id="counterparty-INN-btn") Заполнить реквизиты автоматически по ИНН
 				form
 					.d-flex.mb-3
 						.col-5
@@ -32,9 +32,9 @@
 							input.form-control(type="text" name="INN")
 					.d-flex.mb-3
 						.col-3
-							.input-group-text ОГРИ
+							.input-group-text ОГРН
 						.col
-							input.form-control(type="text" name="OGRI")
+							input.form-control(type="text" name="OGRN")
 					.d-flex.mb-3
 						.col-3
 							.input-group-text КПП
@@ -63,19 +63,3 @@
 			.modal-footer
 				button.btn.btn-dark(type="button") Сохранить
 				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить
-.modal.fade(id="counterparty-INN" data-bs-backdrop="static" data-bs-keyboard="false")
-	.modal-dialog.modal-dialog-scrollable
-		.modal-content
-			.modal-header
-				.modal-title.fs-5 Запись данных по ИНН
-				button.btn-close(type="button" data-bs-dismiss="modal")
-			.modal-body
-				form
-					.d-flex
-						.col-3
-							.input-group-text ИНН
-						.col
-							input.form-control(type="text" name="INN")
-			.modal-footer
-				button.btn.btn-dark(type="button") Сохранить
-				button.btn.btn-danger(type="button" data-bs-toggle="modal" data-bs-target="#counterparty") Отменить

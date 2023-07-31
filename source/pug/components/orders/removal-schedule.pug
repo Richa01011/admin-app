@@ -1,0 +1,240 @@
+.tab-pane.fade.show.active#tab-removal-schedule
+	.d-flex.justify-content-between.mb-2
+		.d-flex.gap-2
+			button.d-xxl-none.btn.btn-secondary(type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu") Меню
+			button.btn.btn-light(type="button" id="toggle-checked-all-btn")
+				i.fa-regular.fa-circle-check
+				span  Выделить всё
+			button.btn.btn-light(type="button" id="delete-order-btn" data-disabled-toggle="any" disabled)
+				i.fa-solid.fa-trash
+				span  Удалить
+			button.btn.btn-light(type="button" id="edit-order-btn" data-disabled-toggle="one" disabled)
+				i.fa-solid.fa-edit
+				span  Редактировать
+			button.btn.btn-light(type="button" id="print-order-btn" data-disabled-toggle="any" disabled)
+				i.fa-solid.fa-print
+				span  Распечатать
+			button.btn.btn-light(type="button" id="excel-order-btn" data-disabled-toggle="any" disabled)
+				i.fa-solid.fa-download
+				span  Отправить в Excel
+		.d-flex.gap-2
+			input.form-control(type="text" placeholder="Поиск")
+			button.btn.btn-dark(type="button") Поиск
+	.table-responsive
+		table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
+			thead
+				tr.align-middle
+					th #
+					th(style="min-width: 120px")
+						.filterable
+							span № Заявки
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Регион
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Исполнитель
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Заказчик
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Договор
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Орг. субподряд
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Контакт на адресе
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span ТС
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Водитель
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Вых. дни
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Переодичность вывоза отходов
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Наименование учреждения
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span ФИО контакт
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Телефон контакт
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Адрес вывоза
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Тип вывоза отхода
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Ед. измерения
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Кол-во плановое
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Кол-во фактическое
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Дата плановая
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Дата план. изменен
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Дата фактическая
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Комм-рий к адресу
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Корректировка
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Статус
+							i.fa-solid.fa-sort-down
+			tbody
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231231
+					td Липецк
+					td Союз Рубин
+					td ООО Мед
+					td 2342/342
+					td x
+					td Иванов И.И.
+					td A54645645
+					td Тарабах А.А.
+					td да
+					td ВТ, ЧТ
+					td Мед
+					td
+					td
+					td Липецк Ковалева 125Б
+					td А
+					td КГ
+					td 1
+					td 1
+					td 18.06.23
+					td 18.08.23
+					td 18.12.23
+					td в первой половине
+					td x
+					td Назначена
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231231
+					td Липецк
+					td Союз Рубин
+					td ООО Мед
+					td 2342/342
+					td x
+					td Иванов И.И.
+					td A54645645
+					td Тарабах А.А.
+					td да
+					td ВТ, ЧТ
+					td Мед
+					td
+					td
+					td Липецк Квалева 125Б
+					td А
+					td КГ
+					td 1
+					td 1
+					td 18.06.23
+					td 18.08.23
+					td 18.12.23
+					td в первой половине
+					td x
+					td Назначена
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231231
+					td Липецк
+					td Союз Рубин
+					td ООО Мед
+					td 2342/342
+					td x
+					td Иванов И.И.
+					td A54645645
+					td Тарабах А.А.
+					td да
+					td ВТ, ЧТ
+					td Мед
+					td
+					td
+					td Липецк Квалева 125Б
+					td А
+					td КГ
+					td 1
+					td 1
+					td 18.06.23
+					td 18.08.23
+					td 18.12.23
+					td в первой половине
+					td x
+					td Назначена
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231231
+					td Липецк
+					td Союз Рубин
+					td ООО Мед
+					td 2342/342
+					td x
+					td Иванов И.И.
+					td A54645645
+					td Тарабах А.А.
+					td да
+					td ВТ, ЧТ
+					td Мед
+					td
+					td
+					td Липецк Квалева 125Б
+					td А
+					td КГ
+					td 1
+					td 1
+					td 18.06.23
+					td 18.08.23
+					td 18.12.23
+					td в первой половине
+					td x
+					td Назначена

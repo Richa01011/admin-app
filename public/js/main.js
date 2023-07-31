@@ -2,10 +2,14 @@ import { TelMaks } from "./telMask.js";
 import { Contract } from "./contract.js";
 import { CounterParty } from "./counterParty.js";
 import { createDynamicElements, createWasteTypeElement } from "./dynamicElements.js";
+import { Orders } from "./orders.js";
+import highlightActivePage from "./highligtCurrentPage.js";
 
+highlightActivePage();
 TelMaks();
 Contract();
 CounterParty();
+Orders();
 
 const observer = new MutationObserver((mutations) => {
 	let hasNewDynamicElements = false;
