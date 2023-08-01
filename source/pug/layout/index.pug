@@ -11,7 +11,7 @@ html(lang="ru")
 		header.position-sticky.z-3.top-0.bg-white.border-bottom.mb-4.py-2
 			.container
 				.d-flex.gap-4
-					a.logo(href="/")
+					a.logo(href="#")
 						img(src="images/logo.jpg")
 						p Союз Рубин
 					.d-flex.align-items-center.gap-2.col-4
@@ -23,7 +23,7 @@ html(lang="ru")
 			.grid
 				.g-col-2.d-none.d-xxl-block
 					.list-group#nav-menu-links
-						a.list-group-item.list-group-item-action(href='/') Реестр договоров
+						a.list-group-item.list-group-item-action.active(href='#') Реестр договоров
 						a.list-group-item.list-group-item-action(href='/regedit-orders.html') Реестр заявок
 						a.list-group-item.list-group-item-action(href='#') Отчеты
 						a.list-group-item.list-group-item-action(href='#') Архивы
@@ -34,7 +34,7 @@ html(lang="ru")
 						button.btn-close(type="button" data-bs-dismiss="offcanvas")
 					.offcanvas-body
 						.list-group#nav-menu-links
-							a.list-group-item.list-group-item-action(href='/') Реестр договоров
+							a.list-group-item.list-group-item-action.active(href='#') Реестр договоров
 							a.list-group-item.list-group-item-action(href='/regedit-orders.html') Реестр заявок
 							a.list-group-item.list-group-item-action(href='#') Отчеты
 							a.list-group-item.list-group-item-action(href='#') Архивы

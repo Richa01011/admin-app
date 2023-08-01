@@ -1,6 +1,7 @@
 .d-flex.mb-3
-	.col-3
+	.col-4
 		.input-group-text Исполнитель (субподряд)
+			span.ms-2.text-secondary Не обязательно
 	.col
 		select.form-select(name="subcontracting[]")
 			option(selected) Выберите исполнителя для отображения
@@ -25,11 +26,11 @@
 		input.form-control(type="text" name="wasteRemovalAddress[]")
 .d-flex.mb-3
 	.col-3
-		.input-group-text ФИО ответственного лица от ЛПУ
+		.input-group-text Контактное лицо от ЛПУ
 	.col
 		.input-group
 			input.form-control(type="text" name="fullNamePersonFromHospital[]")
-			.input-group-text Телефон
+			.input-group-text Телефон контактного лица
 			input.form-control(type="tel" name="telPersonFromHospital[]")
 .d-flex.mb-3
 	.col-3
@@ -44,6 +45,6 @@
 p.mb-3
 	strong Типы вывозимых отходов
 div(data-dynamic-element="")
-	div(data-dynamic-container="waste-type")
+	div(data-dynamic-container="waste-type" data-type-intervals="wrapper")
 		include waste-type
 	button.btn.btn-outline-rose(type="button" data-dynamic-button="waste-type") + Добавить строку

@@ -112,123 +112,129 @@ function handleExactdates(element) {
 export function createWasteTypeElement() {
 	updateWasteTypeOptions();
 
-	const wasteType = document.querySelectorAll("[data-waste-type-wrapper]");
-	wasteType.forEach((element) => {
-		const select = element.querySelector('select[name="wasteType[]"]');
-		if (!select.hasAttribute("data-handler-added")) {
-			select.addEventListener("change", (event) => {
-				const typeIntervals = element.querySelector("[data-type-intervals]");
-				if (element.getAttribute("data-waste-type-element") === "type-intervals" && typeIntervals) {
-					element.removeAttribute("data-waste-type-element", "type-intervals");
-					typeIntervals.remove();
-				}
-
-				if (event.target.value === "none") {
-					typeIntervals.remove();
-				} else {
-					let uniqueId = generateUniqueId();
-					const div = document.createElement("div");
-					div.classList.add("mb-3");
-					div.setAttribute("data-type-intervals", "");
-					element.insertAdjacentElement("beforeend", div);
-
-					div.insertAdjacentHTML(
-						"beforeend",
-						`
-						<div class="d-flex mb-3">
-							<div class="col-3">
-								<div class="input-group-text">Дни недели</div>
-							</div>
-							<div class="col">
-								<div class="btn-group" data-type-interval="weekdays">
-									<input class="btn-check" type="checkbox" autocomplete="off" id="mo-${uniqueId}" name="mo[]"/>
-									<label for="mo-${uniqueId}" class="btn btn-outline-rose">ПН</label>
-									<input class="btn-check" type="checkbox" autocomplete="off" id="tu-${uniqueId}" name="tu[]"/>
-									<label for="tu-${uniqueId}" class="btn btn-outline-rose">ВТ</label>
-									<input class="btn-check" type="checkbox" autocomplete="off" id="we-${uniqueId}" name="we[]"/>
-									<label for="we-${uniqueId}" class="btn btn-outline-rose">СР</label>
-									<input class="btn-check" type="checkbox" autocomplete="off" id="th-${uniqueId}" name="th[]"/>
-									<label for="th-${uniqueId}" class="btn btn-outline-rose">ЧТ</label>
-									<input class="btn-check" type="checkbox" autocomplete="off" id="fr-${uniqueId}" name="fr[]"/>
-									<label for="fr-${uniqueId}" class="btn btn-outline-rose">ПТ</label>
-									<input class="btn-check" type="checkbox" autocomplete="off" id="sa-${uniqueId}" name="sa[]"/>
-									<label for="sa-${uniqueId}" class="btn btn-outline-rose">СБ</label>
-									<input class="btn-check" type="checkbox" autocomplete="off" id="su-${uniqueId}" name="su[]"/>
-									<label for="su-${uniqueId}" class="btn btn-outline-rose">ВС</label>
-								</div>
-							</div>
-						</div>
-					`
-					);
-
-					uniqueId = generateUniqueId();
-					const days = [];
-					for (let i = 1; i < 32; i++) {
-						days.push(`
-							<input class="btn-check" type="checkbox" autocomplete="off" id="monthday-${i}-${uniqueId}" name="monthday-${i}[]"/>
-							<label for="monthday-${i}-${uniqueId}" class="btn btn-outline-rose">${i}</label>
-						`);
+	const typeIntervalsWrappers = document.querySelectorAll('[data-type-intervals="wrapper"]');
+	typeIntervalsWrappers.forEach((typeIntervalsWrapper) => {
+		const wasteType = typeIntervalsWrapper.querySelectorAll("[data-waste-type-wrapper]");
+		wasteType.forEach((element) => {
+			const select = element.querySelector('select[name="wasteType[]"]');
+			if (!select.hasAttribute("data-handler-added")) {
+				select.addEventListener("change", (event) => {
+					const typeIntervals = element.querySelector("[data-type-intervals]");
+					if (element.getAttribute("data-waste-type-element") === "type-intervals" && typeIntervals) {
+						element.removeAttribute("data-waste-type-element", "type-intervals");
+						typeIntervals.remove();
 					}
-					div.insertAdjacentHTML(
-						"beforeend",
-						`
-						<div class="d-flex mb-3">
-							<div class="col-3">
-								<div class="input-group-text">Дни месяца</div>
-							</div>
-							<div class="col-6">
-								<div class="d-flex flex-wrap gap-2" data-type-interval="monthdays">
-									${days.join("")}
+
+					if (event.target.value === "none") {
+						typeIntervals.remove();
+					} else {
+						let uniqueId = generateUniqueId();
+						const div = document.createElement("div");
+						div.classList.add("mb-3");
+						div.setAttribute("data-type-intervals", "body");
+						element.insertAdjacentElement("beforeend", div);
+
+						div.insertAdjacentHTML(
+							"beforeend",
+							`
+							<div class="d-flex mb-3">
+								<div class="col-3">
+									<div class="input-group-text">Дни недели</div>
+								</div>
+								<div class="col">
+									<div class="btn-group" data-type-interval="weekdays">
+										<input class="btn-check" type="checkbox" autocomplete="off" id="mo-${uniqueId}" name="mo[]"/>
+										<label for="mo-${uniqueId}" class="btn btn-outline-rose">ПН</label>
+										<input class="btn-check" type="checkbox" autocomplete="off" id="tu-${uniqueId}" name="tu[]"/>
+										<label for="tu-${uniqueId}" class="btn btn-outline-rose">ВТ</label>
+										<input class="btn-check" type="checkbox" autocomplete="off" id="we-${uniqueId}" name="we[]"/>
+										<label for="we-${uniqueId}" class="btn btn-outline-rose">СР</label>
+										<input class="btn-check" type="checkbox" autocomplete="off" id="th-${uniqueId}" name="th[]"/>
+										<label for="th-${uniqueId}" class="btn btn-outline-rose">ЧТ</label>
+										<input class="btn-check" type="checkbox" autocomplete="off" id="fr-${uniqueId}" name="fr[]"/>
+										<label for="fr-${uniqueId}" class="btn btn-outline-rose">ПТ</label>
+										<input class="btn-check" type="checkbox" autocomplete="off" id="sa-${uniqueId}" name="sa[]"/>
+										<label for="sa-${uniqueId}" class="btn btn-outline-rose">СБ</label>
+										<input class="btn-check" type="checkbox" autocomplete="off" id="su-${uniqueId}" name="su[]"/>
+										<label for="su-${uniqueId}" class="btn btn-outline-rose">ВС</label>
+									</div>
 								</div>
 							</div>
-						</div>
-					`
-					);
-					div.insertAdjacentHTML(
-						"beforeend",
 						`
-						<div class="d-flex mb-3" data-waste-type-element="exactdates">
-							<div class="col-3">
-								<div class="input-group-text">Дочные даты</div>
-							</div>
-							<div class="col">
-								<div class="d-flex flex-wrap" data-exactdates="container" data-type-interval="exactdates">
-									<button class="btn btn-outline-rose" style="max-width: 150px;" type="button" data-exactdates="add-button">Добавить дату</button>
+						);
+
+						uniqueId = generateUniqueId();
+						const days = [];
+						for (let i = 1; i < 32; i++) {
+							days.push(`
+								<input class="btn-check" type="checkbox" autocomplete="off" id="monthday-${i}-${uniqueId}" name="monthday-${i}[]"/>
+								<label for="monthday-${i}-${uniqueId}" class="btn btn-outline-rose">${i}</label>
+							`);
+						}
+						div.insertAdjacentHTML(
+							"beforeend",
+							`
+							<div class="d-flex mb-3">
+								<div class="col-3">
+									<div class="input-group-text">Дни месяца</div>
+								</div>
+								<div class="col-6">
+									<div class="d-flex flex-wrap gap-2" data-type-interval="monthdays">
+										${days.join("")}
+									</div>
 								</div>
 							</div>
-						</div>
-					`
-					);
-					element.setAttribute("data-waste-type-element", "type-intervals");
-					handleExactdates(element);
-				}
-				updateWasteTypeOptions();
-				changeTypeIntervalHandler();
-			});
-			select.setAttribute("data-handler-added", "true");
-		}
+						`
+						);
+						div.insertAdjacentHTML(
+							"beforeend",
+							`
+							<div class="d-flex mb-3" data-waste-type-element="exactdates">
+								<div class="col-3">
+									<div class="input-group-text">Дочные даты</div>
+								</div>
+								<div class="col">
+									<div class="d-flex flex-wrap" data-exactdates="container" data-type-interval="exactdates">
+										<button class="btn btn-outline-rose" style="max-width: 150px;" type="button" data-exactdates="add-button">Добавить дату</button>
+									</div>
+								</div>
+							</div>
+						`
+						);
+						element.setAttribute("data-waste-type-element", "type-intervals");
+						handleExactdates(element);
+					}
+					updateWasteTypeOptions();
+					changeTypeIntervalHandler();
+				});
+				select.setAttribute("data-handler-added", "true");
+			}
+		});
 	});
 }
 
 function updateWasteTypeOptions() {
-	const wasteTypeWrappers = document.querySelectorAll("[data-waste-type-wrapper]");
-	const selectedWasteTypes = [];
-	wasteTypeWrappers.forEach((wrapper) => {
-		const wasteTypeSelect = wrapper.querySelector("select[name='wasteType[]']");
-		const selectedWasteType = wasteTypeSelect.value;
-		if (selectedWasteType !== "none") {
-			selectedWasteTypes.push(selectedWasteType);
-		}
-	});
-
-	wasteTypeWrappers.forEach((wrapper) => {
-		const wasteTypeSelect = wrapper.querySelector("select[name='wasteType[]']");
-		wasteTypeSelect.querySelectorAll("option").forEach((option) => {
-			if (selectedWasteTypes.includes(option.value) && option.value !== wasteTypeSelect.value) {
-				option.disabled = true;
-			} else {
-				option.disabled = false;
+	const typeIntervalsWrappers = document.querySelectorAll('[data-type-intervals="wrapper"]');
+	typeIntervalsWrappers.forEach((typeIntervalsWrapper) => {
+		const wasteTypeWrappers = typeIntervalsWrapper.querySelectorAll("[data-waste-type-wrapper]");
+		const selectedWasteTypes = [];
+		wasteTypeWrappers.forEach((wrapper) => {
+			const wasteTypeSelect = wrapper.querySelector("select[name='wasteType[]']");
+			const selectedWasteType = wasteTypeSelect.value;
+			if (selectedWasteType !== "none") {
+				selectedWasteTypes.push(selectedWasteType);
 			}
+		});
+
+		wasteTypeWrappers.forEach((wrapper) => {
+			const wasteTypeSelect = wrapper.querySelector("select[name='wasteType[]']");
+			wasteTypeSelect.querySelectorAll("option").forEach((option) => {
+				if (selectedWasteTypes.includes(option.value) && option.value !== wasteTypeSelect.value) {
+					option.disabled = true;
+				} else {
+					option.disabled = false;
+				}
+			});
 		});
 	});
 }
@@ -289,6 +295,7 @@ function changeTypeIntervalHandler() {
 		});
 	});
 }
+
 function updateTypeIntervals(intervals) {
 	let anyActive = false;
 	intervals.forEach((interval) => {

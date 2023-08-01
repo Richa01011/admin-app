@@ -5,7 +5,7 @@ import { createDynamicElements, createWasteTypeElement } from "./dynamicElements
 import { Orders } from "./orders.js";
 import highlightActivePage from "./highligtCurrentPage.js";
 
-highlightActivePage();
+// highlightActivePage();
 TelMaks();
 Contract();
 CounterParty();
