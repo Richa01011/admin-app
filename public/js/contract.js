@@ -1,22 +1,14 @@
 import { DynanicTabs } from "./dynamicTabs.js";
+import { switchTables } from "./switchTables.js";
 import { tableCheckboxes } from "./tableControl.js";
 
 export const Contract = () => {
 	const tableContracts = document.querySelector("#table-contracts");
-	const tableSelectRadios = document.querySelectorAll('input[type="radio"][name="tables"]');
+	const tableRadioButtons = document.querySelectorAll('#contracts-tabs input[type="radio"][name="tables"]');
 
 	if (tableContracts) {
 		const tablePanes = tableContracts.querySelectorAll(".tab-pane");
-		tableSelectRadios.forEach(function (tableSelectRadio) {
-			tableSelectRadio.addEventListener("change", function () {
-				const target =
-					this.id === "table-contract-is-proccess" ? "#tab-proccess-contracts" : "#tab-complete-contracts";
-				tablePanes.forEach(function (tabPane) {
-					tabPane.classList.remove("show", "active");
-				});
-				document.querySelector(target).classList.add("show", "active");
-			});
-		});
+		switchTables(tableRadioButtons, ["#tab-proccess-contracts", "#tab-complete-contracts"]);
 
 		tablePanes.forEach((tablePane) => {
 			const tbody = tablePane.querySelector("tbody");

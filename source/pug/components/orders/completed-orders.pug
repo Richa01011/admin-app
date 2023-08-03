@@ -1,0 +1,208 @@
+.tab-pane.fade#tab-completed-orders
+	.d-flex.justify-content-between.mb-2
+		.d-flex.gap-2
+			button.d-xxl-none.btn.btn-secondary(type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu") Меню
+			button.btn.btn-light(type="button" id="toggle-checked-all-btn")
+				i.fa-regular.fa-circle-check
+				span  Выделить всё
+			button.btn.btn-light(type="button" id="delete-order-btn" data-disabled-toggle="any" disabled)
+				i.fa-solid.fa-trash
+				span  Удалить
+			button.btn.btn-light(type="button" id="edit-order-btn" data-disabled-toggle="one" disabled)
+				i.fa-solid.fa-edit
+				span  Редактировать
+			button.btn.btn-light(type="button" id="print-order-btn" data-disabled-toggle="any" disabled)
+				i.fa-solid.fa-print
+				span  Распечатать
+			button.btn.btn-light(type="button" id="excel-order-btn" data-disabled-toggle="any" disabled)
+				i.fa-solid.fa-download
+				span  Отправить в Excel
+		.d-flex.gap-2
+			input.form-control(type="text" placeholder="Поиск")
+			button.btn.btn-dark(type="button") Поиск
+	.table-responsive
+		table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
+			thead
+				tr.align-middle
+					th #
+					th(style="min-width: 120px")
+						.filterable
+							span № Заявки
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Регион
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Исполнитель
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Орг. субподряд
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Заказчик
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Договор
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Дата палновая
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Дата план.изменен
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Дата фактическая
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Наименование учреждения
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Адрес вывоза
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Комм-рий к адресу
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Тип вывоз отхода
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Кол-во плановое
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Кол-во фактическое
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Ед.измер
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span ТС
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Тип ТС
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Водитель
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Коррект-ка
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Статус
+							i.fa-solid.fa-sort-down
+			tbody
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231231
+					td Липецкая обл
+					td Союз Рубин
+					td x
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №1
+					td Липецк Ковалева 125Б
+					td в первой половине
+					td А
+					td 1
+					td 1
+					td КГ
+					td А925АА48
+					td Темофургон
+					td Тарабах А.А.
+					td х
+					td Исполнена
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231232
+					td Липецкая обл
+					td Союз Рубин
+					td x
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №2
+					td Липецк Ковалева 125Б
+					td до 14:00
+					td Б
+					td 1
+					td 1
+					td Контнейнер 35
+					td А925АА48
+					td Темофургон
+					td Тарабах А.А.
+					td х
+					td Исполнена
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231233
+					td Липецкая обл
+					td Союз Рубин
+					td x
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №3
+					td Липецк Ковалева 125Б
+					td ключи от ворот на охране
+					td В
+					td 10
+					td 10
+					td ШТ
+					td В311ОО48
+					td Бортовой
+					td Тарабах А.А.
+					td х
+					td Исполнена
+				tr
+					td
+						input.form-check-input(type="checkbox")
+					td 231234
+					td Липецкая обл
+					td Союз Рубин
+					td x
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №4
+					td Липецк Ковалева 125Б
+					td По пропускам
+					td Г
+					td 5
+					td 5
+					td М,КУБ
+					td А744ВВ48
+					td Цистерна
+					td Бах А.А.
+					td х
+					td Исполнена

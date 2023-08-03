@@ -1,12 +1,12 @@
 extends layout/index
 block content
-	.btn-group.mb-3
+	.btn-group.mb-3#orders-tabs
 		input.btn-check(name="order-tables" type="radio" id="table-removal-schedule" checked)
 		label.btn.btn-outline-secondary(for="table-removal-schedule") График вывоза
-		input.btn-check(name="order-tables" type="radio" id="table-completed-request")
-		label.btn.btn-outline-secondary(for="table-completed-request") Выполненные заявки
-		input.btn-check(name="order-tables" type="radio" id="table-unfulfilled-request")
-		label.btn.btn-outline-secondary(for="table-unfulfilled-request") Не выполненные заявки
+		input.btn-check(name="order-tables" type="radio" id="table-completed-orders")
+		label.btn.btn-outline-secondary(for="table-completed-orders") Выполненные заявки
+		input.btn-check(name="order-tables" type="radio" id="table-unfulfilled-orders")
+		label.btn.btn-outline-secondary(for="table-unfulfilled-orders") Не выполненные заявки
 	.d-flex.flex-column.mb-3
 		.row.mb-2
 			.col-3
@@ -47,3 +47,5 @@ block content
 							option Белгородская область
 	.tab-content#table-orders
 		include components/orders/removal-schedule
+		include components/orders/completed-orders
+		include components/orders/unfulfilled-orders

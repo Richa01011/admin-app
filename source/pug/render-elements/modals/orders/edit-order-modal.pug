@@ -1,0 +1,138 @@
+.modal.fade(id="edit-order-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Редактирование заявки
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				form
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Заявка №
+						.col
+							input.form-control(type="text" name="order-number" value="242342" disabled)
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Проект
+						.col
+							input.form-control(type="text" name="project" value="Обезвреживание (утилизация) отходов" disabled)
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Договр №
+						.col-3
+							input.form-control(type="text" name="contract-number" value="254/495" disabled)
+						.col-3
+							.input-group-text От
+						.col-3
+							input.form-control(type="date" name="contract-date" value="2023-05-22" disabled)
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Исполнитель
+						.col
+							input.form-control(type="text" name="executor" value="ООО СоюзРубин Втормет" disabled)
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Заказчик
+						.col
+							input.form-control(type="text" name="customer" value="ООО Медицинский центр" disabled)
+					.d-flex.mb-3
+						.col-4
+							.input-group-text Орг. исполнитель (субподряд)
+						.col
+							select.form-select(name="subcontracting")
+								option(selected) Выберите исполнителя для отображения
+								option ООО Союз Рубин
+					.d-flex.mb-3
+						.col-4
+							.input-group-text Регион нахождения
+						.col
+							select.form-select(name="region" disabled)
+								option(selected) Липецкая область
+					.d-flex.mb-3
+						.col-4
+							.input-group-text Наименование учреждения
+						.col
+							input.form-control(type="text" name="hospitalName" value="Центр лечения боли" disabled)
+					.d-flex.mb-3
+						.col-4
+							.input-group-text Адрес вывоза
+						.col
+							input.form-control(type="text" name="hospitalName" value="Липецк ул. Папина д.17" disabled)
+					.d-flex.mb-3
+						.col-4
+							.input-group-text Комментарий к адресу вывоза
+						.col
+							input.form-control(type="text" name="comment" value="до 14-00")
+					.d-flex.mb-3
+						.col-4
+							.input-group-text Транспортное средство
+						.col
+							input.form-control(type="text" name="car" value="А 975 АА 48 (фургон)")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Водитель
+						.col
+							select.form-select(name="driver" disabled)
+								option(selected) Семенов В.В.
+								option Иванов И.И.
+					.d-flex.mb-3
+						.col-4
+							.input-group-text.h-100 Контактное лицо от ЛПУ
+						.col
+							textarea.form-control(name="contactPersons" row="2") Иванова А.А. Иванова В.В.
+					.d-flex.mb-3
+						.col-4
+							.input-group-text.h-100 Телефон контактного лица
+						.col
+							textarea.form-control(name="telPersons") +7-4742-56-48-75 +7-920-654-98-65
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Тип вывоза отхода
+						.col-3
+							select.form-select(name="waste-type" disabled)
+								option(value="1") А
+								option(value="2" selected) Б
+						.col-3
+							.input-group-text Ед. измер
+						.col-3
+							select.form-select(name="unit" disabled)
+								option(value="1") КГ
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Кол-во плановое
+						.col-3
+							input.form-control(type="number" value="12" disabled)
+						.col-3
+							.input-group-text Дата плановая
+						.col-3
+							input.form-control(type="date" value="2023-05-22" disabled)
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Кол-во фактическое
+						.col-3
+							input.form-control(type="number")
+						.col-3
+							.input-group-text Дата план. изменен
+						.col-3
+							input.form-control(type="date" value="2023-05-22")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Корректировка
+						.col-3
+							input.form-control(type="text" value="x" disabled)
+						.col-3
+							.input-group-text Дата фактическая
+						.col-3
+							input.form-control(type="date" value="2023-05-22")
+					.d-flex.mb-3
+						.col-3
+							.input-group-text Статус
+						.col
+							select.form-select(name="status")
+								option(selected) В работе
+								option Исполнена
+								option Не исполнена
+								option Отменена
+			.modal-footer
+				button.btn.btn-dark(type="button") Сохранить
+				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить

@@ -39,6 +39,10 @@
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
+							span Орг. субподряд
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
 							span Заказчик
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
@@ -47,27 +51,11 @@
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
-							span Орг. субподряд
+							span Дата палновая
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
-							span Контакт на адресе
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span ТС
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Водитель
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Вых. дни
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Переодичность вывоза отходов
+							span Дата план.изменен
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
@@ -75,43 +63,7 @@
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
-							span ФИО контакт
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Телефон контакт
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
 							span Адрес вывоза
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Тип вывоза отхода
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Ед. измерения
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Кол-во плановое
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Кол-во фактическое
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Дата плановая
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Дата план. изменен
-							i.fa-solid.fa-sort-down
-					th(style="min-width: 200px")
-						.filterable
-							span Дата фактическая
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
@@ -119,7 +71,39 @@
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
-							span Корректировка
+							span Тип вывоз отхода
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Кол-во плановое
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Ед.измер
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span График работы
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Периодичность вывоза отходов
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span ТС
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Тип ТС
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Водитель
+							i.fa-solid.fa-sort-down
+					th(style="min-width: 200px")
+						.filterable
+							span Коррект-ка
 							i.fa-solid.fa-sort-down
 					th(style="min-width: 200px")
 						.filterable
@@ -130,111 +114,312 @@
 					td
 						input.form-check-input(type="checkbox")
 					td 231231
-					td Липецк
+					td Липецкая обл
 					td Союз Рубин
-					td ООО Мед
-					td 2342/342
 					td x
-					td Иванов И.И.
-					td A54645645
-					td Тарабах А.А.
-					td да
-					td ВТ, ЧТ
-					td Мед
-					td
-					td
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №1
 					td Липецк Ковалева 125Б
-					td А
-					td КГ
-					td 1
-					td 1
-					td 18.06.23
-					td 18.08.23
-					td 18.12.23
 					td в первой половине
-					td x
-					td Назначена
+					td А
+					td 1
+					td КГ
+					td вкл. Вых. ии праздн.
+					td ВТ,ЧТ
+					td А925АА48
+					td Темофургон
+					td Тарабах А.А.
+					td х
+					td В работе
 				tr
 					td
 						input.form-check-input(type="checkbox")
-					td 231231
-					td Липецк
+					td 231232
+					td Липецкая обл
 					td Союз Рубин
-					td ООО Мед
-					td 2342/342
 					td x
-					td Иванов И.И.
-					td A54645645
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №2
+					td Липецк Ковалева 125Б
+					td до 14:00
+					td Б
+					td 1
+					td Контнейнер 35
+					td вкл. Вых. ии праздн.
+					td ВТ,ЧТ
+					td А925АА48
+					td Темофургон
 					td Тарабах А.А.
-					td да
-					td ВТ, ЧТ
-					td Мед
-					td
-					td
-					td Липецк Квалева 125Б
-					td А
-					td КГ
-					td 1
-					td 1
-					td 18.06.23
-					td 18.08.23
-					td 18.12.23
-					td в первой половине
-					td x
-					td Назначена
+					td х
+					td В работе
 				tr
 					td
 						input.form-check-input(type="checkbox")
-					td 231231
-					td Липецк
+					td 231233
+					td Липецкая обл
 					td Союз Рубин
-					td ООО Мед
-					td 2342/342
 					td x
-					td Иванов И.И.
-					td A54645645
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №3
+					td Липецк Ковалева 125Б
+					td ключи от ворот на охране
+					td В
+					td 10
+					td ШТ
+					td кроме вых. и праздн.
+					td Еженд
+					td В311ОО48
+					td Бортовой
 					td Тарабах А.А.
-					td да
-					td ВТ, ЧТ
-					td Мед
-					td
-					td
-					td Липецк Квалева 125Б
-					td А
-					td КГ
-					td 1
-					td 1
-					td 18.06.23
-					td 18.08.23
-					td 18.12.23
-					td в первой половине
-					td x
-					td Назначена
+					td х
+					td В работе
 				tr
 					td
 						input.form-check-input(type="checkbox")
-					td 231231
-					td Липецк
+					td 231234
+					td Липецкая обл
 					td Союз Рубин
-					td ООО Мед
-					td 2342/342
-					td x
-					td Иванов И.И.
-					td A54645645
-					td Тарабах А.А.
-					td да
-					td ВТ, ЧТ
-					td Мед
-					td
-					td
-					td Липецк Квалева 125Б
-					td А
-					td КГ
-					td 1
-					td 1
-					td 18.06.23
-					td 18.08.23
-					td 18.12.23
-					td в первой половине
-					td x
-					td Назначена
+					td ИП Бах
+					td ООО Медицинские центры России
+					td 254/454
+					td 6/17/2023
+					td 6/17/2023
+					td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №4
+					td Липецк Ковалева 125Б
+					td По пропускам
+					td Г
+					td 5
+					td М,КУБ
+					td кроме вых. и праздн. Искл. Суб.
+					td ВТ,ЧТ
+					td А744ВВ48
+					td Цистерна
+					td Бах А.А.
+					td х
+					td В работе
+		//- table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
+		//- 	thead
+		//- 		tr.align-middle
+		//- 			th #
+		//- 			th(style="min-width: 120px")
+		//- 				.filterable
+		//- 					span № Заявки
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Регион
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Исполнитель
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Орг. субподряд
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Заказчик
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Договор
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Контактное лицо от ЛПУ
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Телефон контактного лица
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Наименование учреждения
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Адрес вывоза
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Комм-рий к адресу
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span График работы
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Периодичность вывоза отходов
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Дата палновая
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Дата план.изменен
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Дата фактическая
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Тип вывоз отхода
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Кол-во плановое
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Кол-во фактическое
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Ед.измер
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span ТС
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Тип ТС
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Водитель
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Корректировка
+		//- 					i.fa-solid.fa-sort-down
+		//- 			th(style="min-width: 200px")
+		//- 				.filterable
+		//- 					span Статус
+		//- 					i.fa-solid.fa-sort-down
+		//- 	tbody
+		//- 		tr
+		//- 			td
+		//- 				input.form-check-input(type="checkbox")
+		//- 			td 231231
+		//- 			td Липецк
+		//- 			td Союз Рубин
+		//- 			td x
+		//- 			td ООО Медицинские центры России
+		//- 			td 254/454
+		//- 			td Иванова А.А Петрова В.В.
+		//- 			td 8-4742-15-20-14
+		//- 			td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №1
+		//- 			td Липецк Ковалева 125Б
+		//- 			td в первой половине
+		//- 			td вкл. Вых. ии праздн.
+		//- 			td ВТ,ЧТ
+		//- 			td 6/18/2023
+		//- 			td 6/17/2023
+		//- 			td 6/17/2023
+		//- 			td А
+		//- 			td 1
+		//- 			td 1
+		//- 			td КГ
+		//- 			td А925АА48
+		//- 			td Темофургон
+		//- 			td Тарабах А.А.
+		//- 			td x
+		//- 			td В работе
+		//- 		tr
+		//- 			td
+		//- 				input.form-check-input(type="checkbox")
+		//- 			td 231232
+		//- 			td Липецк
+		//- 			td Союз Рубин
+		//- 			td x
+		//- 			td ООО Медицинские центры России
+		//- 			td 254/454
+		//- 			td Иванова А.А Петрова В.В.
+		//- 			td 8-4742-15-25-18
+		//- 			td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №2
+		//- 			td Липецк Ковалева 125Б
+		//- 			td до 14:00
+		//- 			td вкл. Вых. ии праздн.
+		//- 			td ВТ,ЧТ
+		//- 			td 6/18/2023
+		//- 			td 6/17/2023
+		//- 			td 6/17/2023
+		//- 			td Б
+		//- 			td 1
+		//- 			td 1
+		//- 			td Контнейнер 35
+		//- 			td А925АА48
+		//- 			td Темофургон
+		//- 			td Тарабах А.А.
+		//- 			td x
+		//- 			td Исполнена
+		//- 		tr
+		//- 			td
+		//- 				input.form-check-input(type="checkbox")
+		//- 			td 231233
+		//- 			td Липецк
+		//- 			td Союз Рубин
+		//- 			td x
+		//- 			td ООО Медицинские центры России
+		//- 			td 254/454
+		//- 			td Иванова А.А Петрова В.В.
+		//- 			td 8-4742-41-22-24
+		//- 			td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №3
+		//- 			td Липецк Ковалева 125Б
+		//- 			td ключи от ворот на охране
+		//- 			td кроме вых. и праздн.
+		//- 			td Еженд
+		//- 			td 6/18/2023
+		//- 			td 6/17/2023
+		//- 			td 6/17/2023
+		//- 			td В
+		//- 			td 10
+		//- 			td 10
+		//- 			td ШТ
+		//- 			td В311ОО48
+		//- 			td Бортовой
+		//- 			td Тарабах А.А.
+		//- 			td x
+		//- 			td Не исполнена
+		//- 		tr
+		//- 			td
+		//- 				input.form-check-input(type="checkbox")
+		//- 			td 231234
+		//- 			td Липецк
+		//- 			td Союз Рубин
+		//- 			td ИП Бах
+		//- 			td ООО Медицинские центры России
+		//- 			td 254/454
+		//- 			td Иванова А.А Петрова В.В.
+		//- 			td 8-4742-41-78-99
+		//- 			td ЛЕЧЕБНО-ДИАГНОСТИЧЕСКИЙ ЦЕНТР №4
+		//- 			td Липецк Ковалева 125Б
+		//- 			td По пропускам
+		//- 			td кроме вых. и праздн. Искл. Суб.
+		//- 			td ВТ,ЧТ
+		//- 			td 6/18/2023
+		//- 			td 6/17/2023
+		//- 			td 6/17/2023
+		//- 			td Г
+		//- 			td 5
+		//- 			td 5
+		//- 			td М,КУБ
+		//- 			td А744ВВ48
+		//- 			td Цистерна
+		//- 			td Бах А.А.
+		//- 			td x
+		//- 			td Отменена
