@@ -1,0 +1,80 @@
+.input-group.mb-3
+	.input-group-text Контрагент
+	select.form-select(name="counterparty")
+		option(selected) Городская больница 1
+		option Городская больница 2
+	.input-group-text Тип отхода
+	select.form-select(name="waste-type")
+		option(selected) Все типы
+		option А
+		option Б
+		option В
+		option Г
+	.input-group-text Период
+	select.form-select(name="interval")
+		option(selected) Квартал
+.mb-5.border.p-3
+	p.text-center
+		strong Журнал движения отходов
+			br
+			| Акт приема-передачи медицинских отходов
+	p Тип отхода 
+		strong В
+	p За период ________20__г.(указывается месяц)
+	p Наименование контрагента: _________________________
+	p Адрес вывоза(ЛПУ): ________________________________
+	.table-responsive
+		table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
+			thead
+				tr
+					td(style="min-width: 100px; max-width: 100px") № п/п
+					td(style="min-width: 110px; max-width: 110px") Дата вывоза
+					td(style="min-width: 120px; max-width: 120px") Наименование типа отходов
+					td(style="min-width: 130px; max-width: 130px") Ед. изм.
+					td(style="min-width: 100px; max-width: 100px") Кол-во
+					td(style="min-width: 270px; max-width: 270px") ФИО, подпись представителя ЛПУ
+					td Подпись
+					td(style="min-width: 250px; max-width: 250px") ФИО, подпись представителя ООО "СоюзРубин-Втормет"
+					td Подпись
+			tbody
+				tr
+					td 1
+					td 26.06.2023
+					td В
+					td Контейнер 35л
+					td 1
+					td Зубрикова О.В., Иванова А.А
+					td
+					td Костин К.В.
+					td
+				tr
+					td 2
+					td 27.06.2023
+					td В
+					td Контейнер 35л
+					td 1
+					td Зубрикова О.В., Иванова А.А
+					td
+					td Костин К.В.
+					td
+				tr
+					td 3
+					td 28.06.2023
+					td В
+					td Контейнер 35л
+					td 1
+					td Зубрикова О.В., Иванова А.А
+					td
+					td Костин К.В.
+					td
+				tr
+					td(colspan="2") Итого
+					td В
+					td Контейнер 35л
+					td 42
+					td Зубрикова О.В., Иванова А.А
+					td
+					td Костин К.В.
+					td
+	p Проверено:
+	p.mb-0 Генеральный директор ООО "СоюзРубин-Втормет" ____________________ И.Ю. Петров

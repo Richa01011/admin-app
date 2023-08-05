@@ -1,0 +1,13 @@
+extends layout/index
+block content
+	.dropdown.mb-3
+		button.btn.btn-secondary.dropdown-toggle(type="button" data-bs-toggle="dropdown") Выбор отчёта
+		.dropdown-menu
+			button.dropdown-item Журнал движения отходов
+			button.dropdown-item Отчёт по контрагентам
+			button.dropdown-item Отчёт по адресам
+			button.dropdown-item Отчёт по ТС
+			button.dropdown-item Отчёт по отходам
+			button.dropdown-item Журнал изменений
+	include components/reports/waste-move-log
+	include components/reports/report-layout
