@@ -38,6 +38,7 @@
         </div>
         <main class="g-col-12 g-col-xxl-10">
           <div class="dropdown mb-3">
+            <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Выбор отчёта</button>
             <div class="dropdown-menu">
               <button class="dropdown-item">Журнал движения отходов</button>
@@ -48,31 +49,32 @@
               <button class="dropdown-item">Журнал изменений</button>
             </div>
           </div>
-          <div class="input-group mb-3">
-            <div class="input-group-text">Контрагент</div>
-            <select class="form-select" name="counterparty">
-              <option selected>Городская больница 1</option>
-              <option>Городская больница 2</option>
-            </select>
-            <div class="input-group-text">Тип отхода</div>
-            <select class="form-select" name="waste-type">
-              <option selected>Все типы</option>
-              <option>А</option>
-              <option>Б</option>
-              <option>В</option>
-              <option>Г</option>
-            </select>
-            <div class="input-group-text">Период</div>
-            <select class="form-select" name="interval">
-              <option selected>Квартал</option>
-            </select>
-          </div>
           <div class="mb-5 border p-3">
+            <div class="input-group mb-3">
+              <div class="input-group-text">Контрагент</div>
+              <select class="form-select" name="counterparty">
+                <option selected>Все</option>
+                <option>Городская больница 1</option>
+                <option>Городская больница 2</option>
+              </select>
+              <div class="input-group-text">Тип отхода</div>
+              <select class="form-select" name="waste-type">
+                <option selected>Все типы</option>
+                <option>А</option>
+                <option>Б</option>
+                <option>В</option>
+                <option>Г</option>
+              </select>
+              <div class="input-group-text">Период</div>
+              <select class="form-select" name="interval">
+                <option selected>Квартал</option>
+              </select>
+            </div>
             <p class="text-center"><strong>Журнал движения отходов<br>Акт приема-передачи медицинских отходов</strong></p>
             <p>Тип отхода <strong>В</strong></p>
             <p>За период ________20__г.(указывается месяц)</p>
             <p>Наименование контрагента: _________________________</p>
-            <p>Адрес вывоза(ЛПУ): ________________________________</p>
+            <p>Адрес вывоза(ЛПУ): __________________________________</p>
             <div class="table-responsive">
               <table class="table table-striped table-bordered table-sm table-hover rounded align-middle">
                 <thead>
@@ -138,16 +140,17 @@
             <p>Проверено:</p>
             <p class="mb-0">Генеральный директор ООО "СоюзРубин-Втормет" ____________________ И.Ю. Петров</p>
           </div>
-          <div class="input-group w-50 mb-3">
-            <div class="input-group-text">Контрагент</div>
-            <select class="form-select" name="counterparty">
-              <option selected>Городская больница 1</option>
-              <option>Городская больница 2</option>
-            </select>
-            <div class="input-group-text">Период</div>
-            <input class="form-control" type="date">
-          </div>
           <div class="mb-2 border p-3">
+            <div class="input-group w-50 mb-3">
+              <div class="input-group-text">Контрагент</div>
+              <select class="form-select" name="counterparty">
+                <option selected>Все</option>
+                <option>Городская больница 1</option>
+                <option>Городская больница 2</option>
+              </select>
+              <div class="input-group-text">Период</div>
+              <input class="form-control" type="date">
+            </div>
             <p class="text-center"><strong>Отчёт по договорам с контрагентом за период</strong></p>
             <div class="table-responsive">
               <table class="table table-striped table-bordered table-sm table-hover rounded align-middle">
@@ -178,11 +181,10 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td colspan="8">Довор 12323/342 от 17.06.2023</td>
+                    <td class="text-center" colspan="8"><strong>Договор 12323/342 от 17.06.2023</strong></td>
                   </tr>
                   <tr>
-                    <td></td>
-                    <td colspan="7">Липецкая область</td>
+                    <td class="text-center" colspan="8"><strong>Липецкая область</strong></td>
                   </tr>
                   <tr>
                     <td></td>
@@ -255,8 +257,7 @@
                     <td class="text-end">230</td>
                   </tr>
                   <tr>
-                    <td></td>
-                    <td colspan="7">Томбовская область</td>
+                    <td class="text-center" colspan="8"><strong>Тамбовская область</strong></td>
                   </tr>
                   <tr>
                     <td></td>

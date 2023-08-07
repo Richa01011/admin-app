@@ -1,11 +1,12 @@
-.input-group.w-50.mb-3
-	.input-group-text Контрагент
-	select.form-select(name="counterparty")
-		option(selected) Городская больница 1
-		option Городская больница 2
-	.input-group-text Период
-	input.form-control(type="date")
 .mb-2.border.p-3
+	.input-group.w-50.mb-3
+		.input-group-text Контрагент
+		select.form-select(name="counterparty")
+			option(selected) Все
+			option Городская больница 1
+			option Городская больница 2
+		.input-group-text Период
+		input.form-control(type="date")
 	p.text-center
 		strong Отчёт по договорам с контрагентом за период
 	.table-responsive
@@ -29,10 +30,11 @@
 									td.border-start(style="width: 33.333%") отклонение
 			tbody
 				tr
-					td(colspan="8") Довор 12323/342 от 17.06.2023
+					td.text-center(colspan="8")
+						strong Договор 12323/342 от 17.06.2023
 				tr
-					td
-					td(colspan="7") Липецкая область
+					td.text-center(colspan="8")
+						strong Липецкая область
 				tr
 					td
 					td
@@ -96,8 +98,8 @@
 					td.text-end 980
 					td.text-end 230
 				tr
-					td
-					td(colspan="7") Томбовская область
+					td.text-center(colspan="8")
+						strong Тамбовская область
 				tr
 					td
 					td

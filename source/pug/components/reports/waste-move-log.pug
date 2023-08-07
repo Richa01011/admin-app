@@ -1,19 +1,20 @@
-.input-group.mb-3
-	.input-group-text Контрагент
-	select.form-select(name="counterparty")
-		option(selected) Городская больница 1
-		option Городская больница 2
-	.input-group-text Тип отхода
-	select.form-select(name="waste-type")
-		option(selected) Все типы
-		option А
-		option Б
-		option В
-		option Г
-	.input-group-text Период
-	select.form-select(name="interval")
-		option(selected) Квартал
 .mb-5.border.p-3
+	.input-group.mb-3
+		.input-group-text Контрагент
+		select.form-select(name="counterparty")
+			option(selected) Все
+			option Городская больница 1
+			option Городская больница 2
+		.input-group-text Тип отхода
+		select.form-select(name="waste-type")
+			option(selected) Все типы
+			option А
+			option Б
+			option В
+			option Г
+		.input-group-text Период
+		select.form-select(name="interval")
+			option(selected) Квартал
 	p.text-center
 		strong Журнал движения отходов
 			br
@@ -22,7 +23,7 @@
 		strong В
 	p За период ________20__г.(указывается месяц)
 	p Наименование контрагента: _________________________
-	p Адрес вывоза(ЛПУ): ________________________________
+	p Адрес вывоза(ЛПУ): __________________________________
 	.table-responsive
 		table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
 			thead
