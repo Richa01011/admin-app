@@ -44,7 +44,19 @@
 			option(value="5") Работают все дни, кроме праздничных.
 p.mb-3
 	strong Типы вывозимых отходов
-div(data-dynamic-element="")
+div.mb-3(data-dynamic-element="")
 	div(data-dynamic-container="waste-type" data-type-intervals="wrapper")
 		include waste-type
 	button.btn.btn-outline-rose(type="button" data-dynamic-button="waste-type") + Добавить строку
+.d-flex.mb-3
+	.col-3
+		.input-group-text Выбрать и закрепить ТС
+	.col
+		select.form-select(name="car[]")
+			option(selected value="none")
+			option(value="1") A4234AA54 - Термофургон
+.d-flex.mb-3
+	.col-3
+		.input-group-text.h-100.text-wrap Комментарий к адресу вывоза отходов
+	.col
+		textarea.form-control(col="3")
