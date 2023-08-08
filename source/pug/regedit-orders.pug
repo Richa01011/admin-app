@@ -1,12 +1,14 @@
 extends layout/index
 block content
-	.btn-group.mb-3#orders-tabs
-		input.btn-check(name="order-tables" type="radio" id="table-removal-schedule" checked)
-		label.btn.btn-outline-secondary(for="table-removal-schedule") График вывоза
-		input.btn-check(name="order-tables" type="radio" id="table-completed-orders")
-		label.btn.btn-outline-secondary(for="table-completed-orders") Выполненные заявки
-		input.btn-check(name="order-tables" type="radio" id="table-unfulfilled-orders")
-		label.btn.btn-outline-secondary(for="table-unfulfilled-orders") Невыполненные заявки
+	.d-flex.gap-2.mb-3
+		button.d-xxl-none.btn.btn-secondary(type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu") Меню
+		.btn-group#orders-tabs
+			input.btn-check(name="order-tables" type="radio" id="table-removal-schedule" checked)
+			label.btn.btn-outline-secondary(for="table-removal-schedule") График вывоза
+			input.btn-check(name="order-tables" type="radio" id="table-completed-orders")
+			label.btn.btn-outline-secondary(for="table-completed-orders") Выполненные заявки
+			input.btn-check(name="order-tables" type="radio" id="table-unfulfilled-orders")
+			label.btn.btn-outline-secondary(for="table-unfulfilled-orders") Невыполненные заявки
 	.d-flex.flex-column.mb-3
 		.row.mb-2
 			.col-3

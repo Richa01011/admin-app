@@ -37,13 +37,16 @@
           </div>
         </div>
         <main class="g-col-12 g-col-xxl-10">
-          <div class="btn-group mb-3" id="orders-tabs">
-            <input class="btn-check" name="order-tables" type="radio" id="table-removal-schedule" checked>
-            <label class="btn btn-outline-secondary" for="table-removal-schedule">График вывоза</label>
-            <input class="btn-check" name="order-tables" type="radio" id="table-completed-orders">
-            <label class="btn btn-outline-secondary" for="table-completed-orders">Выполненные заявки</label>
-            <input class="btn-check" name="order-tables" type="radio" id="table-unfulfilled-orders">
-            <label class="btn btn-outline-secondary" for="table-unfulfilled-orders">Невыполненные заявки</label>
+          <div class="d-flex gap-2 mb-3">
+            <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
+            <div class="btn-group" id="orders-tabs">
+              <input class="btn-check" name="order-tables" type="radio" id="table-removal-schedule" checked>
+              <label class="btn btn-outline-secondary" for="table-removal-schedule">График вывоза</label>
+              <input class="btn-check" name="order-tables" type="radio" id="table-completed-orders">
+              <label class="btn btn-outline-secondary" for="table-completed-orders">Выполненные заявки</label>
+              <input class="btn-check" name="order-tables" type="radio" id="table-unfulfilled-orders">
+              <label class="btn btn-outline-secondary" for="table-unfulfilled-orders">Невыполненные заявки</label>
+            </div>
           </div>
           <div class="d-flex flex-column mb-3">
             <div class="row mb-2">
@@ -110,7 +113,6 @@
             <div class="tab-pane fade show active" id="tab-removal-schedule">
               <div class="d-flex justify-content-between mb-2">
                 <div class="d-flex gap-2">
-                  <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
                   <button class="btn btn-light" type="button" id="toggle-checked-all-btn"><i class="fa-regular fa-circle-check"></i><span> Выделить всё</span></button>
                   <button class="btn btn-light" type="button" id="delete-order-btn" data-disabled-toggle="any" disabled><i class="fa-solid fa-trash"></i><span> Удалить</span></button>
                   <button class="btn btn-light" type="button" id="edit-order-btn" data-disabled-toggle="one" disabled><i class="fa-solid fa-edit"></i><span> Редактировать</span></button>
@@ -304,7 +306,6 @@
             <div class="tab-pane fade" id="tab-completed-orders">
               <div class="d-flex justify-content-between mb-2">
                 <div class="d-flex gap-2">
-                  <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
                   <button class="btn btn-light" type="button" id="toggle-checked-all-btn"><i class="fa-regular fa-circle-check"></i><span> Выделить всё</span></button>
                   <button class="btn btn-light" type="button" id="delete-order-btn" data-disabled-toggle="any" disabled><i class="fa-solid fa-trash"></i><span> Удалить</span></button>
                   <button class="btn btn-light" type="button" id="edit-order-btn" data-disabled-toggle="one" disabled><i class="fa-solid fa-edit"></i><span> Редактировать</span></button>
@@ -498,7 +499,6 @@
             <div class="tab-pane fade" id="tab-unfulfilled-orders">
               <div class="d-flex justify-content-between mb-2">
                 <div class="d-flex gap-2">
-                  <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
                   <button class="btn btn-light" type="button" id="toggle-checked-all-btn"><i class="fa-regular fa-circle-check"></i><span> Выделить всё</span></button>
                   <button class="btn btn-light" type="button" id="delete-order-btn" data-disabled-toggle="any" disabled><i class="fa-solid fa-trash"></i><span> Удалить</span></button>
                   <button class="btn btn-light" type="button" id="edit-order-btn" data-disabled-toggle="one" disabled><i class="fa-solid fa-edit"></i><span> Редактировать</span></button>
