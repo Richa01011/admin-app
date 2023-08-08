@@ -90,7 +90,6 @@ export const Contract = () => {
 		});
 	}
 
-	//Открытие модалки нового договора
 	const newContractModalBtn = document.querySelector("#new-contract-modal-btn");
 	if (newContractModalBtn) {
 		newContractModalBtn.addEventListener("click", () => {

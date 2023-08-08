@@ -1,14 +1,19 @@
 extends layout/index
 block content
-	.dropdown.mb-3
+	.d-flex.gap-2.mb-3
 		button.d-xxl-none.btn.btn-secondary(type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu") Меню
-		button.btn.btn-secondary.dropdown-toggle(type="button" data-bs-toggle="dropdown") Выбор отчёта
-		.dropdown-menu
-			button.dropdown-item Журнал движения отходов
-			button.dropdown-item Отчёт по контрагентам
-			button.dropdown-item Отчёт по адресам
-			button.dropdown-item Отчёт по ТС
-			button.dropdown-item Отчёт по отходам
-			button.dropdown-item Журнал изменений
-	include components/reports/waste-move-log
-	include components/reports/report-layout
+		.dropdown
+			button.btn.btn-secondary.dropdown-toggle(type="button" data-bs-toggle="dropdown") Выбор отчёта
+			.dropdown-menu
+				button.dropdown-item#waste-move-log-btn Журнал движения отходов
+				button.dropdown-item#report-counterparty-btn Отчёт по контрагентам
+				button.dropdown-item#report-lpu-btn Отчёт по адресам
+				button.dropdown-item#report-car-btn Отчёт по ТС
+				button.dropdown-item#report-type-waste-btn Отчёт по отходам
+				button.dropdown-item#change-log-btn Журнал изменений
+		.dropdown
+			button.btn.btn-secondary.dropdown-toggle(type="button" data-bs-toggle="dropdown") Действия
+			.dropdown-menu
+				button.dropdown-item Распечатать
+				button.dropdown-item Скачать
+	#reports-container

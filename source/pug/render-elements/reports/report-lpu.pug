@@ -1,0 +1,316 @@
+.nav.nav-tabs(role="tablist")
+	button.nav-link.active(type="button" data-bs-toggle="tab" data-bs-target="#tab-1" role="tab") Отчёт по адресу по дням
+	button.nav-link(type="button" data-bs-toggle="tab" data-bs-target="#tab-2" role="tab") Отчёт по адресу план-факт
+.tab-content
+	.tab-pane.fade.show.active(id="tab-1" role="tabpanel")
+		.d-flex.flex-column.my-3
+			.row.mb-2
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Договор
+						.col.px-0
+							select.form-select(name="contract")
+								option(selected) 123/432 от 17.05.2022
+								option 543/534 от 03.04.2023
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Адрес ЛПУ
+						.col.px-0
+							select.form-select(name="address-lpu")
+								option(selected) Ковалева 20
+								option Ковалева 5
+			.row
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Регион
+						.col.px-0
+							select.form-select(name="region")
+								option(selected) Липецкая область
+								option Тамбовская область
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Период
+						.col.px-0
+							input.form-control(id="month-picker" name="month-picker" readonly)
+		.table-responsive
+			table.table.table-bordered.table-sm.align-middle
+				thead
+					tr
+						td.bg-warning-subtle(style="width: 16.666%") Адрес ЛПУ
+						td.bg-warning-subtle(style="width: 16.666%") Тип отхода
+						td.bg-warning-subtle(style="width: 16.666%") Дата вывоза
+						td.p-0(colspan="4")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								thead
+									tr
+										td(colspan="4").bg-warning-subtle.text-center Период - Январь
+								tbody
+									tr
+										td.bg-warning-subtle.border-end(style="width: 25%") план
+										td.bg-warning-subtle.border-end(style="width: 25%") факт
+										td.bg-warning-subtle.border-end(style="width: 25%") отклонение
+										td.bg-warning-subtle(style="width: 25%") отклонение %
+				tbody
+					tr
+						td.bg-dark-subtle(colspan="8") Мед учреждение ООО Ковалева 20
+					tr
+						td
+						td.bg-body-secondary(colspan="2") ТИП отхода А - Контейнер 35
+						td.p-0(colspan="6")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.bg-body-secondary.border-end.fw-bold(style="width: 25%") 296
+										td.bg-body-secondary.border-end.fw-bold(style="width: 25%") 302
+										td.bg-body-secondary.border-end.fw-bold(style="width: 25%") 6
+										td.bg-body-secondary.fw-bold(style="width: 25%")
+					tr
+						td
+						td
+						td 04.01.2023
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td 05.01.2023
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td 06.01.2023
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+	.tab-pane.fade(id="tab-2" role="tabpanel")
+		.d-flex.flex-column.my-3
+			.row.mb-2
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Договор
+						.col.px-0
+							select.form-select(name="contract")
+								option(selected) 123/432 от 17.05.2022
+								option 543/534 от 03.04.2023
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Адрес ЛПУ
+						.col.px-0
+							select.form-select(name="address-lpu")
+								option(selected) Ковалева 20
+								option Ковалева 5
+			.row
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Регион
+						.col.px-0
+							select.form-select(name="region")
+								option(selected) Липецкая область
+								option Тамбовская область
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Период
+						.col.px-0
+							input.form-control(id="year-picker" name="year-picker" readonly)
+		.table-responsive
+			table.table.table-bordered.table-sm.align-middle
+				thead
+					tr
+						td.bg-warning-subtle(style="width: 16.666%") Адрес ЛПУ
+						td.bg-warning-subtle(style="width: 16.666%") Тип отхода
+						td.bg-warning-subtle(style="width: 16.666%") Период
+						td.p-0(colspan="4")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								thead
+									tr
+										td(colspan="4").bg-warning-subtle.text-center Период - 2023г
+								tbody
+									tr
+										td.bg-warning-subtle.border-end(style="width: 25%") план
+										td.bg-warning-subtle.border-end(style="width: 25%") факт
+										td.bg-warning-subtle.border-end(style="width: 25%") отклонение
+										td.bg-warning-subtle(style="width: 25%") отклонение %
+				tbody
+					tr
+						td.bg-dark-subtle(colspan="8") Мед учреждение ООО Ковалева 20
+					tr
+						td
+						td.bg-body-secondary(colspan="2") ТИП отхода А - Контейнер 35
+						td.p-0(colspan="6")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.bg-body-secondary.border-end.fw-bold(style="width: 25%") 296
+										td.bg-body-secondary.border-end.fw-bold(style="width: 25%") 302
+										td.bg-body-secondary.border-end.fw-bold(style="width: 25%") 6
+										td.bg-body-secondary.fw-bold(style="width: 25%")
+					tr
+						td
+						td
+						td Январь
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Февраль
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Март
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Апрель
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Май
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Июнь
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Июль
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Август
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Сентябрь
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Октябрь
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Ноябрь
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")
+					tr
+						td
+						td
+						td Декабрь
+						td.p-0(colspan="5")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.border-end(style="width: 25%") 37
+										td.border-end(style="width: 25%") 35
+										td.border-end(style="width: 25%") -2
+										td(style="width: 25%")

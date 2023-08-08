@@ -1,0 +1,142 @@
+.d-flex.flex-column.mb-3
+	.row.mb-2
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Период
+				.col.px-0
+					input.form-control(id="month-picker" name="month-picker" readonly)
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Регион
+				.col.px-0
+					select.form-select(name="region")
+						option(selected) Липецкая область
+						option Тамбовская область
+	.row
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Тип отхода
+				.col.px-0
+					select.form-select(name="waste-type")
+						option(selected) Все типы
+						option А
+						option Б
+						option В
+						option Г
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Контрагент
+				.col.px-0
+					select.form-select(name="counterparty")
+						option(selected) Все
+						option Городская больница 1
+						option Городская больница 2
+p.fw-bold.text-center Отчёт "План-факт по проекту в целом по типам отходов"
+.table-responsive
+	table.table.table-bordered.table-sm.align-middle
+		thead
+			tr
+				td.bg-warning-subtle(style="width: 16.666%") Период
+				td.bg-warning-subtle(style="width: 16.666%") Ед. изм, Тон
+				td.bg-warning-subtle(style="width: 16.666%") Кол-во план по договорам
+				td.bg-warning-subtle(style="width: 16.666%") Кол-во факт по договорам
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						thead
+							tr
+								td.bg-warning-subtle(colspan="3").text-center Период Отклонение
+						tbody
+							tr
+								td.bg-warning-subtle.border-end.text-center(style="width: 50%") Значение
+								td.bg-warning-subtle.text-center(style="width: 50%") %
+		tbody
+			tr
+				td.bg-body-secondary(colspan="2") Отходы типа А
+				td.bg-body-secondary.text-end 4500
+				td.bg-body-secondary.text-end 4250
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-body-secondary.border-end.text-end(style="width: 50%") -250
+								td.bg-body-secondary.text-end(style="width: 50%") 94.4%
+			tr
+				td.text-center Январь
+				td.text-center Тонна
+				td.text-center 1500
+				td.text-center 1200
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-danger-subtle.border-end.text-center(style="width: 50%") -300
+								td.text-center(style="width: 50%") 80%
+			tr
+				td.text-center Февраль
+				td.text-center Тонна
+				td.text-center 1500
+				td.text-center 1600
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-success-subtle.border-end.text-center(style="width: 50%") 100
+								td.bg-success.text-center(style="width: 50%") 106.7%
+			tr
+				td.text-center Март
+				td.text-center Тонна
+				td.text-center 1500
+				td.text-center 1450
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-danger-subtle.border-end.text-center(style="width: 50%") -50
+								td.text-center(style="width: 50%") 96.7%
+			tr
+				td.bg-body-secondary(colspan="2") Отходы типа Б
+				td.bg-body-secondary.text-end 3900
+				td.bg-body-secondary.text-end 4250
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-body-secondary.border-end.text-end(style="width: 50%") 350
+								td.bg-body-secondary.text-end(style="width: 50%") 109.0%
+			tr
+				td.text-center Январь
+				td.text-center Тонна
+				td.text-center 1300
+				td.text-center 1200
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-danger-subtle.border-end.text-center(style="width: 50%") -100
+								td.text-center(style="width: 50%") 92.3%
+			tr
+				td.text-center Февраль
+				td.text-center Тонна
+				td.text-center 1300
+				td.text-center 1600
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-success-subtle.border-end.text-center(style="width: 50%") 300
+								td.bg-success.text-center(style="width: 50%") 123.1%
+			tr
+				td.text-center Март
+				td.text-center Тонна
+				td.text-center 1300
+				td.text-center 1450
+				td.p-0(colspan="2")
+					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+						tbody
+							tr
+								td.bg-success-subtle.border-end.text-center(style="width: 50%") 150
+								td.bg-success.text-center(style="width: 50%") 111.5%

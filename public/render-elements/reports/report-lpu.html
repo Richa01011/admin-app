@@ -1,0 +1,474 @@
+
+<div class="nav nav-tabs" role="tablist">
+  <button class="nav-link active" type="button" data-bs-toggle="tab" data-bs-target="#tab-1" role="tab">Отчёт по адресу по дням</button>
+  <button class="nav-link" type="button" data-bs-toggle="tab" data-bs-target="#tab-2" role="tab">Отчёт по адресу план-факт</button>
+</div>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
+    <div class="d-flex flex-column my-3">
+      <div class="row mb-2">
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Договор</div>
+            </div>
+            <div class="col px-0">
+              <select class="form-select" name="contract">
+                <option selected="selected">123/432 от 17.05.2022</option>
+                <option>543/534 от 03.04.2023</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Адрес ЛПУ</div>
+            </div>
+            <div class="col px-0">
+              <select class="form-select" name="address-lpu">
+                <option selected="selected">Ковалева 20</option>
+                <option>Ковалева 5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Регион</div>
+            </div>
+            <div class="col px-0">
+              <select class="form-select" name="region">
+                <option selected="selected">Липецкая область</option>
+                <option>Тамбовская область</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Период</div>
+            </div>
+            <div class="col px-0">
+              <input class="form-control" id="month-picker" name="month-picker" readonly="readonly"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm align-middle">
+        <thead>
+          <tr>
+            <td class="bg-warning-subtle" style="width: 16.666%">Адрес ЛПУ</td>
+            <td class="bg-warning-subtle" style="width: 16.666%">Тип отхода</td>
+            <td class="bg-warning-subtle" style="width: 16.666%">Дата вывоза</td>
+            <td class="p-0" colspan="4">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <thead>
+                  <tr>
+                    <td class="bg-warning-subtle text-center" colspan="4">Период - Январь</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="bg-warning-subtle border-end" style="width: 25%">план</td>
+                    <td class="bg-warning-subtle border-end" style="width: 25%">факт</td>
+                    <td class="bg-warning-subtle border-end" style="width: 25%">отклонение</td>
+                    <td class="bg-warning-subtle" style="width: 25%">отклонение %</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="bg-dark-subtle" colspan="8">Мед учреждение ООО Ковалева 20</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="bg-body-secondary" colspan="2">ТИП отхода А - Контейнер 35</td>
+            <td class="p-0" colspan="6">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="bg-body-secondary border-end fw-bold" style="width: 25%">296</td>
+                    <td class="bg-body-secondary border-end fw-bold" style="width: 25%">302</td>
+                    <td class="bg-body-secondary border-end fw-bold" style="width: 25%">6</td>
+                    <td class="bg-body-secondary fw-bold" style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>04.01.2023</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>05.01.2023</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>06.01.2023</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="tab-2" role="tabpanel">
+    <div class="d-flex flex-column my-3">
+      <div class="row mb-2">
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Договор</div>
+            </div>
+            <div class="col px-0">
+              <select class="form-select" name="contract">
+                <option selected="selected">123/432 от 17.05.2022</option>
+                <option>543/534 от 03.04.2023</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Адрес ЛПУ</div>
+            </div>
+            <div class="col px-0">
+              <select class="form-select" name="address-lpu">
+                <option selected="selected">Ковалева 20</option>
+                <option>Ковалева 5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Регион</div>
+            </div>
+            <div class="col px-0">
+              <select class="form-select" name="region">
+                <option selected="selected">Липецкая область</option>
+                <option>Тамбовская область</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-5 pe-0">
+              <div class="input-group-text">Период</div>
+            </div>
+            <div class="col px-0">
+              <input class="form-control" id="year-picker" name="year-picker" readonly="readonly"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm align-middle">
+        <thead>
+          <tr>
+            <td class="bg-warning-subtle" style="width: 16.666%">Адрес ЛПУ</td>
+            <td class="bg-warning-subtle" style="width: 16.666%">Тип отхода</td>
+            <td class="bg-warning-subtle" style="width: 16.666%">Период</td>
+            <td class="p-0" colspan="4">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <thead>
+                  <tr>
+                    <td class="bg-warning-subtle text-center" colspan="4">Период - 2023г</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="bg-warning-subtle border-end" style="width: 25%">план</td>
+                    <td class="bg-warning-subtle border-end" style="width: 25%">факт</td>
+                    <td class="bg-warning-subtle border-end" style="width: 25%">отклонение</td>
+                    <td class="bg-warning-subtle" style="width: 25%">отклонение %</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="bg-dark-subtle" colspan="8">Мед учреждение ООО Ковалева 20</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="bg-body-secondary" colspan="2">ТИП отхода А - Контейнер 35</td>
+            <td class="p-0" colspan="6">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="bg-body-secondary border-end fw-bold" style="width: 25%">296</td>
+                    <td class="bg-body-secondary border-end fw-bold" style="width: 25%">302</td>
+                    <td class="bg-body-secondary border-end fw-bold" style="width: 25%">6</td>
+                    <td class="bg-body-secondary fw-bold" style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Январь</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Февраль</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Март</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Апрель</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Май</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Июнь</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Июль</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Август</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Сентябрь</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Октябрь</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Ноябрь</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Декабрь</td>
+            <td class="p-0" colspan="5">
+              <table class="table table-sm align-middle" style="margin: 0 -1px -1px 0">
+                <tbody>
+                  <tr>
+                    <td class="border-end" style="width: 25%">37</td>
+                    <td class="border-end" style="width: 25%">35</td>
+                    <td class="border-end" style="width: 25%">-2</td>
+                    <td style="width: 25%"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

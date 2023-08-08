@@ -1,0 +1,66 @@
+.d-flex.flex-column.mb-3
+	.row.mb-2
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Договор
+				.col.px-0
+					select.form-select(name="contract")
+						option(selected) 213/124 от 17.06.2023
+						option 543/543 от 04.12.2023
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Адрес ЛПУ
+				.col.px-0
+					select.form-select(name="address-lpu")
+						option(selected) Ковалева 20
+						option Ковалева 5
+	.row
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Пользователь
+				.col.px-0
+					select.form-select(name="user")
+						option(selected) Иванов И.И
+						option Викторов И.И
+		.col-4
+			.row
+				.col-5.pe-0
+					.input-group-text Дата изменений
+				.col.px-0
+					input.form-control(id="month-picker" name="month-picker" readonly)
+p.fw-bold.text-center Журнал изменений
+.table-responsive
+	table.table.table-striped.table-bordered.table-sm.table-hover.align-middle
+		thead
+			tr
+				td.text-center(style="width: 16.666%") Дата изменений
+				td.text-center(style="width: 16.666%") Измененное поле
+				td.text-center(style="width: 16.666%") № Заявки
+				td.text-center(style="width: 16.666%") Значение до изменений
+				td.text-center(style="width: 16.666%") Значение после изменений
+				td.text-center(style="width: 16.666%") Измененно пользователем
+		tbody
+			tr
+				td.text-center 04.06.2023
+				td.text-center Волитель
+				td.text-center 2132135
+				td.text-center Иванов А.А.
+				td.text-center Сидоров В.В.
+				td.text-center Пупкина А.А.
+			tr
+				td.text-center 15.06.23
+				td.text-center ТС
+				td.text-center 2132136
+				td.text-center А954ТС
+				td.text-center У566КЕ
+				td.text-center Пупкина А.А.
+			tr
+				td.text-center 22.06.23
+				td.text-center Вывоз отходов
+				td.text-center 2132137
+				td.text-center 23
+				td.text-center 20
+				td.text-center Пупкина А.А.

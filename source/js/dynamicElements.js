@@ -191,7 +191,7 @@ export function createWasteTypeElement() {
 							`
 							<div class="d-flex mb-3" data-waste-type-element="exactdates">
 								<div class="col-3">
-									<div class="input-group-text">Дочные даты</div>
+									<div class="input-group-text">Точные даты</div>
 								</div>
 								<div class="col">
 									<div class="d-flex flex-wrap" data-exactdates="container" data-type-interval="exactdates">

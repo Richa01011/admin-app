@@ -1,0 +1,206 @@
+.nav.nav-tabs(role="tablist")
+	button.nav-link.active(type="button" data-bs-toggle="tab" data-bs-target="#tab-1" role="tab") Отчёт ТС по заявкам
+	button.nav-link(type="button" data-bs-toggle="tab" data-bs-target="#tab-2" role="tab") Отчёт ТС по объёму
+.tab-content
+	.tab-pane.fade.show.active(id="tab-1" role="tabpanel")
+		.input-group.w-50.my-3
+			.input-group-text Период
+			input.form-control(id="month-picker" name="month-picker" readonly)
+			.input-group-text ТС
+			select.form-select(name="car")
+				option(selected) А94234АА43 - Фургон
+				option А5433АА45 - Термофургон
+		.table-responsive
+			table.table.table-bordered.table-sm.align-middle
+				thead
+					tr
+						td.bg-warning-subtle(style="width: 20%") Регион
+						td.bg-warning-subtle(style="width: 20%") Дата факт
+						td.bg-warning-subtle(style="width: 20%") Кол-во выполненных заявок
+						td.bg-warning-subtle(style="width: 20%") Кол-во не выполненных заявок
+						td.bg-warning-subtle(style="width: 20%") Комментарии водителя
+				tbody
+					tr
+						td.bg-secondary-subtle.fw-bold(colspan="2") Липецкая область
+						td.bg-secondary-subtle.fw-bold.text-end 260
+						td.bg-secondary-subtle.fw-bold.text-end 5
+						td.bg-secondary-subtle.fw-bold
+					tr
+						td.text-end(colspan="2") 01.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+					tr
+						td
+						td.text-end 02.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+					tr
+						td
+						td.text-end 04.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+					tr
+						td
+						td.text-end 06.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+					tr
+						td.bg-secondary-subtle.fw-bold(colspan="2") Тамбовская область
+						td.bg-secondary-subtle.fw-bold.text-end 225
+						td.bg-secondary-subtle.fw-bold.text-end 22
+						td.bg-secondary-subtle.fw-bold
+					tr
+						td.text-end(colspan="2") 01.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+					tr
+						td
+						td.text-end 02.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+					tr
+						td
+						td.text-end 04.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+					tr
+						td
+						td.text-end 06.06.2023
+						td.text-end 42
+						td.text-end 2
+						td
+				tfoot
+					tr
+						td.text-end.fw-bold(colspan="2") Итого
+						td.text-center.fw-bold 485
+						td.text-center.fw-bold 27
+						td
+					tr
+						td
+						td Премия
+						td
+						td
+						td
+	.tab-pane.fade(id="tab-2" role="tabpanel")
+		.d-flex.flex-column.my-3
+			.row.mb-2
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text ТС
+						.col.px-0
+							select.form-select(name="car")
+								option(selected) А94234АА43 - Фургон
+								option А5433АА45 - Термофургон
+			.row
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Регион
+						.col.px-0
+							select.form-select(name="region")
+								option(selected) Липецкая область
+								option Тамбовская область
+				.col-4
+					.row
+						.col-5.pe-0
+							.input-group-text Период
+						.col.px-0
+							input.form-control(id="month-picker" name="month-picker" readonly)
+		.table-responsive
+			table.table.table-bordered.table-sm.align-middle
+				thead
+					tr
+						td.bg-warning-subtle(style="width: 16.666%") ТС
+						td.bg-warning-subtle(style="width: 16.666%") Тип отхода
+						td.bg-warning-subtle(style="width: 16.666%") Дата вывоза
+						td.p-0(colspan="3")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								thead
+									tr
+										td.bg-warning-subtle(colspan="3").text-center Период - Июнь
+								tbody
+									tr
+										td.bg-warning-subtle.border-end(style="width: 33.333%") план
+										td.bg-warning-subtle.border-end(style="width: 33.333%") факт
+										td.bg-warning-subtle.border-end(style="width: 33.333%") отклонение
+				tbody
+					tr
+						td.bg-dark-subtle.fw-bold(colspan="6") А94234АА43 - Фургон 
+					tr
+						td
+						td.bg-body-secondary(colspan="2") ТИП отхода А - Контейне 35
+						td.p-0(colspan="3")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.bg-body-secondary.border-end.text-end.fw-bold(style="width: 33.333%") 296
+										td.bg-body-secondary.border-end.text-end.fw-bold(style="width: 33.333%") 302
+										td.bg-body-secondary.text-end.fw-bold(style="width: 33.333%") 6
+					tr
+						td
+						td
+						td.text-end 04.06.2023
+						td.text-end 37
+						td.text-end 35
+						td.text-end -2
+					tr
+						td
+						td
+						td.text-end 06.06.2023
+						td.text-end 37
+						td.text-end 35
+						td.text-end -2
+					tr
+						td
+						td
+						td.text-end 07.06.2023
+						td.text-end 37
+						td.text-end 35
+						td.text-end -2
+					tr
+						td
+						td.bg-body-secondary(colspan="2") ТИП отхода А - Контейне 15
+						td.p-0(colspan="3")
+							table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
+								tbody
+									tr
+										td.bg-body-secondary.border-end.text-end.fw-bold(style="width: 33.333%") 296
+										td.bg-body-secondary.border-end.text-end.fw-bold(style="width: 33.333%") 302
+										td.bg-body-secondary.text-end.fw-bold(style="width: 33.333%") 6
+					tr
+						td
+						td
+						td.text-end 04.06.2023
+						td.text-end 37
+						td.text-end 35
+						td.text-end -2
+					tr
+						td
+						td
+						td.text-end 06.06.2023
+						td.text-end 37
+						td.text-end 35
+						td.text-end -2
+					tr
+						td
+						td
+						td.text-end 07.06.2023
+						td.text-end 37
+						td.text-end 35
+						td.text-end -2
+				tfoot
+					tr
+						td
+						td
+						td Премия
+						td
+						td
+						td

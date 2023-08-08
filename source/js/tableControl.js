@@ -1,12 +1,5 @@
 import toggleButtonDisabled from "./toggleButtonDisabled.js";
 
-export function tableControl(tables, tableCheckboxes) {
-	tables.forEach((table) => {
-		const tbody = tablPane.querySelector("tbody");
-		tableCheckboxes(tbody);
-	});
-}
-
 export function tableCheckboxes(tbody, buttons, toggleCheckAllButton) {
 	const checkboxes = tbody.querySelectorAll('tr input[type="checkbox"');
 	function updateCheckedState() {
