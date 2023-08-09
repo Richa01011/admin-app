@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="./images/logo.jpg">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <header class="position-sticky z-3 top-0 bg-white border-bottom mb-4 py-2">
+      <div class="container">
+        <div class="d-flex gap-4"><a class="logo" href="https://richa01011.github.io/admin-app/public/"><img src="images/logo.jpg">
+            <p>СоюзРубин</p></a>
+          <div class="d-flex align-items-center gap-2 col-4"><span>Проект</span>
+            <select class="form-select" name="project">
+              <option selected>Обезвреживание (уничтожение) отходов</option>
+              <option>Утилизация (покупка) отходов</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="grid">
+        <div class="g-col-2 d-none d-xxl-block">
+          <div class="list-group" id="nav-menu-links"><a class="list-group-item list-group-item-action active" href="https://richa01011.github.io/admin-app/public/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="https://richa01011.github.io/admin-app/public/regedit-orders.html">Реестр заявок</a><a class="list-group-item list-group-item-action" href="https://richa01011.github.io/admin-app/public/reports.html">Отчеты</a><a class="list-group-item list-group-item-action" href="https://richa01011.github.io/admin-app/public/archives.html">Архивы</a><a class="list-group-item list-group-item-action" href="#">Справочники</a></div>
+        </div>
+        <div class="offcanvas offcanvas-start" id="nav-menu">
+          <div class="offcanvas-header">
+            <div class="offcanvas-title fs-5">Меню</div>
+            <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="list-group" id="nav-menu-links"><a class="list-group-item list-group-item-action active" href="https://richa01011.github.io/admin-app/public/">Реестр договоров</a><a class="list-group-item list-group-item-action" href="https://richa01011.github.io/admin-app/public/regedit-orders.html">Реестр заявок</a><a class="list-group-item list-group-item-action" href="https://richa01011.github.io/admin-app/public/reports.html">Отчеты</a><a class="list-group-item list-group-item-action" href="https://richa01011.github.io/admin-app/public/archives.html">Архивы</a><a class="list-group-item list-group-item-action" href="#">Справочники</a></div>
+          </div>
+        </div>
+        <main class="g-col-12 g-col-xxl-10">
+          <div class="d-flex gap-2 mb-3">
+            <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
+            <button class="btn btn-secondary" type="button">2023 год</button>
+            <button class="btn btn-secondary" type="button">2022 год</button>
+            <button class="btn btn-outline-secondary" type="button">2021 год</button>
+          </div>
+          <div class="d-flex gap-2 w-75 mb-3">
+            <div class="input-group">
+              <div class="input-group-text">Орг. исполн.</div>
+              <select class="form-select" name="executor">
+                <option value="all">Все</option>
+                <option value="1">ООО СоюзРубин</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <div class="input-group-text">Контрагент</div>
+              <select class="form-select" name="counterparty">
+                <option value="all">Все</option>
+                <option value="1">ООО Мед. огранизация 1</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <div class="input-group-text">Регион</div>
+              <select class="form-select" name="region">
+                <option value="1">Воронежская обл.</option>
+                <option value="2">Липецкая обл.</option>
+              </select>
+            </div>
+          </div>
+          <div class="list-group list-group-numbered mb-3">
+            <div class="list-group-item d-flex">
+              <div class="col-6">БУЗ ВО "Воронежская городская поликлиника №1"</div>
+              <div class="col-6 d-flex flex-column gap-2"><a href="#">Договор №4234/3423 от 15.12.2020</a></div>
+            </div>
+            <div class="list-group-item d-flex">
+              <div class="col-6">БУЗ ВО "Воронежская поликлиника №3"</div>
+              <div class="col-6 d-flex flex-column gap-2"><a href="#">Контракт №543/534 от 31.12.2020</a></div>
+            </div>
+            <div class="list-group-item d-flex">
+              <div class="col-6">КУЗ ВО "Воронежский клинический психоневралогический диспансер"</div>
+              <div class="col-6 d-flex flex-column gap-2"><a href="#">Госконтракт №123 от 09.01.2021</a><a href="#">Контракт №321 от 15.03.2021</a><a href="#">Договор №5 от 01.05.2021</a></div>
+            </div>
+            <div class="list-group-item d-flex">
+              <div class="col-6">Воронежский родильный дом №2</div>
+              <div class="col-6 d-flex flex-column gap-2"><a href="#">Госконтракт №Ф.24/123.4323 от 09.01.2021</a></div>
+            </div>
+            <div class="list-group-item d-flex">
+              <div class="col-6">ФГКУ 418 ВГ Минобороны России</div>
+              <div class="col-6 d-flex flex-column gap-2"><a href="#">Госконтракт №23424234234 от 09.01.2021</a></div>
+            </div>
+          </div>
+          <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link disabled" href="#"><span>&laquo;</span></a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#"><span>&raquo;</span></a></li>
+          </ul>
+        </main>
+      </div>
+    </div>
+    <script src="js/libs.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
