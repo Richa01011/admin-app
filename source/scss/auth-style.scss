@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+}
+a {
+	text-decoration-line: none;
+	color: inherit;
+}
+button,
+input,
+textarea,
+button,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+button,
+input[type="submit"] {
+	cursor: pointer;
+}
+input::-ms-clear {
+	display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: 120%;
+}
+p {
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: 140%;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+html,
+body {
+	min-width: 320px;
+}
+@font-face {
+	font-family: "ProximaNova";
+	src: url("./fonts/ProximaNova-Bold.eot");
+	src: url("./fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"),
+		url("./fonts/ProximaNova-Bold.woff") format("woff"), url("./fonts/ProximaNova-Bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "ProximaNova";
+	src: url("./fonts/ProximaNova-Regular.eot");
+	src: url("./fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"),
+		url("./fonts/ProximaNova-Regular.woff") format("woff"),
+		url("./fonts/ProximaNova-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+body {
+	overflow: hidden;
+	min-height: 100vh;
+	font-family: "ProximaNova", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+}
+.container {
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.auth-block {
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	max-width: 1920px;
+	min-height: 100vh;
+	width: 100%;
+	margin: 0 auto;
+
+	&__row {
+		overflow: hidden;
+		display: flex;
+		height: 100%;
+		border-radius: 60px;
+	}
+	&__left {
+		flex: 0 0 60%;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgb(195, 35, 54);
+		background: linear-gradient(
+			9deg,
+			rgba(195, 35, 54, 1) 10%,
+			rgba(227, 58, 78, 1) 40%,
+			rgba(227, 58, 78, 1) 60%,
+			rgba(227, 58, 78, 0.6) 100%
+		);
+
+		&-decor-1,
+		&-decor-2 {
+			position: absolute;
+			z-index: -1;
+			background-color: transparent;
+			width: 560px;
+			height: 560px;
+			border: 1px solid rgb(240, 109, 124);
+			border-radius: 50%;
+		}
+		&-decor-1 {
+			bottom: -270px;
+			left: -200px;
+		}
+		&-decor-2 {
+			bottom: -300px;
+			left: -120px;
+		}
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__right {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		padding: 30px 100px;
+	}
+}
+.logo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #ffffff;
+	border-radius: 30px;
+	padding: 20px;
+
+	&__icon {
+		width: 100px;
+		height: 100px;
+		margin-bottom: 20px;
+	}
+	&__label {
+		font-weight: 700;
+		font-size: 20px;
+	}
+}
+.text {
+	text-align: center;
+	font-size: 30px;
+	line-height: 120%;
+	color: #ffffff;
+}
+.title {
+	font-weight: 700;
+	font-size: 35px;
+	line-height: 120%;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	width: 100%;
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+}
+.input {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	border: 1px solid #eeeeee;
+	border-radius: 30px;
+	padding: 18px 26px;
+	cursor: text;
+
+	&__icon {
+		flex: 0 0 24px;
+		height: 24px;
+	}
+	& input {
+		background-color: transparent;
+		width: 100%;
+		font-size: 14px;
+		color: #000000;
+
+		&::placeholder {
+			color: #333333;
+		}
+	}
+}
+.button {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(227, 58, 78);
+	border-radius: 30px;
+	padding: 18px 26px;
+	text-align: center;
+	color: #ffffff;
+	transition: background-color 0.15s ease-in-out;
+
+	&:hover {
+		background-color: rgb(226, 83, 100);
+	}
+}
+.link {
+	align-self: center;
+	display: flex;
+	color: #333333;
+	transition: color 0.15s ease-in-out;
+
+	&:hover {
+		text-decoration-line: underline;
+		color: rgb(227, 58, 78);
+	}
+}

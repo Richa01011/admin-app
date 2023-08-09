@@ -43,19 +43,17 @@ function pug() {
 		.pipe(dest("./public"));
 }
 function pugElements() {
-	return src("./source/pug/render-elements/**/*.pug")
-		.pipe(gulpPug({ pretty: true }))
-		.pipe(dest("./public/render-elements"));
+	return src("./source/pug/render-elements/**/*.pug").pipe(gulpPug()).pipe(dest("./public/render-elements"));
 }
 function stylesDev() {
-	return src("./source/scss/index.scss")
+	return src("./source/scss/*.scss")
 		.pipe(sass())
 		.pipe(autoprefixer())
 		.pipe(dest("./public"))
 		.pipe(browserSync.stream());
 }
 function stylesBuild() {
-	return src("./source/scss/index.scss")
+	return src("./source/scss/*.scss")
 		.pipe(sass({ outputStyle: "compressed" }))
 		.pipe(autoprefixer())
 		.pipe(dest("./public"));

@@ -1,0 +1,35 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="icon" type="image/png" href="./images/logo.png")
+		title Авторизация
+		link(rel="stylesheet", href="auth-style.css")
+	body
+		.auth-block
+			.container
+				.auth-block__row
+					.auth-block__left
+						.auth-block__info
+							.logo
+								img(class="logo__icon" src="./images/logo.png", alt="СоюзРубин")
+								.logo__label СоюзРубин Втормет
+							.text
+								p Информационно-управляющая система
+								p "Сбор и транспортировка медицинских отходов"
+						.auth-block__left-decor-1
+						.auth-block__left-decor-2
+					.auth-block__right
+						form.form
+							h1.title Вход в систему
+							.form__items
+								label.input
+									img(class="input__icon" src="./images/account.svg", alt="Имя пользователя")
+									input(type="text" placeholder="Имя пользователя")
+								label.input
+									img(class="input__icon" src="./images/lock.svg", alt="Пароль")
+									input(type="password" placeholder="Пароль")
+								button.button(type="submit") Войти
+								a.link(href='#') Забыл пароль
