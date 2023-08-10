@@ -2,9 +2,12 @@ extends layout/index
 block content
 	.d-flex.gap-2.mb-3
 		button.d-xxl-none.btn.btn-secondary(type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu") Меню
-		button.btn.btn-secondary(type="button") 2023 год
-		button.btn.btn-secondary(type="button") 2022 год
-		button.btn.btn-outline-secondary(type="button") 2021 год
+		input.btn-check(name="year" type="radio" id="2023" checked)
+		label.btn.btn-outline-secondary(for="2023") 2023 год
+		input.btn-check(name="year" type="radio" id="2022")
+		label.btn.btn-outline-secondary(for="2022") 2022 год
+		input.btn-check(name="year" type="radio" id="2021")
+		label.btn.btn-outline-secondary(for="2021") 2021 год
 	.d-flex.gap-2.w-75.mb-3
 		.input-group
 			.input-group-text Орг. исполн.
@@ -21,28 +24,28 @@ block content
 			select.form-select(name="region")
 				option(value="1") Воронежская обл.
 				option(value="2") Липецкая обл.
-	.list-group.list-group-numbered.mb-3
+	.list-group.mb-3
 		.list-group-item.d-flex
-			.col-6 БУЗ ВО "Воронежская городская поликлиника №1"
-			.col-6.d-flex.flex-column.gap-2
+			.col-6.border-end.border-primary БУЗ ВО "Воронежская городская поликлиника №1"
+			.col-6.d-flex.flex-column.gap-2.ms-3
 				a(href='#') Договор №4234/3423 от 15.12.2020
 		.list-group-item.d-flex
-			.col-6 БУЗ ВО "Воронежская поликлиника №3"
-			.col-6.d-flex.flex-column.gap-2
+			.col-6.border-end.border-primary БУЗ ВО "Воронежская поликлиника №3"
+			.col-6.d-flex.flex-column.gap-2.ms-3
 				a(href='#') Контракт №543/534 от 31.12.2020
 		.list-group-item.d-flex
-			.col-6 КУЗ ВО "Воронежский клинический психоневралогический диспансер"
-			.col-6.d-flex.flex-column.gap-2
+			.col-6.border-end.border-primary КУЗ ВО "Воронежский клинический психоневралогический диспансер"
+			.col-6.d-flex.flex-column.gap-2.ms-3
 				a(href='#') Госконтракт №123 от 09.01.2021
 				a(href='#') Контракт №321 от 15.03.2021
 				a(href='#') Договор №5 от 01.05.2021
 		.list-group-item.d-flex
-			.col-6 Воронежский родильный дом №2
-			.col-6.d-flex.flex-column.gap-2
+			.col-6.border-end.border-primary Воронежский родильный дом №2
+			.col-6.d-flex.flex-column.gap-2.ms-3
 				a(href='#') Госконтракт №Ф.24/123.4323 от 09.01.2021
 		.list-group-item.d-flex
-			.col-6 ФГКУ 418 ВГ Минобороны России
-			.col-6.d-flex.flex-column.gap-2
+			.col-6.border-end.border-primary ФГКУ 418 ВГ Минобороны России
+			.col-6.d-flex.flex-column.gap-2.ms-3
 				a(href='#') Госконтракт №23424234234 от 09.01.2021
 	ul.pagination.justify-content-center
 		li.page-item
