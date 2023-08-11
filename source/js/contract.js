@@ -1,8 +1,9 @@
+import closeModal from "./closeModal.js";
 import { DynanicTabs } from "./dynamicTabs.js";
 import { switchTables } from "./switchTables.js";
 import { tableCheckboxes } from "./tableControl.js";
 
-export const Contract = () => {
+const Contract = () => {
 	const tableContracts = document.querySelector("#table-contracts");
 	const tableRadioButtons = document.querySelectorAll('#contracts-tabs input[type="radio"][name="tables"]');
 
@@ -42,9 +43,7 @@ export const Contract = () => {
 								});
 
 							editContactModal.show();
-							editContactModal._element.addEventListener("hidden.bs.modal", () => {
-								editContactModal._element.remove();
-							});
+							closeModal(editContactModal);
 
 							const termContractBtn = document.querySelector("#term-contract-btn");
 							if (termContractBtn) {
@@ -81,9 +80,7 @@ export const Contract = () => {
 							);
 
 							accessContactModal.show();
-							accessContactModal._element.addEventListener("hidden.bs.modal", () => {
-								accessContactModal._element.remove();
-							});
+							closeModal(accessContactModal);
 						});
 				});
 			}
@@ -106,10 +103,10 @@ export const Contract = () => {
 						});
 
 					newContactModal.show();
-					newContactModal._element.addEventListener("hidden.bs.modal", () => {
-						newContactModal._element.remove();
-					});
+					closeModal(newContactModal);
 				});
 		});
 	}
 };
+
+export default Contract;

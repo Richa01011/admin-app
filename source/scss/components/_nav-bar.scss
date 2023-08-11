@@ -1,0 +1,7 @@
+.nav-bar {
+	position: sticky;
+	top: calc(77px + 1.5rem);
+}
+.collapsed {
+	transform: rotateZ(180deg);
+}

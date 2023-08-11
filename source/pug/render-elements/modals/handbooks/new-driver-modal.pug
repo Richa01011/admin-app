@@ -1,0 +1,65 @@
+.modal.fade(id="new-driver-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Новый водитель
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				.d-flex.mb-3
+					.col-3
+						.input-group-text ФИО водителя
+					.col
+						input.form-control(type="text" name="name")
+				.d-flex.mb-3
+					.col-3
+						.input-group-text.h-100 Категория прав
+					.col
+						select.form-select(name="driverLicense" multiple)
+							option(value="1") A
+							option(value="2") B
+							option(value="3") C
+							option(value="4") D
+				.d-flex.mb-3
+					.col-3
+						.input-group-text Регион
+					.col
+						select.form-select(name="region")
+							option(selected value="1") Липецкая обл.
+							option(value="2") Тамбовская обл.
+							option(value="3") Курская обл.
+				.d-flex.mb-3
+					.col-3
+						.input-group-text Логин
+					.col
+						input.form-control(type="text" name="login")
+				.d-flex.mb-3
+					.col-3
+						.input-group-text Пароль
+					.col
+						input.form-control(type="password" name="password")
+				.d-flex.mb-3
+					.col-5
+						.input-group-text.h-100 Транспортное средство
+					.col
+						select.form-select(name="car" multiple)
+							option(value="1") A 943 AA 49 (фургон)
+							option(value="2") A 324 AA 12 (термофургон)
+							option(value="3") A 643 AA 94 (фургон)
+				.d-flex.mb-3
+					.col-5
+						.input-group-text Организация исполнитель (субподряд)
+					.col
+						select.form-select(name="executor")
+							option(selected value="1") ООО Организация 1
+							option(value="2") ООО Организация 2
+							option(value="3") ООО Организация 3
+				.d-flex.mb-3
+					.col-5
+						.input-group-text Статус
+					.col
+						select.form-select(name="status")
+							option(selected value="1") Активен
+							option(value="2") Заблокирован
+			.modal-footer
+				button.btn.btn-dark(type="button") Сохранить
+				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить

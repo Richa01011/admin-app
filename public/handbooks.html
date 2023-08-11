@@ -39,28 +39,18 @@
           </div>
         </div>
         <main class="g-col-12 g-col-xxl-10">
-          <div class="d-flex gap-2 mb-3">
-            <button class="d-xxl-none btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Выбор отчёта</button>
-              <div class="dropdown-menu">
-                <button class="dropdown-item" id="waste-move-log-btn">Журнал движения отходов</button>
-                <button class="dropdown-item" id="report-counterparty-btn">Отчёт по контрагентам</button>
-                <button class="dropdown-item" id="report-lpu-btn">Отчёт по адресам</button>
-                <button class="dropdown-item" id="report-car-btn">Отчёт по ТС</button>
-                <button class="dropdown-item" id="report-type-waste-btn">Отчёт по отходам</button>
-                <button class="dropdown-item" id="change-log-btn">Журнал изменений</button>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Действия</button>
-              <div class="dropdown-menu">
-                <button class="dropdown-item">Распечатать</button>
-                <button class="dropdown-item">Скачать</button>
-              </div>
-            </div>
+          <button class="d-xxl-none btn btn-secondary mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav-menu">Меню</button>
+          <div class="grid gap-2 w-50">
+            <button class="handbook-btn g-col-4" type="button" id="driver-modal-btn"><i class="fa-solid fa-gear"></i><span>Водители</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="unit-modal-btn"><i class="fa-solid fa-gear"></i><span>Единицы измерения</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="contact-persons-btn"><i class="fa-solid fa-gear"></i><span>Контактные лица</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="counterparty-modal-btn"><i class="fa-solid fa-gear"></i><span>Контрагенты</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="organizations-modal-btn"><i class="fa-solid fa-gear"></i><span>Организации</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="waste-modal-btn"><i class="fa-solid fa-gear"></i><span>Отходы</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="subcontract-modal-btn"><i class="fa-solid fa-gear"></i><span>Подрядные организации</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="projects-modal-btn"><i class="fa-solid fa-gear"></i><span>Проекты</span></button>
+            <button class="handbook-btn g-col-4" type="button" id="car-modal-btn"><i class="fa-solid fa-gear"></i><span>Транспортные средства</span></button>
           </div>
-          <div id="reports-container"></div>
         </main>
       </div>
     </div>

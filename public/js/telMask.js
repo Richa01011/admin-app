@@ -1,6 +1,6 @@
 import observeMutations from "./observerMutation.js";
 
-export const TelMaks = () => {
+const TelMaks = () => {
 	const maskOptions = {
 		mask: "+7 (000) 000-00-00",
 	};
@@ -31,3 +31,4 @@ export const TelMaks = () => {
 	};
 	setAppyMask();
 };
+export default TelMaks;

@@ -1,0 +1,51 @@
+.modal.fade(id="edit-contact-persons-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.modal-title.fs-5 Редактирование Контактного лица ЛПУ
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				.d-flex.mb-3
+					.col-3
+						.input-group-text ФИО водителя
+					.col
+						input.form-control(type="text" name="name" value="Зубрикова Ольга Владимировна")
+				.d-flex.mb-3
+					.col-3
+						.input-group-text.h-100 Контрагент
+					.col
+						select.form-select(name="counterparty")
+							option(value="1" selected) ООО МЕД ПЛЮ
+							option(value="2") ООО Контрагент
+				.d-flex.mb-3
+					.col-3
+						.input-group-text Адрес вывоза отходов
+					.col
+						select.form-select(name="address")
+							option(selected value="1") Липецк Ковалева д.125
+							option(value="2") Воронеж Лизюкова 2
+				.d-flex.mb-3
+					.col-3
+						.input-group-text Логин
+					.col
+						input.form-control(type="text" name="login" value="ibax434@mail.ru")
+				.d-flex.mb-3
+					.col-3
+						.input-group-text Пароль
+					.col
+						input.form-control(type="password" name="password" value="#4324324")
+				.d-flex.mb-3
+					.col-3
+						.input-group-text.h-100 Телефон контрактный
+					.col
+						input.form-control(type="tel" name="tel" value="+7 (943) 432-43-12")
+				.d-flex.mb-3
+					.col-3
+						.input-group-text Статус
+					.col
+						select.form-select(name="status")
+							option(selected value="1") Активен
+							option(value="2") Заблокирован
+			.modal-footer
+				button.btn.btn-dark(type="button") Сохранить
+				button.btn.btn-danger(type="button" data-bs-dismiss="modal") Отменить

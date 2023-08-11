@@ -1,7 +1,7 @@
 import { switchTables } from "./switchTables.js";
 import { tableCheckboxes } from "./tableControl.js";
 
-export const Orders = () => {
+const Orders = () => {
 	const tableRadioButtons = document.querySelectorAll('#orders-tabs input[type="radio"][name="order-tables"]');
 	switchTables(tableRadioButtons, ["#tab-removal-schedule", "#tab-completed-orders", "#tab-unfulfilled-orders"]);
 
@@ -37,3 +37,5 @@ export const Orders = () => {
 		});
 	}
 };
+
+export default Orders;

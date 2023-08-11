@@ -1,0 +1,37 @@
+.modal.fade(id="counterparty-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.d-flex.gap-2
+					button.btn.btn-light(type="button" id="toggle-checked-all-btn")
+						i.fa-regular.fa-circle-check
+						span  Выделить всё
+					button.btn.btn-light(type="button" id="delete-btn" data-disabled-toggle="any" disabled)
+						i.fa-solid.fa-trash
+						span  Удалить
+					button.btn.btn-light(type="button" id="edit-btn" data-disabled-toggle="one" disabled)
+						i.fa-solid.fa-edit
+						span  Редактировать
+					button.btn.btn-light(type="button" id="new-btn")
+						i.fa-solid.fa-plus
+						span  Добавить
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				.table-responsive
+					table.table.table-striped.table-bordered.table-sm.table-hover.align-middle
+						thead
+							tr.align-middle
+								th.text-center #
+								th.text-center(style="width: 50%") Полное название
+								th.text-center(style="width: 50%") ИНН
+						tbody
+							tr
+								td
+									input.form-check-input(type="checkbox")
+								td.text-center ООО Контрагент
+								td.text-center 345435343345
+							tr
+								td
+									input.form-check-input(type="checkbox")
+								td.text-center ООО МЕД ПЛЮС
+								td.text-center 0929г3923743

@@ -1,0 +1,45 @@
+.modal.fade(id="car-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.d-flex.gap-2
+					button.btn.btn-light(type="button" id="toggle-checked-all-btn")
+						i.fa-regular.fa-circle-check
+						span  Выделить всё
+					button.btn.btn-light(type="button" id="delete-btn" data-disabled-toggle="any" disabled)
+						i.fa-solid.fa-trash
+						span  Удалить
+					button.btn.btn-light(type="button" id="new-btn")
+						i.fa-solid.fa-plus
+						span  Добавить
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				.table-responsive
+					table.table.table-striped.table-bordered.table-sm.table-hover.align-middle
+						thead
+							tr.align-middle
+								th.text-center #
+								th.text-center(style="width: 50%") Госномер
+								th.text-center(style="width: 50%") Тип ТС
+								th
+						tbody
+							tr
+								td
+									input.form-check-input(type="checkbox")
+								td
+									input.form-control(type="text" value="А43828АА34")
+								td
+									input.form-control(type="text" value="Термофургон")
+								td
+									button.btn.btn-outline-rose(type="button")
+										i.fa-regular.fa-floppy-disk
+							tr
+								td
+									input.form-check-input(type="checkbox")
+								td
+									input.form-control(type="text" value="Е342435А62")
+								td
+									input.form-control(type="text" value="Цитерна")
+								td
+									button.btn.btn-outline-rose(type="button")
+										i.fa-regular.fa-floppy-disk

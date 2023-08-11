@@ -1,4 +1,6 @@
-export const CounterParty = () => {
+import closeModal from "./closeModal.js";
+
+const CounterParty = () => {
 	const newCounterPartyModalBtn = document.querySelector("#new-counterparty-modal-btn");
 	if (newCounterPartyModalBtn) {
 		newCounterPartyModalBtn.addEventListener("click", () => {
@@ -8,9 +10,7 @@ export const CounterParty = () => {
 					document.body.insertAdjacentHTML("beforeend", text);
 					const newCounterPartyModal = new bootstrap.Modal(document.querySelector("#new-counterparty-modal"));
 					newCounterPartyModal.show();
-					newCounterPartyModal._element.addEventListener("hidden.bs.modal", () => {
-						newCounterPartyModal._element.remove();
-					});
+					closeModal(newCounterPartyModal);
 
 					const INNButton = document.querySelector("#counterparty-INN-btn");
 					if (INNButton) {
@@ -35,3 +35,5 @@ export const CounterParty = () => {
 		});
 	}
 };
+
+export default CounterParty;

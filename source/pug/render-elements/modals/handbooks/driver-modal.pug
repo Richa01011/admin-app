@@ -1,0 +1,46 @@
+.modal.fade(id="driver-modal" data-bs-backdrop="static" data-bs-keyboard="false")
+	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
+		.modal-content
+			.modal-header
+				.d-flex.gap-2
+					button.btn.btn-light(type="button" id="toggle-checked-all-btn")
+						i.fa-regular.fa-circle-check
+						span  Выделить всё
+					button.btn.btn-light(type="button" id="delete-btn" data-disabled-toggle="any" disabled)
+						i.fa-solid.fa-trash
+						span  Удалить
+					button.btn.btn-light(type="button" id="edit-btn" data-disabled-toggle="one" disabled)
+						i.fa-solid.fa-edit
+						span  Редактировать
+					button.btn.btn-light(type="button" id="new-btn")
+						i.fa-solid.fa-plus
+						span  Добавить
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				.table-responsive
+					table.table.table-striped.table-bordered.table-sm.table-hover.align-middle
+						thead
+							tr.align-middle
+								th.text-center #
+								th.text-center(style="width: 25%") ФИО водителя
+								th.text-center(style="width: 25%") Категория прав
+								th.text-center(style="width: 25%") ТС
+								th.text-center(style="width: 25%") Организация субподряд
+								th.text-center(style="width: 25%") Статус
+						tbody
+							tr
+								td
+									input.form-check-input(type="checkbox")
+								td.text-center Иванов И.И
+								td.text-center B, C, D
+								td.text-center А953454
+								td.text-center -
+								td.text-center Активен
+							tr
+								td
+									input.form-check-input(type="checkbox")
+								td.text-center Петров А.А
+								td.text-center B, C
+								td.text-center O534534
+								td.text-center ООО Бач А.А.
+								td.text-center Заблокирован
