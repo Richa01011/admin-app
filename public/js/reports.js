@@ -1,6 +1,8 @@
 const Reports = () => {
 	const reportsContainer = document.querySelector("#reports-container");
 	if (reportsContainer) {
+		const dropdown = new bootstrap.Dropdown(document.querySelector(".dropdown"));
+		dropdown.show();
 		const wasteMoveLogBtn = document.querySelector("#waste-move-log-btn");
 		const reportCounterpartyBtn = document.querySelector("#report-counterparty-btn");
 		const reportLpuBtn = document.querySelector("#report-lpu-btn");
@@ -9,6 +11,7 @@ const Reports = () => {
 		const changeLogBtn = document.querySelector("#change-log-btn");
 
 		const insertReport = (link) => {
+			dropdown.hide();
 			fetch(link)
 				.then((response) => response.text())
 				.then((text) => {
