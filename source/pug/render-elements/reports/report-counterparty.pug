@@ -1,10 +1,16 @@
-.input-group.w-50.mb-3
-	.input-group-text Контрагент
-	select.form-select(name="counterparty")
-		option(selected) Городская больница 1
-		option Городская больница 2
-	.input-group-text Период
-	input.form-control(id="month-picker" name="month-picker" readonly)
+.d-flex.mb-3
+	.col-4
+		.input-group
+			.input-group-text Контрагент
+			select.form-select(name="counterparty")
+				option(selected) Мед. учреждение ООО Ковалева 20
+				option Мед. учреждение ООО Ковалева 6
+	.col-4
+		.input-group(data-date-picker="range-month")
+			.input-group-text Период
+			input.form-control(name="start" readonly)
+			.input-group-text -
+			input.form-control(name="end" readonly)
 p.text-center
 	strong Отчёт по договорам с контрагентами за период
 .table-responsive

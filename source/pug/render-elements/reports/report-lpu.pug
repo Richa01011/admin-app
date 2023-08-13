@@ -35,7 +35,10 @@
 						.col-5.pe-0
 							.input-group-text Период
 						.col.px-0
-							input.form-control(id="month-picker" name="month-picker" readonly)
+							.input-group(data-date-picker="range-month")
+								input.form-control(name="start" readonly)
+								.input-group-text -
+								input.form-control(name="end" readonly)
 		.table-responsive
 			table.table.table-bordered.table-sm.align-middle
 				thead
@@ -137,7 +140,10 @@
 						.col-5.pe-0
 							.input-group-text Период
 						.col.px-0
-							input.form-control(id="year-picker" name="year-picker" readonly)
+							.input-group(data-date-picker="range-year")
+								input.form-control(name="start" readonly)
+								.input-group-text -
+								input.form-control(name="end" readonly)
 		.table-responsive
 			table.table.table-bordered.table-sm.align-middle
 				thead

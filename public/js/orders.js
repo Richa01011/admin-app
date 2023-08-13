@@ -8,9 +8,10 @@ const Orders = () => {
 	const tableOrders = document.querySelector("#table-orders");
 	if (tableOrders) {
 		const tablePanes = tableOrders.querySelectorAll(".tab-pane");
-		tablePanes.forEach((tablePane) => {
+		tablePanes.forEach((tablePane, tableIndex) => {
 			if (tablePane) {
-				const tbody = tablePane.querySelector("tbody");
+				const table = tablePane.querySelector("table");
+				const tbody = table.querySelector("tbody");
 				const toggleCheckAllButton = tablePane.querySelector("#toggle-checked-all-btn");
 				const deleteButton = tablePane.querySelector("#delete-order-btn");
 				const editButton = tablePane.querySelector("#edit-order-btn");
@@ -33,6 +34,56 @@ const Orders = () => {
 							});
 					});
 				}
+
+				const theadCols = tablePane.querySelectorAll("thead tr th");
+				const dropdownRows = tablePane.querySelectorAll("[data-dropdown-cols]");
+				dropdownRows.forEach((dropdownRow, rowIndex) => {
+					theadCols.forEach((theadCol, colIndex) => {
+						dropdownRow.insertAdjacentHTML(
+							"beforeend",
+							`
+						<div class="d-block w-100 py-1 px-2 text-nowrap">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="${rowIndex}-${colIndex}" checked data-column="${colIndex}"/>
+								<label class="form-check-label" for="${rowIndex}-${colIndex}">${theadCol.textContent}</label>
+							</div>
+						</div>
+						`
+						);
+					});
+				});
+				dropdownRows.forEach((dropdownRow) => {
+					const checkboxes = dropdownRow.querySelectorAll('input[type="checkbox"]');
+
+					function toggleColumns() {
+						const columnIndex = parseInt(this.getAttribute("data-column"));
+						const cells = table.querySelectorAll(`tr > *:nth-child(${columnIndex + 1})`);
+
+						if (this.checked) {
+							cells.forEach((theadCol) => {
+								theadCol.classList.remove("d-none");
+							});
+						} else {
+							cells.forEach((theadCol) => {
+								theadCol.classList.add("d-none");
+							});
+						}
+
+						sessionStorage.setItem(`row-${tableIndex}_column-${columnIndex}`, this.checked);
+					}
+
+					checkboxes.forEach((checkbox) => {
+						checkbox.addEventListener("change", toggleColumns);
+
+						const columnIndex = parseInt(checkbox.getAttribute("data-column"));
+						const isChecked = sessionStorage.getItem(`row-${tableIndex}_column-${columnIndex}`);
+
+						if (isChecked === "false") {
+							checkbox.checked = false;
+							toggleColumns.call(checkbox);
+						}
+					});
+				});
 			}
 		});
 	}

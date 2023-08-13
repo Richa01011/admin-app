@@ -8,16 +8,17 @@
 	padding: 10px;
 	text-align: start;
 	text-decoration-line: none;
-	color: #000;
 	cursor: pointer;
 	transition: background-color 0.15s ease-in-out;
 
 	& i {
 		font-size: 40px;
+		color: #e33a4e;
 	}
 	& span {
 		font-size: 18px;
 		line-height: 1;
+		color: #000;
 	}
 
 	&:hover {

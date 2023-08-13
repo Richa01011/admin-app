@@ -16,6 +16,9 @@
 			button.btn.btn-light(type="button" id="excel-order-btn" data-disabled-toggle="any" disabled)
 				i.fa-solid.fa-download
 				span  Отправить в Excel
+			.dropdown
+				button.btn.btn-secondary.dropdown-toggle(type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside") Выбрать столбцы
+				.dropdown-menu(data-dropdown-cols)
 		.d-flex.gap-2
 			input.form-control(type="text" placeholder="Поиск")
 			button.btn.btn-dark(type="button") Поиск
@@ -23,7 +26,7 @@
 		table.table.table-striped.table-bordered.table-sm.table-hover.rounded.align-middle
 			thead
 				tr.align-middle
-					th #
+					th(style="width: 25px") #
 					th(style="min-width: 120px")
 						.filterable
 							span № Заявки

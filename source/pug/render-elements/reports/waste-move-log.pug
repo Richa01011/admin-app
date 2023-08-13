@@ -9,13 +9,12 @@
 		option Ковалева 5
 	.input-group-text Тип отхода
 	select.form-select(name="waste-type")
-		option(selected) Все типы
-		option А
+		option(selected) А
 		option Б
 		option В
 		option Г
 	.input-group-text Период
-	input.form-control(id="month-picker" name="month-picker" readonly)
+	input.form-control(data-date-picker="month" name="month-picker" readonly)
 p.text-center
 	strong Журнал движения отходов
 		br
@@ -79,7 +78,7 @@ p Адрес вывоза(ЛПУ): Мед. учреждение ООО Кова�
 				td Костин К.В.
 				td
 p Итого за период 01.06.2023 - 31.06.2023 
-	span.badge.bg-secondary Контейнер 35
-	span.badge.bg-secondary 42 шт.
+	span.border.p-2 Контейнер 35 л
+	span.border.p-2 42 шт.
 p Проверено:
 p.mb-0 Генеральный директор ООО "СоюзРубин-Втормет" ____________________ И.Ю. Петров

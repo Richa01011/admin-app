@@ -5,7 +5,10 @@
 				.col-5.pe-0
 					.input-group-text Период
 				.col.px-0
-					input.form-control(id="month-picker" name="month-picker" readonly)
+					.input-group(data-date-picker="range-year")
+						input.form-control(name="start" readonly)
+						.input-group-text -
+						input.form-control(name="end" readonly)
 		.col-4
 			.row
 				.col-5.pe-0
@@ -48,7 +51,7 @@ p.fw-bold.text-center Отчёт "План-факт по проекту в це�
 					table.table.table-sm.align-middle(style="margin: 0 -1px -1px 0")
 						thead
 							tr
-								td.bg-warning-subtle(colspan="3").text-center Период Отклонение
+								td.bg-warning-subtle(colspan="3").text-center Отклонение
 						tbody
 							tr
 								td.bg-warning-subtle.border-end.text-center(style="width: 50%") Значение

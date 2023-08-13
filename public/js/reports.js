@@ -17,26 +17,45 @@ const Reports = () => {
 				.then((text) => {
 					reportsContainer.innerHTML = "";
 					reportsContainer.innerHTML = text;
-					const monthpicker = document.querySelectorAll("#month-picker");
-					if (monthpicker.length > 0) {
-						monthpicker.forEach((item) => {
-							const datepicker = new Datepicker(item, {
-								language: "ru",
-								pickLevel: 1,
-								defaultViewDate: "01/01/2023",
-							});
-						});
-					}
-					const yearpicker = document.querySelectorAll("#year-picker");
-					if (yearpicker.length > 0) {
-						yearpicker.forEach((item) => {
-							const datepicker = new Datepicker(item, {
-								language: "ru",
-								pickLevel: 2,
-								defaultViewDate: "01/01/2023",
-							});
-						});
-					}
+					const datePickers = document.querySelectorAll("[data-date-picker]");
+					datePickers.forEach((datePicker) => {
+						if (datePicker) {
+							switch (datePicker.getAttribute("data-date-picker")) {
+								case "month": {
+									new Datepicker(datePicker, {
+										language: "ru",
+										pickLevel: 1,
+										format: "M.yyyy",
+									});
+									break;
+								}
+								case "year": {
+									new Datepicker(datePicker, {
+										language: "ru",
+										pickLevel: 2,
+										format: "yyyy",
+									});
+									break;
+								}
+								case "range-month": {
+									new DateRangePicker(datePicker, {
+										language: "ru",
+										pickLevel: 1,
+										format: "M.yyyy",
+									});
+									break;
+								}
+								case "range-year": {
+									new DateRangePicker(datePicker, {
+										language: "ru",
+										pickLevel: 2,
+										format: "yyyy",
+									});
+									break;
+								}
+							}
+						}
+					});
 				});
 		};
 

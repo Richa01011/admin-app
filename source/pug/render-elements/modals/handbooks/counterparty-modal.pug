@@ -2,7 +2,10 @@
 	.modal-dialog.modal-lg.modal-dialog-scrollable.modal-dialog-centered
 		.modal-content
 			.modal-header
-				.d-flex.gap-2
+				.modal-title.fs-4 Контрагенты
+				button.btn-close(type="button" data-bs-dismiss="modal")
+			.modal-body
+				.d-flex.gap-2.mb-2
 					button.btn.btn-light(type="button" id="toggle-checked-all-btn")
 						i.fa-regular.fa-circle-check
 						span  Выделить всё
@@ -15,8 +18,6 @@
 					button.btn.btn-light(type="button" id="new-btn")
 						i.fa-solid.fa-plus
 						span  Добавить
-				button.btn-close(type="button" data-bs-dismiss="modal")
-			.modal-body
 				.table-responsive
 					table.table.table-striped.table-bordered.table-sm.table-hover.align-middle
 						thead

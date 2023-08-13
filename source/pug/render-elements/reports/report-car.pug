@@ -5,7 +5,7 @@
 	.tab-pane.fade.show.active(id="tab-1" role="tabpanel")
 		.input-group.w-50.my-3
 			.input-group-text Период
-			input.form-control(id="month-picker" name="month-picker" readonly)
+			input.form-control(data-date-picker="month" name="month-picker" readonly)
 			.input-group-text ТС
 			select.form-select(name="car")
 				option(selected) А94234АА43 - Фургон
@@ -113,7 +113,10 @@
 						.col-5.pe-0
 							.input-group-text Период
 						.col.px-0
-							input.form-control(id="month-picker" name="month-picker" readonly)
+							.input-group(data-date-picker="range-year")
+								input.form-control(name="start" readonly)
+								.input-group-text -
+								input.form-control(name="end" readonly)
 		.table-responsive
 			table.table.table-bordered.table-sm.align-middle
 				thead

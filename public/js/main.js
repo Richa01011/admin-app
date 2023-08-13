@@ -6,6 +6,7 @@ import Orders from "./orders.js";
 import highlightActivePage from "./highligtCurrentPage.js";
 import Reports from "./reports.js";
 import Handbooks from "./handbooks.js";
+import multiCheckbox from "./multiCheckbox.js";
 
 highlightActivePage();
 TelMaks();
@@ -14,14 +15,19 @@ CounterParty();
 Orders();
 Reports();
 Handbooks();
+multiCheckbox();
 
 const observer = new MutationObserver((mutations) => {
 	let hasNewDynamicElements = false;
+	let hasNewMultiChecbox = false;
 	mutations.forEach((mutation) => {
 		if (mutation.type === "childList") {
 			mutation.addedNodes.forEach((node) => {
 				if (node.nodeType === Node.ELEMENT_NODE && node.hasChildNodes("data-dynamic-element")) {
 					hasNewDynamicElements = true;
+				}
+				if (node.nodeType === Node.ELEMENT_NODE && node.hasChildNodes('[data-multi-checkbox="dropdown"]')) {
+					hasNewMultiChecbox = true;
 				}
 			});
 		}
@@ -30,6 +36,9 @@ const observer = new MutationObserver((mutations) => {
 	if (hasNewDynamicElements) {
 		createDynamicElements();
 		createWasteTypeElement();
+	}
+	if (hasNewMultiChecbox) {
+		multiCheckbox();
 	}
 });
 

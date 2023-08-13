@@ -14,11 +14,15 @@
 					.col-3
 						.input-group-text.h-100 Категория прав
 					.col
-						select.form-select(name="driverLicense" multiple)
-							option(value="1") A
-							option(selected value="2") B
-							option(selected value="3") C
-							option(selected value="4") D
+						.btn-group
+							input.btn-check(type="checkbox" autocomplete="off" id="category-A" checked)
+							label.btn.btn-outline-rose(for="category-A") A
+							input.btn-check(type="checkbox" autocomplete="off" id="category-B" checked)
+							label.btn.btn-outline-rose(for="category-B") B
+							input.btn-check(type="checkbox" autocomplete="off" id="category-C")
+							label.btn.btn-outline-rose(for="category-C") C
+							input.btn-check(type="checkbox" autocomplete="off" id="category-D")
+							label.btn.btn-outline-rose(for="category-D") D
 				.d-flex.mb-3
 					.col-3
 						.input-group-text Регион
@@ -41,15 +45,27 @@
 					.col-5
 						.input-group-text.h-100 Транспортное средство
 					.col
-						select.form-select(name="car" multiple)
-							option(selected value="1") A 943 AA 49 (фургон)
-							option(value="2") A 324 AA 12 (термофургон)
-							option(selected value="3") A 643 AA 94 (фургон)
+						.dropdown(data-multi-checkbox="dropdown")
+							input.form-control(type="text" readonly placehoder="Выберите ТС")
+							.dropdown-menu
+								.d-flex.justify-content-end.px-2
+									button.btn-close(type="button")
+								.p-3
+									.form-check
+										input.form-check-input(type="checkbox" checked id="car-1")
+										label.form-check-label(for="car-1") A 943 AA 49 (фургон)
+									.form-check
+										input.form-check-input(type="checkbox" id="car-2")
+										label.form-check-label(for="car-2") A 324 AA 12 (термофургон)
+									.form-check
+										input.form-check-input(type="checkbox" id="car-3")
+										label.form-check-label(for="car-3") A 643 AA 94 (фургон)
 				.d-flex.mb-3
 					.col-5
 						.input-group-text Организация исполнитель (субподряд)
 					.col
 						select.form-select(name="executor")
+							option(selected value="none") Не выбрано
 							option(selected value="1") ООО Организация 1
 							option(value="2") ООО Организация 2
 							option(value="3") ООО Организация 3
