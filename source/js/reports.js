@@ -25,7 +25,7 @@ const Reports = () => {
 									new Datepicker(datePicker, {
 										language: "ru",
 										pickLevel: 1,
-										format: "M.yyyy",
+										format: "MM yyyy",
 									});
 									break;
 								}
@@ -41,7 +41,7 @@ const Reports = () => {
 									new DateRangePicker(datePicker, {
 										language: "ru",
 										pickLevel: 1,
-										format: "M.yyyy",
+										format: "MM yyyy",
 									});
 									break;
 								}
